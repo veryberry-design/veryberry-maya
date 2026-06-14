@@ -1,0 +1,9 @@
+/* ==========================================================================
+   works page — page-specific styles
+   ========================================================================== */
+
+/* fade-up entrance animation (extracted from inline <style> in works.php) */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
