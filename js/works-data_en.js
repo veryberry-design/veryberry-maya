@@ -36,7 +36,7 @@ const WORKS_DATA = [
     ttl:'Renovation Company Website',
     date:'2026.05', client:'', meta:'/ 2026.05',
     desc:'A landing page for a renovation company. Focused on a layout that drives inquiries and a design that builds trust.',
-    thumb:'/wp-content/themes/maya/img/works/portfolilo_10_2.jpg', img:'/wp-content/themes/maya/img/works/portfolilo_10.png',
+    thumb:'/wp-content/themes/maya/img/works/portfolilo_10_2.jpg', img:'/wp-content/themes/maya/img/works/portfolilo_10.jpg',
     url:'http://veryberry.weblike.jp/reform/'
   },
   {

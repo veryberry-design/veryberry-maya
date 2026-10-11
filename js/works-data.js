@@ -39,7 +39,7 @@ const WORKS_DATA = [
     ttl:'リフォーム会社Webサイト',
     date:'2026.05', client:'', meta:'/ 2026.05',
     desc:'リフォーム会社向けのランディングページ。問い合わせにつながる構成と、信頼感を伝えるデザインにこだわりました。',
-    thumb:'/wp-content/themes/maya/img/works/portfolilo_10_2.jpg', img:'/wp-content/themes/maya/img/works/portfolilo_10.png',
+    thumb:'/wp-content/themes/maya/img/works/portfolilo_10_2.jpg', img:'/wp-content/themes/maya/img/works/portfolilo_10.jpg',
     url:'http://veryberry.weblike.jp/reform/'
   },
   {
