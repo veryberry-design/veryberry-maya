@@ -35,12 +35,12 @@ const WORKS_DATA = [
     thumb:'/wp-content/themes/maya/img/works/portfolilo_11.png', img:'/wp-content/themes/maya/img/works/portfolilo_11.png'
   },
   {
-    cat:'web', tags:[{l:'デザイン＋コーディング', c:'both'}],
+    cat:'web', tags:[{l:'デザイン＋コーディング', c:'both'}, {l:'ブログ運用', c:'blog'}],
     ttl:'リフォーム会社Webサイト',
     date:'2026.05', client:'', meta:'/ 2026.05',
     desc:'リフォーム会社向けのランディングページ。問い合わせにつながる構成と、信頼感を伝えるデザインにこだわりました。',
-    thumb:'/wp-content/themes/maya/img/works/portfolilo_10_2.jpg', img:'/wp-content/themes/maya/img/works/portfolilo_10.jpg',
-    url:'http://veryberry.weblike.jp/reform/'
+    thumb:'/wp-content/themes/maya/img/works/portfolilo_10_2.jpg', img:'/wp-content/themes/maya/img/works/yui.jpg',
+    url:'https://yui-oki.jp/'
   },
   {
     cat:'banner', tags:[{l:'デザイン', c:'other'}],

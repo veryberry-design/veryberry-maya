@@ -32,12 +32,12 @@ const WORKS_DATA = [
     thumb:'/wp-content/themes/maya/img/works/portfolilo_11.png', img:'/wp-content/themes/maya/img/works/portfolilo_11.png'
   },
   {
-    cat:'web', tags:[{l:'Design + Coding', c:'both'}],
+    cat:'web', tags:[{l:'Design + Coding', c:'both'}, {l:'Blog Management', c:'blog'}],
     ttl:'Renovation Company Website',
     date:'2026.05', client:'', meta:'/ 2026.05',
     desc:'A landing page for a renovation company. Focused on a layout that drives inquiries and a design that builds trust.',
-    thumb:'/wp-content/themes/maya/img/works/portfolilo_10_2.jpg', img:'/wp-content/themes/maya/img/works/portfolilo_10.jpg',
-    url:'http://veryberry.weblike.jp/reform/'
+    thumb:'/wp-content/themes/maya/img/works/portfolilo_10_2.jpg', img:'/wp-content/themes/maya/img/works/yui.jpg',
+    url:'https://yui-oki.jp/'
   },
   {
     cat:'banner', tags:[{l:'Design', c:'other'}],
