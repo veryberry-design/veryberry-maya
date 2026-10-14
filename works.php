@@ -67,8 +67,6 @@ include "header.php";
         <p class="desc" id="fdesc">
           紫の世界観で作った60秒のミュージックビデオ。スプラッシュ表現にこだわりました。
         </p>
-        <span class="corner1" id="c1"></span>
-        <span class="corner2" id="c2"></span>
       </article>
       <div class="thumb-row" id="thumbs">
       </div>
@@ -242,19 +240,12 @@ include "header.php";
         <div class="work-modal-img imgph" id="wm-img">
           <span class="lbl" id="wm-imglbl">[ work ] </span>
         </div>
-        <div class="wm-left-deco" aria-hidden="true">
-          <div class="wm-deco-watermark">
-            <span class="wm-deco-en">VeryBerry </span>
-            <span class="wm-deco-jp">design studio </span>
-          </div>
-          <div class="wm-deco-berries">
-            <span class="wm-deco-berry b1"></span>
-            <span class="wm-deco-berry b2"></span>
-            <span class="wm-deco-berry b3"></span>
-          </div>
-          <div class="wm-deco-tag">
-            — curated case study —
-          </div>
+        <!-- 画像の下：作品画像をぼかした背景＋紙の質感（JSで作品ごとに差し替え） -->
+        <div class="wm-left-deco" id="wm-deco" aria-hidden="true">
+          <div class="wm-deco-k">— case study —</div>
+          <div class="wm-deco-ttl" id="wm-deco-ttl"></div>
+          <div class="wm-deco-meta" id="wm-deco-meta"></div>
+          <div class="wm-deco-tags" id="wm-deco-tags"></div>
         </div>
       </div>
       <!-- RIGHT: scrollable case study -->
@@ -794,8 +785,19 @@ const toolsEl = document.getElementById('wm-tools');
 toolsEl.className ='wm-tools wm-tools-clean';
 toolsEl.innerHTML = c.tools.map(t => `<span class="wm-tool">${t}</span>`).join('');
 
+/* 画像の下の飾り：作品画像をぼかして背景に */
+const deco = document.getElementById('wm-deco');
+const decoImg = w.thumb || w.img || '';
+deco.style.setProperty('--deco-bg', decoImg ? `url('${decoImg}')` : 'none');
+document.getElementById('wm-deco-ttl').textContent = w.ttl;
+document.getElementById('wm-deco-meta').textContent = [c.period, c.scope].filter(x => x && x !== '—').join(' ／ ');
+document.getElementById('wm-deco-tags').innerHTML = (w.tags || []).map(t => `<span>${t.l}</span>`).join('');
 const wmUrl = document.getElementById('wm-url');
 if (w.url) { wmUrl.href = w.url; wmUrl.style.display = ''; } else { wmUrl.style.display = 'none'; }
+
+/* 画像をクリックしてもサイトを開く（URLがある作品のみ） */
+wmImg.style.cursor = w.url ? 'pointer' : '';
+wmImg.onclick = w.url ? () => window.open(w.url, '_blank', 'noopener') : null;
 
 const consultBtn = document.getElementById('wm-consult-btn');
 if (consultBtn) {
@@ -832,8 +834,6 @@ document.getElementById('ftitle').textContent = w.ttl;
 document.getElementById('fmeta').textContent = w.meta;
 document.getElementById('fdesc').textContent = w.desc;
 document.getElementById('cat-label').textContent = catLabel(curCat);
-document.getElementById('c1').innerHTML = BB.ICONS.berry(80,'var(--grape)');
-document.getElementById('c2').innerHTML = BB.ICONS.berry(64,'var(--berry)');
 const f = document.getElementById('featured');
 const fImgPh = f.querySelector('.imgph');
 if (fImgPh) {
@@ -874,6 +874,8 @@ t.querySelectorAll('.t').forEach(el => el.addEventListener('click', () => {
 curIdx = parseInt(el.dataset.i, 10);
 renderFeatured();
 t.querySelectorAll('.t').forEach(x => x.classList.toggle('on', x === el));
+/* 選んだ作品が見えるよう、上の大きい表示までスクロール */
+document.getElementById('featured').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }));
 }
 
