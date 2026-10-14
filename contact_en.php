@@ -89,19 +89,19 @@ include "header_en.php";
           <h3 class="cf-section-ttl">About your current site and target audience</h3>
         </div>
         <div class="form-field">
-          <label>Do you already have a website?</label>
+          <label>Do you already have a website? <span class="opt">Optional</span></label>
           <div class="check-row check-row-col">
             <label><input type="radio" name="existing" value="Yes (Renewal)" id="existing-yes"><span class="cb-box"></span>Yes (Renewal)</label>
             <label><input type="radio" name="existing" value="No (New)"><span class="cb-box"></span>No (New)</label>
             <label><input type="radio" name="existing" value="Not decided"><span class="cb-box"></span>Not decided</label>
           </div>
           <div class="form-field" id="existing-url-wrap" style="display:none; margin-top:12px; margin-bottom:0;">
-            <label for="existing-url" style="font-size:12px; color:#888;">Current site URL (optional)</label>
+            <label for="existing-url" style="font-size:12px; color:#888;">Current site URL <span class="opt">Optional</span></label>
             <input type="url" id="existing-url" name="existing_url" placeholder="https://example.com">
           </div>
         </div>
         <div class="form-field">
-          <label>Who is your target audience?</label>
+          <label>Who is your target audience? <span class="opt">Optional</span></label>
           <div class="check-row">
             <label><input type="checkbox" name="target" value="Local / general customers"><span class="cb-box"></span>Local / general customers</label>
             <label><input type="checkbox" name="target" value="Businesses / corporations"><span class="cb-box"></span>Businesses / corporations</label>
@@ -123,7 +123,7 @@ include "header_en.php";
           <h3 class="cf-section-ttl">What design style are you going for?</h3>
         </div>
         <div class="form-field">
-          <label>Preferred design style? (Multiple OK)</label>
+          <label>Preferred design style? (Multiple OK) <span class="opt">Optional</span></label>
           <div class="check-row">
             <label><input type="checkbox" name="tone" value="Simple &amp; clean"><span class="cb-box"></span>Simple &amp; clean</label>
             <label><input type="checkbox" name="tone" value="Cute &amp; soft"><span class="cb-box"></span>Cute &amp; soft</label>
@@ -134,7 +134,7 @@ include "header_en.php";
           </div>
         </div>
         <div class="form-field">
-          <label>Reference URL (optional)</label>
+          <label>Reference URL <span class="opt">Optional</span></label>
           <input type="text" name="ref" id="cf-ref" placeholder="https://... / Share a URL that captures the vibe you're going for"/>
         </div>
         <div class="cf-nav">
@@ -151,7 +151,7 @@ include "header_en.php";
         </div>
         <div class="field-row">
           <div class="form-field">
-            <label>Approximate budget</label>
+            <label>Approximate budget <span class="opt">Optional</span></label>
             <select name="budget" id="cf-budget">
               <option value="">— Select —</option>
               <option>¥150,000–300,000</option>
@@ -161,7 +161,7 @@ include "header_en.php";
             </select>
           </div>
           <div class="form-field">
-            <label>Target launch date</label>
+            <label>Target launch date <span class="opt">Optional</span></label>
             <select name="due" id="cf-due">
               <option value="">— Select —</option>
               <option>Within 1 month (urgent)</option>
@@ -172,7 +172,7 @@ include "header_en.php";
           </div>
         </div>
         <div class="form-field">
-          <label>Asset availability (Multiple OK)</label>
+          <label>Asset availability (Multiple OK) <span class="opt">Optional</span></label>
           <div class="check-row">
             <label><input type="checkbox" name="assets" value="Logo file available"><span class="cb-box"></span>Logo file available</label>
             <label><input type="checkbox" name="assets" value="Photos / images available"><span class="cb-box"></span>Photos / images available</label>
@@ -199,7 +199,7 @@ include "header_en.php";
           <p class="muted tiny" style="margin-top:6px;">* If hearing sheet answers exist, they will be inserted automatically</p>
         </div>
         <div class="form-field">
-          <label>Things to avoid / design you dislike (optional)</label>
+          <label>Things to avoid / design you dislike <span class="opt">Optional</span></label>
           <textarea name="ng" placeholder="e.g. I don't like a cluttered look, please avoid pink, etc."></textarea>
         </div>
         <div class="cf-nav">
@@ -220,7 +220,7 @@ include "header_en.php";
             <input type="text" name="name" placeholder="e.g. Berry Taro"/>
           </div>
           <div class="form-field">
-            <label>Company / Business name (optional)</label>
+            <label>Company / Business name <span class="opt">Optional</span></label>
             <input type="text" name="company" placeholder="Leave blank if individual"/>
           </div>
         </div>
@@ -229,20 +229,20 @@ include "header_en.php";
           <input type="email" name="email" placeholder="example@berry.com"/>
         </div>
         <div class="form-field">
-          <label>Phone number (optional)</label>
+          <label>Phone number <span class="opt">Optional</span></label>
           <input type="tel" name="tel" placeholder="000-0000-0000"/>
         </div>
         <!-- Coupon code -->
         <div class="form-field">
-          <label>Coupon Code (optional)
-            <span class="cf-field-note">Earned by getting a perfect quiz score &middot; ¥500 OFF &middot; One use only</span>
+          <label>Coupon Code <span class="opt">Optional</span>
+            <span class="cf-field-note">Earned by getting a perfect quiz score &middot; ¥1,000 OFF &middot; One use only</span>
           </label>
           <input type="text" name="coupon" id="cf-coupon" style="text-transform:uppercase; letter-spacing:.1em;"/>
         </div>
 
         <!-- Referral -->
         <div class="form-field">
-          <label>Referred by (optional)
+          <label>Referred by <span class="opt">Optional</span>
             <span class="cf-field-note">Please tell us the name of the person who referred you</span>
           </label>
           <input type="text" name="referral" id="cf-referral" placeholder="e.g. Berry Hanako"/>
@@ -254,7 +254,7 @@ include "header_en.php";
         </label>
 
         <!-- Privacy Policy -->
-        <details class="pp-details" style="margin: 0 0 18px; font-size:12px; color:#888; border:1px solid #eee; border-radius:8px; padding:10px 14px;">
+        <details class="pp-details" style="margin: 0 0 18px; font-size:12px; color:#888; border:1px solid #eee; border-radius:0; padding:10px 14px;">
           <summary style="cursor:pointer; font-weight:600; color:#555;">Privacy Policy</summary>
           <div style="margin-top:10px; line-height:1.8;">
             <p><strong>1. Purpose of collection</strong><br>
@@ -311,8 +311,12 @@ include "header_en.php";
     sections.forEach(s => s.classList.toggle('cf-active', parseInt(s.dataset.step) === n));
     stepDots.forEach((d, i) => d.classList.toggle('active', i + 1 <= n));
     if (fillEl) fillEl.style.width = Math.round((n / TOTAL_STEPS) * 100) + '%';
-    const bar = document.getElementById('cf-sticky-bar');
-    if (bar) bar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    /* 次の質問の先頭へ戻す。進捗バーは画面に付いてくるので、フォーム本体の位置から計算する */
+    const bar  = document.getElementById('cf-sticky-bar');
+    const head = document.querySelector('.site-head');
+    const offset = (head ? head.offsetHeight : 0) + (bar ? bar.offsetHeight : 0);
+    const y = form.getBoundingClientRect().top + window.scrollY - offset;
+    if (window.scrollY > y) window.scrollTo({ top: y, behavior: 'smooth' });
   }
 
   // Next

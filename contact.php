@@ -89,19 +89,19 @@ include "header.php";
           <h3 class="cf-section-ttl">今のサイトとターゲットについて</h3>
         </div>
         <div class="form-field">
-          <label>今すでにサイトはありますか？</label>
+          <label>今すでにサイトはありますか？ <span class="opt">任意</span></label>
           <div class="check-row check-row-col">
             <label><input type="radio" name="existing" value="ある（リニューアル）" id="existing-yes"><span class="cb-box"></span>ある（リニューアル）</label>
             <label><input type="radio" name="existing" value="ない（新規制作）"><span class="cb-box"></span>ない（新規制作）</label>
             <label><input type="radio" name="existing" value="未定"><span class="cb-box"></span>未定</label>
           </div>
           <div class="form-field" id="existing-url-wrap" style="display:none; margin-top:12px; margin-bottom:0;">
-            <label for="existing-url" style="font-size:12px; color:#888;">現在のサイトURL（任意）</label>
+            <label for="existing-url" style="font-size:12px; color:#888;">現在のサイトURL <span class="opt">任意</span></label>
             <input type="url" id="existing-url" name="existing_url" placeholder="https://example.com">
           </div>
         </div>
         <div class="form-field">
-          <label>誰に見てほしいですか？</label>
+          <label>誰に見てほしいですか？ <span class="opt">任意</span></label>
           <div class="check-row">
             <label><input type="checkbox" name="target" value="近隣の個人・一般のお客様"><span class="cb-box"></span>近隣の個人・一般のお客様</label>
             <label><input type="checkbox" name="target" value="法人・企業向け"><span class="cb-box"></span>法人・企業向け</label>
@@ -123,7 +123,7 @@ include "header.php";
           <h3 class="cf-section-ttl">デザインの雰囲気は？</h3>
         </div>
         <div class="form-field">
-          <label>希望するデザインの雰囲気は？（複数OK）</label>
+          <label>希望するデザインの雰囲気は？（複数OK） <span class="opt">任意</span></label>
           <div class="check-row">
             <label><input type="checkbox" name="tone" value="シンプル・すっきり"><span class="cb-box"></span>シンプル・すっきり</label>
             <label><input type="checkbox" name="tone" value="かわいい・やわらかい"><span class="cb-box"></span>かわいい・やわらかい</label>
@@ -134,7 +134,7 @@ include "header.php";
           </div>
         </div>
         <div class="form-field">
-          <label>参考URL（任意）</label>
+          <label>参考URL <span class="opt">任意</span></label>
           <input type="text" name="ref" id="cf-ref" placeholder="https://... ／ 「こんな雰囲気」が伝わるサイトのURLをどうぞ"/>
         </div>
         <div class="cf-nav">
@@ -151,7 +151,7 @@ include "header.php";
         </div>
         <div class="field-row">
           <div class="form-field">
-            <label>ご予算の目安</label>
+            <label>ご予算の目安 <span class="opt">任意</span></label>
             <select name="budget" id="cf-budget">
               <option value="">— 選択 —</option>
               <option>15〜30万円</option>
@@ -161,7 +161,7 @@ include "header.php";
             </select>
           </div>
           <div class="form-field">
-            <label>公開希望の時期</label>
+            <label>公開希望の時期 <span class="opt">任意</span></label>
             <select name="due" id="cf-due">
               <option value="">— 選択 —</option>
               <option>1ヶ月以内（急ぎ）</option>
@@ -172,7 +172,7 @@ include "header.php";
           </div>
         </div>
         <div class="form-field">
-          <label>素材・データの準備状況は？（複数OK）</label>
+          <label>素材・データの準備状況は？（複数OK） <span class="opt">任意</span></label>
           <div class="check-row">
             <label><input type="checkbox" name="assets" value="ロゴデータがある"><span class="cb-box"></span>ロゴデータがある</label>
             <label><input type="checkbox" name="assets" value="写真・画像素材がある"><span class="cb-box"></span>写真・画像素材がある</label>
@@ -199,7 +199,7 @@ include "header.php";
           <p class="muted tiny" style="margin-top:6px;">※ ヒアリングシートの内容がある場合、自動で挿入されます</p>
         </div>
         <div class="form-field">
-          <label>絶対に避けたいこと・苦手なデザイン（任意）</label>
+          <label>絶対に避けたいこと・苦手なデザイン <span class="opt">任意</span></label>
           <textarea name="ng" placeholder="例）ごちゃっとした感じが苦手、ピンクは使いたくない など"></textarea>
         </div>
         <div class="cf-nav">
@@ -220,7 +220,7 @@ include "header.php";
             <input type="text" name="name" placeholder="例) ベリー太郎"/>
           </div>
           <div class="form-field">
-            <label>会社名 / 屋号（任意）</label>
+            <label>会社名 / 屋号 <span class="opt">任意</span></label>
             <input type="text" name="company" placeholder="個人の場合は空欄でOK"/>
           </div>
         </div>
@@ -229,20 +229,20 @@ include "header.php";
           <input type="email" name="email" placeholder="example@berry.com"/>
         </div>
         <div class="form-field">
-          <label>電話番号（任意）</label>
+          <label>電話番号 <span class="opt">任意</span></label>
           <input type="tel" name="tel" placeholder="000-0000-0000"/>
         </div>
         <!-- クーポンコード -->
         <div class="form-field">
-          <label>クーポンコード（任意）
-            <span class="cf-field-note">クイズ全問正解で取得できます・¥500 OFF・1回限り</span>
+          <label>クーポンコード <span class="opt">任意</span>
+            <span class="cf-field-note">クイズ全問正解で取得できます・¥1,000 OFF・1回限り</span>
           </label>
           <input type="text" name="coupon" id="cf-coupon" style="text-transform:uppercase; letter-spacing:.1em;"/>
         </div>
 
         <!-- お友達紹介 -->
         <div class="form-field">
-          <label>ご紹介者のお名前（任意）
+          <label>ご紹介者のお名前 <span class="opt">任意</span>
             <span class="cf-field-note">ご紹介いただいた方のお名前を教えてください</span>
           </label>
           <input type="text" name="referral" id="cf-referral" placeholder="例）ベリー 花子さん"/>
@@ -250,7 +250,7 @@ include "header.php";
 
         <label class="cf-agree" style="display:flex; align-items:center; gap:10px; margin: 16px 0; font-size:13px; cursor:pointer;">
           <input type="checkbox" name="agree"><span class="cb-box"></span>
-          <span>プライバシーポリシーに同意します <span class="req">必須</span></span>
+          <span><button type="button" class="pp-open" aria-haspopup="dialog">プライバシーポリシー</button>に同意します <span class="req">必須</span></span>
         </label>
         <div class="cf-nav">
           <button type="button" class="cf-back btn-flat">← 戻る</button>
@@ -259,6 +259,76 @@ include "header.php";
       </div>
 
     </form>
+
+    <!-- プライバシーポリシー（同意欄の「プライバシーポリシー」から開く） -->
+    <dialog class="pp-modal" id="pp-modal" aria-labelledby="pp-title">
+      <div class="pp-modal-inner">
+        <button type="button" class="pp-close" aria-label="閉じる">×</button>
+        <h2 id="pp-title">プライバシーポリシー</h2>
+        <p>当サイトでは、お客様の個人情報を適切に保護することを重要な責務と考え、以下のとおりプライバシーポリシーを定めます。</p>
+
+        <h3>1. 個人情報の取得について</h3>
+        <p>当サイトでは、お問い合わせやお仕事のご相談の際に、お名前、メールアドレス、お問い合わせ内容などの個人情報をご提供いただく場合があります。</p>
+        <p>これらの情報は、適正かつ公正な手段によって取得いたします。</p>
+
+        <h3>2. 個人情報の利用目的</h3>
+        <p>取得した個人情報は、以下の目的で利用いたします。</p>
+        <ul>
+          <li>お問い合わせやご相談への回答</li>
+          <li>ご依頼いただいた業務に関するご連絡</li>
+          <li>サービスの提供および円滑な業務遂行</li>
+          <li>その他、上記の利用目的に付随する業務</li>
+        </ul>
+        <p>取得した個人情報は、法令で認められる場合を除き、ご本人の同意なく利用目的の範囲を超えて利用することはありません。</p>
+
+        <h3>3. 個人情報の第三者提供について</h3>
+        <p>取得した個人情報は、法令に基づく場合など、正当な理由がある場合を除き、ご本人の同意なく第三者に提供することはありません。</p>
+
+        <h3>4. 個人情報の管理について</h3>
+        <p>取得した個人情報は、漏えい、紛失、不正アクセスなどを防止するため、適切な安全管理措置を講じます。</p>
+        <p>また、個人情報が不要となった場合は、法令などに従い、適切な方法で削除または廃棄いたします。</p>
+
+        <h3>5. Cookie（クッキー）について</h3>
+        <p>当サイトでは、サイトの利便性向上や利用状況の把握などを目的として、Cookieを使用する場合があります。</p>
+        <p>Cookieによって収集される情報には、通常、お名前やメールアドレスなど、個人を直接特定できる情報は含まれません。</p>
+        <p>Cookieの使用は、お使いのブラウザの設定により制限または無効にすることができます。</p>
+
+        <h3>6. アクセス解析ツールについて</h3>
+        <p>当サイトでは、サイトの利用状況を把握し、サービスの改善に役立てるため、アクセス解析ツールを導入する場合があります。</p>
+        <p>アクセス解析ツールでは、Cookieなどを利用してアクセス情報を収集することがあります。</p>
+        <p>実際にアクセス解析ツールを導入する場合は、使用するサービスや収集される情報について、必要に応じて本ポリシーに追記いたします。</p>
+
+        <h3>7. 個人情報の開示・訂正・削除について</h3>
+        <p>ご本人から個人情報の開示、訂正、削除、利用停止などのお申し出があった場合は、ご本人確認を行ったうえで、法令に従い適切に対応いたします。</p>
+        <p>ご希望の場合は、当サイトのお問い合わせフォームよりご連絡ください。</p>
+
+        <h3>8. プライバシーポリシーの変更について</h3>
+        <p>当サイトでは、法令の改正や運営内容の変更などに応じて、本プライバシーポリシーを見直し、必要に応じて変更する場合があります。</p>
+        <p>変更後の内容は、当サイトに掲載した時点から適用されます。ただし、法令上ご本人の同意が必要となる変更については、適切な方法で同意を取得いたします。</p>
+
+        <h3>9. お問い合わせ窓口</h3>
+        <p>個人情報の取り扱いに関するお問い合わせは、当サイトのお問い合わせフォームよりお願いいたします。</p>
+        <p class="pp-owner">サイト運営者：ニューベリー マヤ</p>
+
+        <div class="pp-actions">
+          <button type="button" class="btn berry pp-close-btn">閉じる</button>
+        </div>
+      </div>
+    </dialog>
+    <script>
+    (function () {
+      const modal = document.getElementById('pp-modal');
+      if (!modal) return;
+      document.querySelectorAll('.pp-open').forEach(btn => btn.addEventListener('click', e => {
+        e.preventDefault(); /* labelの中なので、チェックボックスが切り替わらないように */
+        modal.showModal();
+        modal.querySelector('.pp-modal-inner').scrollTop = 0;
+      }));
+      modal.querySelectorAll('.pp-close, .pp-close-btn').forEach(b => b.addEventListener('click', () => modal.close()));
+      /* 背景（外側）をクリックしても閉じる */
+      modal.addEventListener('click', e => { if (e.target === modal) modal.close(); });
+    })();
+    </script>
   </div>
 </main>
 
@@ -302,8 +372,12 @@ include "header.php";
     sections.forEach(s => s.classList.toggle('cf-active', parseInt(s.dataset.step) === n));
     stepDots.forEach((d, i) => d.classList.toggle('active', i + 1 <= n));
     if (fillEl) fillEl.style.width = Math.round((n / TOTAL_STEPS) * 100) + '%';
-    const bar = document.getElementById('cf-sticky-bar');
-    if (bar) bar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    /* 次の質問の先頭へ戻す。進捗バーは画面に付いてくるので、フォーム本体の位置から計算する */
+    const bar  = document.getElementById('cf-sticky-bar');
+    const head = document.querySelector('.site-head');
+    const offset = (head ? head.offsetHeight : 0) + (bar ? bar.offsetHeight : 0);
+    const y = form.getBoundingClientRect().top + window.scrollY - offset;
+    if (window.scrollY > y) window.scrollTo({ top: y, behavior: 'smooth' });
   }
 
   // 次へ

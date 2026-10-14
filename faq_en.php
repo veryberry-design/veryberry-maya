@@ -219,7 +219,7 @@ const FAQ = [
   { cat:'price', q:'What is the minimum order size?', a:'We accept orders from a single banner. Feel free to reach out.' },
   { cat:'price', q:'Is the estimate free?', a:"Yes, estimates are always free. We'll get back to you within 2 business days." },
   { cat:'price', q:'When do I pay?', a:'We require 50% upfront at contract and the remaining 50% upon delivery.' },
-  { cat:'due',  q:'How long does production take?', a:'It depends on scope — roughly 2 weeks for a single LP and about 1 month for a 5-page site.' },
+  { cat:'due',  q:'How long does production take?', a:'It depends on scope — about 1 month for a single LP and about 2 months for a 5-page site.' },
   { cat:'due',  q:'Can you handle urgent requests?', a:"If our schedule allows, yes. A rush fee may apply." },
   { cat:'delivery', q:'Can I choose the delivery format?', a:'Yes — AI, PSD, Figma, mp4, and more. We adapt to your needs.' },
   { cat:'delivery', q:'How many revisions are included?', a:'It depends on your plan. The PREMIUM plan includes unlimited revisions.' },
