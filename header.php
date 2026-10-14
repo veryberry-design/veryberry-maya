@@ -28,12 +28,12 @@
           <nav class="nav" aria-label="メインナビ">
             <?php
 $nav = [
-  "top" => ["href" => "/", "en" => "top"],
-  "about" => ["href" => "/about/", "en" => "room"],
-  "works" => ["href" => "/works/", "en" => "works"],
-  "menu" => ["href" => "/menu/", "en" => "menu"],
-  "faq" => ["href" => "/faq/", "en" => "faq"],
-  "contact" => ["href" => "/contact/", "en" => "contact"],
+  "top" => ["href" => "/", "en" => "トップ"],
+  "about" => ["href" => "/about/", "en" => "お部屋"],
+  "works" => ["href" => "/works/", "en" => "実績"],
+  "menu" => ["href" => "/menu/", "en" => "料金"],
+  "faq" => ["href" => "/faq/", "en" => "FAQ"],
+  "contact" => ["href" => "/contact/", "en" => "お問い合わせ"],
 ];
 foreach ($nav as $key => $item) {
   $active = $currentPage === $key ? ' class="active"' : "";
