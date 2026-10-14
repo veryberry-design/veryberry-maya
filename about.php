@@ -124,7 +124,7 @@ include "header.php";
               VeryBerry
             </div>
             <div class="kami-cover-sub">
-              a quiet introduction in 9 scenes
+              a quiet introduction<br class="sp-only"> in 9 scenes
             </div>
           </div>
         </div>
@@ -140,12 +140,13 @@ include "header.php";
               にゅーべりー まや <br/>くりすてぃーん
             </h3>
             <p>
-              アメリカ出身・沖縄在住のWebデザイナー＆コーダーです( ˶ˆ꒳ˆ˵ )<br/>
-              ものづくりが大好きで、デザインや新しいアイデアを日々研究しています。
-              お客さま一人ひとりの想いに寄り添い、課題やご要望を丁寧にくみ取りながら、最適なデザインとコーディングをご提案いたします。<br/>
-              分かりやすさと使いやすさを大切にしつつ、『ちょっとした驚き』や『想像を超える工夫』を加えることで、
-              より魅力的で伝わるデザインを形にします。<br/>
-              単なる制作ではなく、一緒に悩みを解決しながら、ゴールまで伴走するパートナーでありたいと考えています。
+              アメリカ出身、沖縄在住のWebデザイナー・コーダーです。<br/>
+              ものづくりが好きで、デザインやWeb制作の新しい技術、アイデアを日々学びながら活動しています。<br/>
+              現在はWeb制作会社でサイトの更新・運用管理に携わり、チームのマネジメントや業務改善にも取り組んでいます。<br/>
+              制作において大切にしているのは、お客様一人ひとりの想いや目的を丁寧に汲み取り、デザインと機能の両面から最適な形を考えることです。<br/>
+              見た目の美しさだけでなく、情報の伝わりやすさや使いやすさにもこだわり、細部まで工夫を重ねながら制作しています。<br/>
+              ただご依頼いただいたものを形にするだけでなく、課題や目標を共有し、一緒に考えながらより良いものをつくり上げていく。<br/>
+              そんな、気軽に相談できる身近なパートナーでありたいと考えています。
             </p>
             <div class="stamp-row">
               <span class="stamp">Okinawa </span>
@@ -165,8 +166,8 @@ include "header.php";
               About me
             </h3>
             <p>
-              アメリカ生まれで宮古島育ちです( ˙༥˙ )<br/>
-              現在は沖縄でゆんたく〜しながら生きてます˶˘ᵕ˘˶
+              アメリカ生まれで宮古島育ちです！<br/>
+              現在は沖縄でゆんたく〜しながら生きてます^ ^
             </p>
             <ul class="kami-list">
               <li><span class="kami-label">血液型：</span><span class="kami-value">A型</span></li>
@@ -188,11 +189,10 @@ include "header.php";
               思わぬところで、<br/>運命に出会った
             </h3>
             <p>
-              大学卒業後、塾の英語担当として約4年間勤めました!<br>
-              業務でデザインに関わる機会を頂き、やってみたらありえないくらい楽しくて...(꒪꒫꒪ )<br>
-              頭にあったイメージを実際に形にできたことが面白くて一気にのめり込みました。
-              デザインをもっと学びたいと思い、働きながらオンラインスクールでデザインやWebの基本を学びました!<br>
-              デザインからさらにWebに興味を持ち始めました。
+              大学卒業後、塾で約4年間、英語講師として勤務していました。<br>
+              仕事を通してデザインに携わる機会があり、自分の頭の中にあるアイデアを形にする楽しさを知りました。<br>
+              そこからデザインの世界に魅了され、働きながらオンラインスクールでデザインやWeb制作の基礎を学び始めました。<br>
+              学びを深めるうちに、見た目の美しさだけでなく、情報をわかりやすく伝え、使いやすさを考えるWeb制作の奥深さにも惹かれるようになりました。
             </p>
           </div>
         </div>
@@ -207,19 +207,20 @@ include "header.php";
               Web業界へ
             </h3>
             <p>
-              Web業界に飛び込もうとして初めて知りました。入りたい気持ちだけはあっても、
-              実績がないと採用すらされないのがこの業界。<br>
-              なのでまずは知識つけよう！と思い、3ヶ月間職業訓練校に通いました!<br>
-              必死に学んで、「<span class="webk-mark">Web技能検定</span>」を満点合格しました〜！！
+              未経験からWeb業界への挑戦を決意したものの、最初は知識も実績もない状態からのスタートでした。<br>
+              まずは基礎をしっかり身につけたいと考え、3ヶ月間の職業訓練校に通い、HTML・CSSをはじめとするWeb制作の知識や技術を学びました。<br>
+              学習と並行して資格取得にも挑戦し、「<span class="webk-mark">Webクリエイター能力認定試験 HTML5 エキスパート</span>」に合格。
             </p>
             <a href="<?php echo MAYA_URI; ?>/img/certificate.pdf" target="_blank" rel="noopener" class="cert-link">
-              <img src="<?php echo MAYA_URI; ?>/img/certificate.jpg" alt="Web技能検定 合格証書" class="cert-img" />
+              <img src="<?php echo MAYA_URI; ?>/img/certificate.jpg" alt="Webクリエイター能力認定試験 HTML5 エキスパート 認定証" class="cert-img" />
               <span class="cert-caption">※クリックしたら結果が見れます</span>
             </a>
-            <p>自信をもらい、もっと真剣に、もっと本気で取り組み始めました！<br/>
-            卒業後、念願のWeb会社へ入社!!入社一年未満で昇進することもできました(๑>ᴗ<)
-            現在も学びながら楽しく働いています。
-          </p>
+            <p>
+              学びを重ねることで少しずつ自信がつき、Web制作の仕事に携わりたいという想いがさらに強くなりました。<br>
+              職業訓練校の修了後は、念願だったWeb制作会社に入社。<br>
+              実際の現場でさまざまな経験を積む中で、Web制作の奥深さや、学んだ知識を仕事に活かせる喜びを日々実感しています。<br>
+              未経験からのスタートだったからこそ、学び続けることの大切さを実感しています。これからも新しい知識や技術を積極的に取り入れ、できることの幅を広げていきたいと考えています。
+            </p>
           </div>
         </div>
         
@@ -234,8 +235,8 @@ include "header.php";
               できること
             </h3>
             <p>
-              Webサイトのデザインからコーディングまでお任せください !<br/>
-              紙もデジタルも動画も、できることは全部使って届けたいものを届けます ˶˘ᵕ˘˶
+              Webサイトのデザインからコーディングまで基本なんでもできます。<br/>
+              紙もデジタルも動画も、できることは全部使って届けたいものを届けます！
             </p>
             <ul class="kami-list">
               <li><span class="kami-label">コーディング</span><span class="kami-value">HTML / CSS / JavaScript / PHP</span></li>
@@ -503,7 +504,6 @@ include "header.php";
           <p class="apple-player-sub" id="pl-sub">
             夜更かしの作業に。穏やかなピアノとアンビエントを中心に。
           </p>
-          <a id="pl-btn" class="btn berry" href="#" target="_blank" rel="noopener" hidden style="margin-top:10px;width:fit-content;">プロフィールを見る</a>
         </div>
       </div>
       <ol class="apple-player-list" id="pl-list">
@@ -561,9 +561,9 @@ include "header.php";
         最後まで見てくださり、<br>ありがとうございます！
       </h2>
       <p class="thanks-msg">
-        ここまで読んでくださってありがとうございます。 <br/>
-        私のことが少しでも伝わったらうれしいです。 <br/>
-        おしゃべりはいつでも大歓迎、お気軽にどうぞ。
+        ここまで読んでくださって<br class="sp-only">ありがとうございます。 <br/>
+        私のことが少しでも<br class="sp-only">伝わったらうれしいです。 <br/>
+        おしゃべりはいつでも大歓迎、<br class="sp-only">お気軽にどうぞ。
       </p>
       <div class="thanks-actions">
         <a class="btn berry lg" href="/contact/">お話してみる → </a>
@@ -709,10 +709,7 @@ dotsEl.addEventListener('click', e => {
 const b = e.target.closest('.kami-dot');
 if (b) go(parseInt(b.dataset.i, 10));
 });
-stage.addEventListener('click', e => {
-if (e.target.closest('a, button, .kami-arrow, .kami-dot')) return;
-go(cur + 1);
-});
+/* ページ送りは矢印・ドット・キーボードのみ（中身をクリックしても進まない） */
 document.addEventListener('keydown', e => {
 if (document.body.dataset.page !=='about') return;
 if (e.target.matches('input, textarea, select')) return;
@@ -851,8 +848,6 @@ document.getElementById('pl-cover').textContent = pl.cover;
 document.getElementById('pl-title').textContent = pl.title;
 document.getElementById('pl-sub').textContent = pl.sub;
 document.getElementById('pl-updated').textContent = pl.updated;
-const plBtn = document.getElementById('pl-btn');
-if (pl.btn) { plBtn.href = pl.btn; plBtn.hidden = false; } else { plBtn.hidden = true; }
 if (pl.iframe) {
   iframeEl.src = pl.iframe;
   iframeEl.style.display = 'block';

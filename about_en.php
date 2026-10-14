@@ -124,7 +124,7 @@ include "header_en.php";
               VeryBerry
             </div>
             <div class="kami-cover-sub">
-              a quiet introduction in 9 scenes
+              a quiet introduction<br class="sp-only"> in 9 scenes
             </div>
           </div>
         </div>
@@ -164,7 +164,7 @@ include "header_en.php";
               About me
             </h3>
             <p>
-              Born in the US, grew up in Miyako Island.<br/>
+              Born in the US, raised on Miyako Island!<br/>
               Now living in Okinawa, taking it one day at a time.
             </p>
             <ul class="kami-list">
@@ -501,7 +501,6 @@ include "header_en.php";
           <p class="apple-player-sub" id="pl-sub">
             For late-night sessions. Calm piano and ambient sounds at the core.
           </p>
-          <a id="pl-btn" class="btn berry" href="#" target="_blank" rel="noopener" hidden style="margin-top:10px;width:fit-content;">View Profile</a>
         </div>
       </div>
       <ol class="apple-player-list" id="pl-list">
@@ -691,10 +690,7 @@ dotsEl.addEventListener('click', e => {
 const b = e.target.closest('.kami-dot');
 if (b) go(parseInt(b.dataset.i, 10));
 });
-stage.addEventListener('click', e => {
-if (e.target.closest('a, button, .kami-arrow, .kami-dot')) return;
-go(cur + 1);
-});
+/* ページ送りは矢印・ドット・キーボードのみ（中身をクリックしても進まない） */
 document.addEventListener('keydown', e => {
 if (document.body.dataset.page !=='about') return;
 if (e.target.matches('input, textarea, select')) return;
@@ -833,8 +829,6 @@ document.getElementById('pl-cover').textContent = pl.cover;
 document.getElementById('pl-title').textContent = pl.title;
 document.getElementById('pl-sub').textContent = pl.sub;
 document.getElementById('pl-updated').textContent = pl.updated;
-const plBtn = document.getElementById('pl-btn');
-if (pl.btn) { plBtn.href = pl.btn; plBtn.hidden = false; } else { plBtn.hidden = true; }
 if (pl.iframe) {
   iframeEl.src = pl.iframe;
   iframeEl.style.display = 'block';
