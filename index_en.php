@@ -74,8 +74,10 @@ include "header_en.php";
           <span class="chip">BANNER </span>
           <span class="chip">VIDEOS</span>
           <span class="chip">FLYER </span>
+          <span class="chip-break" aria-hidden="true"></span>
           <span class="chip">LOGO </span>
           <span class="chip">ILLUST </span>
+          <span class="chip">BUSINESS CARD</span>
         </div>
         <div class="cta-row">
           <a class="btn berry lg" href="/works-en/">Works &rarr; </a>
@@ -173,12 +175,6 @@ include "header_en.php";
         </h3>
         <div class="lines">
           Collecting purple things, making everything from websites to print to video &mdash; a small Tokyo design studio with a taste for the wonderfully odd.
-        </div>
-        <div class="stamp-row">
-          <span class="stamp">Figma </span>
-          <span class="stamp">Illustrator </span>
-          <span class="stamp">Photoshop </span>
-          <span class="stamp">Final Cut Pro X</span>
         </div>
       </div>
       <a class="btn berry" href="/about-en/">About me <span>&rarr; </span></a>

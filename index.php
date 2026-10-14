@@ -67,15 +67,17 @@ include "header.php";
           あなたの想いを形にします
         </div>
         <p class="hero-lede">
-          紫色のものを集めながら、Webから紙、動画まで「ちょっとへんてこなもの」を作る、東京の小さなデザインスタジオ。
+          目に留まるだけじゃなく、記憶に残るものを。<br>「本当はこうしたい」を探しながら、<br class="sp-only">いちばん合うかたちをつくります。
         </p>
         <div class="service-chips">
           <span class="chip">WEB </span>
           <span class="chip">BANNER </span>
           <span class="chip">VIDEOS</span>
           <span class="chip">FLYER </span>
+          <span class="chip-break" aria-hidden="true"></span>
           <span class="chip">LOGO </span>
           <span class="chip">ILLUST </span>
+          <span class="chip">BUSINESS CARD</span>
         </div>
         <div class="cta-row">
           <a class="btn berry lg" href="/works/">実績を見る → </a>
@@ -175,24 +177,94 @@ include "header.php";
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 })();
     </script>
-    <!-- PROFILE SNIPPET -->
-    <section class="profile-snip">
-      <div class="imgph round has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/profile01.JPG');background-size:cover;background-position:center;"></div>
-      <div class="profile-snip-body">
-        <h3>
-          NEWBERRY MAYA KRISTEN <span class="en">/ designer &amp; coder </span>
-        </h3>
-        <div class="lines">
-          紫色のものを集めながら、Web・紙・動画まで<br/>「あまずっぱい」ものをつくっています。
+    <!-- MESSAGE：制作への想い（ルーズリーフを1枚ずつめくる） -->
+    <section class="message-sec" aria-labelledby="message-ttl">
+      <div class="sect-title sect-title-centered">
+        <div class="en kicker-en">— my thought —</div>
+        <h2 id="message-ttl" class="message-ttl">
+          「こうしたい」の先にある、<br>「なぜ、そうしたいのか」まで。
+        </h2>
+      </div>
+      <div class="leaf-book" id="leaf-book">
+        <div class="leaf-stack">
+          <article class="leaf">
+            <h3>「こんなWebサイトにしたい」</h3>
+            <p>その思い描いたイメージを形にするのは、もちろん私の仕事。<br>でも、言われた通りに作るだけで、本当に良いWebサイトになるとは限りません。</p>
+            <p>「誰に届けたいのか」「何を変えたいのか」「今、何に困っているのか」。<br>ときには制作を始める前に、そんなところから一緒に考えることを大切にしています。</p>
+          </article>
+          <article class="leaf">
+            <h3>運用の現場を知っているから</h3>
+            <p>私は普段、中小企業のお客様と直接やり取りをしながら、さまざまなWebサイトの更新・運用に携わっています。</p>
+            <p>そこで見てきたのは、完成されたデザインだけではありません。日々の更新で生まれる悩みや、使い続ける中で見えてくる課題。その経験があるからこそ、見た目の美しさだけでなく、<span class="webk-mark m-grape">完成した後のことまで考えたご提案</span>ができると考えています。</p>
+          </article>
+          <article class="leaf">
+            <h3>ゼロから学んだ一人として</h3>
+            <p>そして、私自身もゼロからWebを学んできた一人です。<br>だからこそ、専門的な知識を一方的に伝えるのではなく、<span class="webk-mark m-grape">「なぜ、この方法がいいのか」その理由や根本にある考え方まで、わかりやすくお伝えしたい。</span></p>
+            <p>一人で制作しているからこそ、一つひとつのご相談にじっくり向き合い、考える時間も、話し合う時間も大切にできます。</p>
+          </article>
+          <article class="leaf">
+            <h3>「作ってよかった」と思えるWebサイトを</h3>
+            <p>あなたの理想を、ただ形にするだけではなく。<br>まだ言葉になっていない想いや、気づいていなかった課題まで一緒に整理しながら、<span class="webk-mark m-grape">「作ってよかった」と心から思えるWebサイトを。</span></p>
+            <p class="leaf-last">そんな制作を、私は目指しています。</p>
+            <p class="leaf-sign">VeryBerry</p>
+          </article>
         </div>
-        <div class="stamp-row">
-          <span class="stamp">Figma </span>
-          <span class="stamp">Illustrator </span>
-          <span class="stamp">Photoshop </span>
-          <span class="stamp">Final Cut Pro X</span>
+        <div class="leaf-ctl">
+          <button type="button" class="leaf-prev" aria-label="前のページ">‹</button>
+          <span class="leaf-count" aria-live="polite">1 / 4</span>
+          <button type="button" class="leaf-next" aria-label="次のページ">›</button>
         </div>
       </div>
-      <a class="btn berry" href="/about/">About me <span>→ </span></a>
+    </section>
+    <script>
+    (function () {
+      const book = document.getElementById('leaf-book');
+      if (!book) return;
+      const leaves = [...book.querySelectorAll('.leaf')];
+      const prev = book.querySelector('.leaf-prev');
+      const next = book.querySelector('.leaf-next');
+      const count = book.querySelector('.leaf-count');
+      let cur = 0;
+      function draw() {
+        leaves.forEach((l, i) => {
+          l.classList.toggle('is-gone', i < cur);
+          l.classList.toggle('is-cur', i === cur);
+          l.classList.toggle('is-next', i === cur + 1);
+          l.classList.toggle('is-hide', i > cur + 1);
+          l.setAttribute('aria-hidden', i === cur ? 'false' : 'true');
+        });
+        count.textContent = `${cur + 1} / ${leaves.length}`;
+        prev.disabled = cur === 0;
+        next.disabled = cur === leaves.length - 1;
+      }
+      function go(n) { cur = Math.max(0, Math.min(leaves.length - 1, n)); draw(); }
+      prev.addEventListener('click', () => go(cur - 1));
+      next.addEventListener('click', () => go(cur + 1));
+      /* スマホは左右スワイプでもめくれる */
+      let sx = null;
+      book.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+      book.addEventListener('touchend', e => {
+        if (sx === null) return;
+        const dx = e.changedTouches[0].clientX - sx; sx = null;
+        if (Math.abs(dx) > 50) go(cur + (dx < 0 ? 1 : -1));
+      });
+      draw();
+    })();
+    </script>
+    <!-- PROFILE SNIPPET（小さめポラロイド＋テープ） -->
+    <section class="profile-pol">
+      <div class="pol-photo">
+        <div class="pol-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/profile01.JPG');"></div>
+        <span class="pol-cap">hello, I'm Maya!</span>
+      </div>
+      <div class="pol-body">
+        <span class="pol-role">designer &amp; coder</span>
+        <h3 class="pol-name">NEWBERRY MAYA KRISTEN</h3>
+        <p class="pol-lines">
+          目に留まるだけじゃなく、記憶に残るものを。<br/>「本当はこうしたい」を探しながら、<br/>いちばん合うかたちをつくります。
+        </p>
+        <a class="btn berry" href="/about/">About me <span>→ </span></a>
+      </div>
     </section>
     <!-- WORKS -->
     <div class="sect-title sect-title-centered">
