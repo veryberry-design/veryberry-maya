@@ -31,8 +31,8 @@
   --script:   "Caveat", cursive;
   --mono:     ui-monospace, "SFMono-Regular", Menlo, monospace;
 
-  --radius-blob: 26px 32px 24px 30px / 24px 26px 30px 28px;
-  --radius-pill: 999px;
+  --radius-blob: 0;
+  --radius-pill: 0;
 
   --maxw: 1100px;
 
@@ -63,7 +63,8 @@ body.font-clean {
 /* ──── base ──── */
 .yen { margin-right: 8px; }
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; overflow-x: hidden; }
+/* hidden だとヘッダーの sticky が効かないので clip（未対応ブラウザは hidden） */
+html, body { margin: 0; padding: 0; overflow-x: hidden; overflow-x: clip; }
 body {
   position: relative;
   font-family: var(--hand-ja);
@@ -77,6 +78,7 @@ body {
   line-height: 1.6;
   font-size: 16px;
   overflow-x: hidden;
+  overflow-x: clip;
   min-height: 100vh;
 }
 
@@ -131,7 +133,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
   font-family: var(--script);
   font-size: 17px; padding: 6px 14px 6px 28px;
   color: var(--ink-soft); position: relative;
-  border-radius: var(--radius-pill);
+  border-radius: 0;
   transition: color .2s, background .2s;
 }
 .nav a:hover { color: var(--grape); background: var(--grape-pale); }
@@ -167,6 +169,8 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 .nav a { white-space: nowrap; }
 .nav a { display: inline-flex; align-items: center; gap: 4px; text-decoration: none; }
 .nav .nav-en { font-family: var(--script); font-size: 17px; letter-spacing: .02em; }
+/* 日本語ページのメニューは日本語表記なので、本文と同じ和文フォントに */
+html[lang="ja"] .nav .nav-en { font-family: var(--hand-ja); font-size: 13px; letter-spacing: .04em; }
 
 /* Hamburger toggle (mobile only) */
 .nav-toggle {
@@ -174,13 +178,13 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
   width: 40px; height: 40px;
   background: transparent; border: none; cursor: pointer;
   padding: 0; position: relative;
-  border-radius: 10px;
+  border-radius: 0;
 }
 .nav-toggle:hover { background: var(--grape-pale); }
 .nav-toggle span {
   display: block; position: absolute;
   left: 10px; right: 10px; height: 2px;
-  background: var(--ink); border-radius: 2px;
+  background: var(--ink); border-radius: 0;
   transition: transform .25s, opacity .2s, top .25s;
 }
 .nav-toggle span:nth-child(1) { top: 13px; }
@@ -208,7 +212,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 .site-foot .social-btn {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 10px 20px;
-  border-radius: 999px;
+  border-radius: 0;
   font-family: var(--hand-ja);
   font-size: 14px;
   background: color-mix(in oklab, var(--grape) 8%, var(--paper));
@@ -240,14 +244,14 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
   flex-direction: column; gap: 8px;
   padding: 16px 0 14px;
   background: var(--berry); color: #fff;
-  border-radius: 10px 0 0 10px;
+  border-radius: 0;
   border: none; cursor: pointer; text-decoration: none;
   transition: width .2s;
 }
 .fab-works {
   position: fixed; right: 0; top: calc(50% + 80px); z-index: 60;
   background: var(--grape);
-  border-radius: 10px 0 0 10px;
+  border-radius: 0;
 }
 .fab:hover { width: 44px; }
 .fab-works:hover { width: 44px; }
@@ -298,7 +302,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 /* ───────── Buttons ───────── */
 .btn {
   display: inline-flex; align-items: center; gap: 6px;
-  padding: 10px 22px; border-radius: var(--radius-pill);
+  padding: 10px 22px; border-radius: 0;
   background: color-mix(in oklab, var(--grape) 10%, var(--paper));
   color: var(--ink); border: none; cursor: pointer;
   font-family: var(--hand-ja); font-size: 14px;
@@ -315,14 +319,14 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
   display: inline-block; padding: 4px 12px;
   font-family: var(--script); font-size: 14px;
   background: color-mix(in oklab, var(--grape) 14%, var(--paper));
-  color: var(--grape); border-radius: var(--radius-pill);
+  color: var(--grape); border-radius: 0;
 }
 .stamp.berry { background: color-mix(in oklab, var(--berry) 14%, var(--paper)); color: var(--berry); }
 
 /* soft tinted blob — replaces card */
 .blob {
   background: color-mix(in oklab, var(--ink) 3%, transparent);
-  border-radius: var(--radius-blob);
+  border-radius: 0;
   padding: 22px;
 }
 .blob.fill { background: color-mix(in oklab, var(--grape) 6%, var(--paper)); }
@@ -332,7 +336,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 /* image placeholder (soft blob with subtle cross) */
 .imgph {
   position: relative; background: color-mix(in oklab, var(--grape) 12%, var(--paper));
-  border-radius: 22px 28px 20px 26px / 24px 20px 26px 22px;
+  border-radius: 0;
   overflow: hidden; aspect-ratio: 4/3;
 }
 .imgph::before, .imgph::after {
@@ -419,7 +423,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
   font-size: 14px;
   line-height: 1.85;
   margin: 14px 0 0;
-  max-width: 400px;
+  max-width: 500px;
 }
 .hero-mag .hero-left .service-chips {
   display: flex; gap: 8px; flex-wrap: wrap;
@@ -507,7 +511,7 @@ body.theme-dark .hero-mag .reach-hand {
   position: absolute; left: 4%; bottom: 6%;
   background: var(--berry); color: #fff;
   font-family: var(--script); font-size: 16px;
-  padding: 6px 16px; border-radius: 999px;
+  padding: 6px 16px; border-radius: 0;
   transform: rotate(-6deg);
   box-shadow: 0 6px 16px -4px rgba(208,74,108,.45);
   animation: stickerBob 4s ease-in-out infinite;
@@ -529,7 +533,7 @@ body.theme-dark .hero-mag .reach-hand {
 .hero-mag .toc-item {
   text-align: center;
   padding: 8px 4px;
-  border-radius: 14px;
+  border-radius: 0;
   transition: background .2s, transform .2s;
 }
 .hero-mag .toc-item:hover {
@@ -553,7 +557,7 @@ body.theme-dark .hero-mag .reach-hand {
 /* common chip style still useful */
 .service-chips { display: flex; gap: 8px; justify-content: flex-start; flex-wrap: wrap; }
 .service-chips .chip {
-  padding: 5px 16px; border-radius: 999px;
+  padding: 5px 16px; border-radius: 0;
   background: color-mix(in oklab, var(--grape) 12%, var(--paper));
   font-size: 13px; font-family: var(--script); letter-spacing: .04em;
   color: var(--ink);
@@ -581,13 +585,19 @@ body.theme-dark .hero-mag .reach-hand {
 .hero .since-tag { font-family: var(--script); color: var(--grape-soft); font-size: 18px; margin-top: 16px; letter-spacing: .04em; }
 .hero .service-chips { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 16px auto 0; max-width: 680px; }
 .hero .service-chips .chip {
-  padding: 5px 16px; border-radius: 999px;
+  padding: 5px 16px; border-radius: 0;
   background: color-mix(in oklab, var(--grape) 10%, var(--paper));
   font-size: 13px; font-family: var(--script); letter-spacing: .04em;
   color: var(--ink);
 }
 
 /* FV チップ: 薄紫→白→薄ピンク グラデーション */
+/* SPだけの改行 <br class="sp-only">（PCでは非表示） */
+br.sp-only { display: none; }
+/* PCでタグを4つ・3つの2行に分ける改行（SPでは非表示） */
+.hero-mag .hero-left .service-chips { row-gap: 0; margin-bottom: -8px; margin-left: 0; justify-content: flex-start; }
+.hero-mag .service-chips .chip { margin-bottom: 8px; }
+.hero-mag .service-chips .chip-break { flex-basis: 100%; height: 0; }
 .hero-mag .service-chips .chip {
   background: linear-gradient(120deg, var(--grape-pale), color-mix(in oklab, var(--berry) 20%, var(--grape-pale)));
   color: var(--grape);
@@ -812,7 +822,7 @@ body.theme-dark .hero-mag .reach-hand {
 /* ---- coupon envelope modal ---- */
 .coupon-envelope {
   background: color-mix(in oklab, var(--berry) 22%, #fff);
-  border-radius: 12px 12px 0 0;
+  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 20px 50px -12px rgba(0,0,0,.28);
 }
@@ -839,7 +849,7 @@ body.theme-dark .hero-mag .reach-hand {
   position: relative;
   margin: 0 20px;
   background: #fff;
-  border-radius: 8px;
+  border-radius: 0;
   box-shadow: 0 6px 20px -6px rgba(0,0,0,.18);
   border: 2px solid color-mix(in oklab, var(--berry) 25%, transparent);
 }
@@ -855,7 +865,7 @@ body.theme-dark .hero-mag .reach-hand {
   font-weight: 700;
   font-size: 13px;
   padding: 4px 18px;
-  border-radius: 999px;
+  border-radius: 0;
   letter-spacing: .08em;
   margin-bottom: 12px;
 }
@@ -947,7 +957,7 @@ body.theme-dark .hero-mag .reach-hand {
   padding: 22px 26px; margin: 36px auto;
   max-width: 760px;
   background: color-mix(in oklab, var(--grape) 8%, var(--paper));
-  border-radius: 32px 38px 28px 36px / 30px 32px 36px 30px;
+  border-radius: 0;
   transform: rotate(-.6deg);
   position: relative;
   /* gentle wiggle every 8s */
@@ -1005,7 +1015,7 @@ body.theme-dark .hero-mag .reach-hand {
   margin: 36px 0 18px;
 }
 .tab-pills button {
-  padding: 8px 18px; border-radius: var(--radius-pill);
+  padding: 8px 18px; border-radius: 0;
   background: transparent; border: none; cursor: pointer;
   font-family: var(--hand-ja); font-size: 14px;
   color: var(--ink-soft); transition: all .2s;
@@ -1030,7 +1040,7 @@ body.theme-dark .hero-mag .reach-hand {
   padding: 2px 10px;
   font-size: 11px;
   font-family: var(--hand-ja);
-  border-radius: 999px;
+  border-radius: 0;
   background: color-mix(in oklab, var(--grape) 10%, var(--paper));
   color: var(--grape);
   letter-spacing: .02em;
@@ -1041,6 +1051,7 @@ body.theme-dark .hero-mag .reach-hand {
 .work-card .tags .tag.both   { background: color-mix(in oklab, var(--grape) 14%, var(--paper)); color: var(--grape); }
 .work-card .tags .tag.movie  { background: color-mix(in oklab, #6aa15a 14%, var(--paper)); color: #3f6b34; }
 .work-card .tags .tag.other  { background: color-mix(in oklab, #888 14%, var(--paper)); color: #555; }
+.work-card .tags .tag.blog  { background: color-mix(in oklab, #e09a2d 16%, var(--paper)); color: #a5651a; }
 
 .work-modal-tags {
   display: flex; flex-wrap: wrap; gap: 6px;
@@ -1051,7 +1062,7 @@ body.theme-dark .hero-mag .reach-hand {
   padding: 4px 14px;
   font-size: 12px;
   font-family: var(--hand-ja);
-  border-radius: 999px;
+  border-radius: 0;
   background: color-mix(in oklab, var(--grape) 10%, var(--paper));
   color: var(--grape);
 }
@@ -1060,6 +1071,7 @@ body.theme-dark .hero-mag .reach-hand {
 .work-modal-tags .tag.both   { background: color-mix(in oklab, var(--grape) 14%, var(--paper)); color: var(--grape); }
 .work-modal-tags .tag.movie  { background: color-mix(in oklab, #6aa15a 14%, var(--paper)); color: #3f6b34; }
 .work-modal-tags .tag.other  { background: color-mix(in oklab, #888 14%, var(--paper)); color: #555; }
+.work-modal-tags .tag.blog  { background: color-mix(in oklab, #e09a2d 16%, var(--paper)); color: #a5651a; }
 .work-card { cursor: pointer; position: relative; margin-bottom: 20px; }
 .work-card::after {
   content: '';
@@ -1079,10 +1091,12 @@ body.theme-dark .hero-mag .reach-hand {
   background: repeating-linear-gradient(to bottom, rgba(140,90,190,0.38) 0, rgba(140,90,190,0.38) 3px, transparent 3px, transparent 9px);
   pointer-events: none;
 }
-.work-card .imgph { aspect-ratio: 4/3; transition: transform .25s; overflow: hidden; }
+/* 3列の右端（3つ目ごと）は右の点線を出さない */
+.work-card:nth-child(3n)::before { display: none; }
+.work-card .imgph { aspect-ratio: 4/3; transition: transform .25s; overflow: hidden; border-radius: 0; }
 .work-card .imgph img { cursor: pointer; width: 100%; height: 100%; object-fit: cover; border-radius: inherit; display: block; }
 .work-card:hover .imgph { transform: translateY(-4px) rotate(-1deg); }
-.work-card:focus { outline: 2px solid var(--grape); outline-offset: 4px; border-radius: 6px; }
+.work-card:focus { outline: 2px solid var(--grape); outline-offset: 4px; border-radius: 0; }
 .work-card .meta { display: flex; justify-content: space-between; align-items: baseline; margin-top: 20px; }
 .work-card .cat { font-family: var(--script); font-size: 14px; color: var(--grape); }
 .work-card .ttl { font-size: 14px; }
@@ -1129,7 +1143,7 @@ body.theme-dark .hero-mag .reach-hand {
   max-width: 760px;
   margin: 28px auto 0;
   overflow-x: auto;
-  border-radius: 16px;
+  border-radius: 0;
   background: var(--paper);
   box-shadow: 0 6px 22px -10px rgba(0,0,0,.14);
 }
@@ -1185,7 +1199,7 @@ body.theme-dark .hero-mag .reach-hand {
   margin: 50px auto 0;
   padding: 22px 26px;
   background: color-mix(in oklab, var(--grape) 6%, var(--paper));
-  border-radius: 18px;
+  border-radius: 0;
 }
 .price-notes-h {
   display: flex; align-items: baseline; gap: 10px;
@@ -1226,7 +1240,7 @@ body.theme-dark .hero-mag .reach-hand {
   max-width: 720px;
   margin: 0 auto;
   background: #fff;
-  border-radius: 0 0 18px 18px;
+  border-radius: 0;
   padding: 28px 28px 22px;
   box-shadow: 0 6px 18px -10px rgba(0,0,0,.14);
   position: relative;
@@ -1238,7 +1252,7 @@ body.theme-dark .hero-mag .reach-hand {
   margin: 0;
   background: #f5f0fb;
   border: none;
-  border-radius: 14px 14px 0 0;
+  border-radius: 0;
   font-family: var(--script);
   letter-spacing: .15em;
   font-size: 15px;
@@ -1303,7 +1317,7 @@ body.theme-dark .hero-mag .reach-hand {
 .optv-pill .optp {
   padding: 18px 26px;
   background: linear-gradient(135deg, #ffe3ee 0%, #efe3fb 100%);
-  border-radius: 999px;
+  border-radius: 0;
   display: flex; flex-direction: column; align-items: center; gap: 4px;
   min-width: 180px;
   transition: transform .2s;
@@ -1319,7 +1333,7 @@ body.theme-dark .hero-mag .reach-hand {
 .optv-receipt .optr {
   max-width: 420px; margin: 0 auto;
   padding: 26px 30px 22px;
-  background: #fffdf5; border-radius: 4px;
+  background: #fffdf5; border-radius: 0;
   font-family: ui-monospace, "SFMono-Regular", monospace;
   color: var(--ink);
   box-shadow: 0 8px 22px -10px rgba(0,0,0,.18);
@@ -1383,7 +1397,7 @@ body.theme-dark .hero-mag .reach-hand {
   position: relative;
   padding: 28px 22px 22px;
   background: #fff;
-  border-radius: 18px;
+  border-radius: 0;
   box-shadow: 0 6px 18px -10px rgba(0,0,0,.14);
   text-align: center;
 }
@@ -1440,7 +1454,7 @@ body.theme-dark .hero-mag .reach-hand {
   gap: 18px; align-items: center;
   padding: 18px 24px;
   background: #fff;
-  border-radius: 18px;
+  border-radius: 0;
   margin-left: calc((var(--lv, 1) - 1) * 32px);
   box-shadow: 0 4px 12px -8px rgba(0,0,0,.1);
 }
@@ -1457,7 +1471,7 @@ body.theme-dark .hero-mag .reach-hand {
 /* D · Dial / level meter */
 .rev-dial-card {
   background: #fff;
-  border-radius: 22px;
+  border-radius: 0;
   padding: 28px 28px 24px;
   box-shadow: 0 6px 22px -10px rgba(0,0,0,.14);
 }
@@ -1485,7 +1499,7 @@ body.theme-dark .hero-mag .reach-hand {
   flex: 1;
   height: 4px;
   background: linear-gradient(to right, var(--berry), var(--grape));
-  border-radius: 999px;
+  border-radius: 0;
   margin: 0 -4px;
 }
 .rev-dial-rows {
@@ -1500,7 +1514,7 @@ body.theme-dark .hero-mag .reach-hand {
 .rev-dial-row:last-child { border-bottom: none; }
 .rev-dial-tag {
   padding: 4px 12px;
-  border-radius: 999px;
+  border-radius: 0;
   background: color-mix(in oklab, var(--berry) 16%, var(--paper));
   color: var(--berry);
   font-family: var(--hand-ja); font-weight: 700; font-size: 13px;
@@ -1527,7 +1541,7 @@ body.theme-dark .hero-mag .reach-hand {
   display: grid; grid-template-columns: 100px 1fr auto;
   gap: 0; align-items: stretch;
   background: #fff;
-  border-radius: 18px;
+  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 4px 14px -8px rgba(0,0,0,.12);
 }
@@ -1610,7 +1624,7 @@ body.theme-dark .hero-mag .reach-hand {
   left: 14px; top: 28px; bottom: 28px;
   width: 2px;
   background: linear-gradient(to bottom, var(--berry), var(--grape));
-  border-radius: 2px;
+  border-radius: 0;
 }
 .flowv-line .flv-step::before {
   content: ""; position: absolute;
@@ -1624,7 +1638,7 @@ body.theme-dark .hero-mag .reach-hand {
 /* B · カード */
 .flowv-card .flv-step {
   background: #fff;
-  border-radius: 16px;
+  border-radius: 0;
   padding: 20px 24px;
   margin-bottom: 12px;
   box-shadow: 0 4px 14px -8px rgba(0,0,0,.12);
@@ -1636,7 +1650,7 @@ body.theme-dark .hero-mag .reach-hand {
 /* C · チケット */
 .flowv-ticket .flv-step {
   background: #fff;
-  border-radius: 16px;
+  border-radius: 0;
   padding: 0;
   margin-bottom: 12px;
   overflow: hidden;
@@ -1781,7 +1795,7 @@ body.theme-dark .hero-mag .reach-hand {
   margin-left: 100px;
   padding: 18px 24px;
   background: #fff;
-  border-radius: 14px;
+  border-radius: 0;
   box-shadow: 0 4px 14px -8px rgba(0,0,0,.12);
 }
 .flowv-behind .flv-r .flv-name { font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
@@ -1816,7 +1830,7 @@ body.theme-dark .hero-mag .reach-hand {
 }
 .flowv-frame .flv-l {
   background: linear-gradient(135deg, #ffe3ee 0%, #efe3fb 100%);
-  border-radius: 14px;
+  border-radius: 0;
   padding: 18px 8px;
   align-items: center; justify-content: center;
 }
@@ -1862,7 +1876,7 @@ body.theme-dark .hero-mag .reach-hand {
   background:
     radial-gradient(80% 60% at 20% 0%, rgba(255, 230, 240, .35) 0%, transparent 60%),
     #fffefa;
-  border-radius: 6px;
+  border-radius: 0;
   box-shadow: 0 18px 36px -20px rgba(0,0,0,.18);
   margin-top: 55px;
 }
@@ -1936,7 +1950,7 @@ body.theme-dark .hero-mag .reach-hand {
   text-align: center;
   background: linear-gradient(120deg, var(--grape-pale), color-mix(in oklab, var(--berry) 20%, var(--grape-pale)));
   border: none;
-  border-radius: 999px;
+  border-radius: 0;
   font-family: var(--script);
   font-size: 14px;
   letter-spacing: .04em;
@@ -1954,7 +1968,7 @@ html { scroll-behavior: smooth; }
 .quiz-wrap { padding: 0 4px; }
 .quiz-gauge {
   background: #fff;
-  border-radius: 18px;
+  border-radius: 0;
   padding: 22px 26px;
   margin-bottom: 22px;
   box-shadow: 0 6px 18px -10px rgba(0,0,0,.14);
@@ -1985,7 +1999,7 @@ html { scroll-behavior: smooth; }
 }
 .quiz-gauge-track {
   height: 14px;
-  border-radius: 999px;
+  border-radius: 0;
   background: color-mix(in oklab, var(--ink) 5%, transparent);
   overflow: hidden;
   position: relative;
@@ -1994,7 +2008,7 @@ html { scroll-behavior: smooth; }
   height: 100%;
   width: 0%;
   background: linear-gradient(90deg, var(--grape), var(--berry));
-  border-radius: 999px;
+  border-radius: 0;
   transition: width .6s cubic-bezier(.4,1.4,.4,1);
   position: relative;
 }
@@ -2012,7 +2026,7 @@ html { scroll-behavior: smooth; }
 .quiz-list { display: flex; flex-direction: column; gap: 16px; }
 .quiz-item {
   background: #fff;
-  border-radius: 16px;
+  border-radius: 0;
   padding: 20px 24px;
   box-shadow: 0 4px 14px -8px rgba(0,0,0,.1);
   transition: box-shadow .25s, opacity .35s, transform .35s;
@@ -2036,7 +2050,7 @@ html { scroll-behavior: smooth; }
   padding: 6px 14px;
   background: transparent;
   border: 1.5px dashed color-mix(in oklab, var(--grape) 30%, transparent);
-  border-radius: 999px;
+  border-radius: 0;
   font-family: var(--hand-ja);
   font-size: 13px;
   color: var(--grape);
@@ -2052,7 +2066,7 @@ html { scroll-behavior: smooth; }
   padding: 12px 16px;
   margin-bottom: 14px;
   background: color-mix(in oklab, #ffe88a 30%, var(--paper));
-  border-radius: 10px;
+  border-radius: 0;
   border-left: 4px solid #ffd86e;
   animation: quizFbIn .3s ease-out;
 }
@@ -2076,7 +2090,7 @@ html { scroll-behavior: smooth; }
   padding: 12px 32px;
   background: linear-gradient(135deg, var(--berry), var(--grape));
   border: none;
-  border-radius: 999px;
+  border-radius: 0;
   color: #fff;
   font-family: var(--hand-ja); font-weight: 700; font-size: 15px;
   cursor: pointer;
@@ -2098,7 +2112,7 @@ html { scroll-behavior: smooth; }
   padding: 18px 24px;
   text-align: center;
   background: linear-gradient(135deg, #ffe3ee 0%, #efe3fb 100%);
-  border-radius: 14px;
+  border-radius: 0;
   font-family: var(--hand-ja);
   font-weight: 700;
   color: var(--berry);
@@ -2137,7 +2151,7 @@ html { scroll-behavior: smooth; }
   padding: 16px 20px;
   background: #fff;
   border: 2px solid color-mix(in oklab, var(--grape) 22%, transparent);
-  border-radius: 14px;
+  border-radius: 0;
   font-family: var(--hand-ja); font-weight: 700; font-size: 16px;
   color: var(--ink);
   cursor: pointer;
@@ -2281,7 +2295,7 @@ html { scroll-behavior: smooth; }
   transform: translate(-50%, -50%) scale(.3) rotate(-12deg);
   display: flex; flex-direction: column; align-items: center; gap: 4px;
   padding: 28px 60px;
-  border-radius: 24px;
+  border-radius: 0;
   background: linear-gradient(135deg, #ffd0e0, #efd6f4 50%, #ffe6c8);
   box-shadow: 0 30px 80px -20px rgba(208,74,108,.6);
   animation: pfBannerIn .5s cubic-bezier(.34,1.56,.64,1) forwards,
@@ -2369,7 +2383,7 @@ html { scroll-behavior: smooth; }
 .perfect-picker {
   margin-top: 30px;
   padding: 18px 22px;
-  border-radius: 18px;
+  border-radius: 0;
   background: color-mix(in oklab, var(--grape) 6%, var(--paper));
   text-align: center;
 }
@@ -2391,7 +2405,7 @@ html { scroll-behavior: smooth; }
 }
 .pf-btn {
   padding: 8px 16px;
-  border-radius: 999px;
+  border-radius: 0;
   border: 1.5px dashed color-mix(in oklab, var(--berry) 30%, transparent);
   background: #fff;
   color: var(--ink);
@@ -2421,7 +2435,7 @@ html { scroll-behavior: smooth; }
   background: linear-gradient(transparent 55%, #ffec80 55%, #ffec80 92%, transparent 92%);
   color: var(--ink);
   padding: 0 2px;
-  border-radius: 2px;
+  border-radius: 0;
   font-weight: 700;
 }
 .webk-mark.m-grape {
@@ -2437,7 +2451,7 @@ html { scroll-behavior: smooth; }
   padding: 1px 10px;
   margin-right: 8px;
   background: color-mix(in oklab, var(--berry) 12%, #fff);
-  border-radius: 999px;
+  border-radius: 0;
   vertical-align: 2px;
 }
 
@@ -2450,7 +2464,7 @@ html { scroll-behavior: smooth; }
   margin: 0 auto 26px;
   background: color-mix(in oklab, var(--grape) 6%, transparent);
   padding: 6px;
-  border-radius: 999px;
+  border-radius: 0;
 }
 .webk-tab {
   display: flex;
@@ -2460,7 +2474,7 @@ html { scroll-behavior: smooth; }
   gap: 0;
   padding: 10px 14px;
   border: none;
-  border-radius: 999px;
+  border-radius: 0;
   background: transparent;
   color: var(--ink-soft);
   cursor: pointer;
@@ -2488,7 +2502,7 @@ html { scroll-behavior: smooth; }
 .webk-view[hidden] { display: none; }
 .webk-item {
   background: #fff;
-  border-radius: 14px;
+  border-radius: 0;
   box-shadow: 0 4px 14px -8px rgba(0,0,0,.1);
   overflow: hidden;
   transition: box-shadow .2s;
@@ -2555,7 +2569,7 @@ html { scroll-behavior: smooth; }
   display: inline-block;
   padding: 1px 8px;
   background: color-mix(in oklab, var(--berry) 8%, var(--paper));
-  border-radius: 4px;
+  border-radius: 0;
   font-family: ui-monospace, "SFMono-Regular", monospace;
   font-size: 12px;
   color: var(--berry);
@@ -2625,7 +2639,7 @@ html { scroll-behavior: smooth; }
   margin-left: 100px;
   padding: 18px 24px;
   background: #fff;
-  border-radius: 14px;
+  border-radius: 0;
   box-shadow: 0 4px 14px -8px rgba(0,0,0,.12);
 }
 .flowv-behind .flv-r .flv-name { font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
@@ -2635,7 +2649,7 @@ html { scroll-behavior: smooth; }
 .flowv-zigzag .flv-step {
   grid-template-columns: 1fr 1fr;
   background: #fff;
-  border-radius: 16px;
+  border-radius: 0;
   padding: 18px 24px;
   margin-bottom: 12px;
   box-shadow: 0 4px 14px -8px rgba(0,0,0,.12);
@@ -2654,7 +2668,7 @@ html { scroll-behavior: smooth; }
   position: relative;
   padding: 32px 36px 28px;
   background: #fffdf5;
-  border-radius: 16px;
+  border-radius: 0;
   box-shadow: 0 8px 22px -10px rgba(0,0,0,.18);
 }
 .notes-h {
@@ -2725,7 +2739,7 @@ html { scroll-behavior: smooth; }
 /* C · リングメモ — spiral binding on top */
 .notes-memo .notes-card {
   margin-top: 24px;
-  border-radius: 6px 6px 16px 16px;
+  border-radius: 0;
   padding-top: 40px;
 }
 .notes-memo .notes-rings {
@@ -2794,7 +2808,7 @@ html { scroll-behavior: smooth; }
   position: relative;
   padding: 28px 18px 20px;
   background: linear-gradient(135deg, #fff3a8 0%, #ffe88a 100%);
-  border-radius: 4px;
+  border-radius: 0;
   box-shadow:
     2px 5px 14px -4px rgba(0,0,0,.22),
     inset 0 0 0 1px rgba(255,255,255,.6);
@@ -2828,7 +2842,7 @@ html { scroll-behavior: smooth; }
 
 .opt-tab {
   padding: 6px 14px;
-  border-radius: 999px;
+  border-radius: 0;
   border: 1px solid color-mix(in oklab, var(--grape) 22%, transparent);
   background: transparent;
   font-family: var(--hand-ja); font-size: 13px;
@@ -2848,7 +2862,7 @@ html { scroll-behavior: smooth; }
 }
 .opt-card {
   background: #fff;
-  border-radius: 18px;
+  border-radius: 0;
   box-shadow: 0 6px 18px -8px rgba(0,0,0,.12);
   overflow: hidden;
 }
@@ -2898,7 +2912,7 @@ html { scroll-behavior: smooth; }
   gap: 24px; align-items: center;
   padding: 18px 24px;
   background: #fff;
-  border-radius: 18px;
+  border-radius: 0;
   box-shadow: 0 4px 14px -8px rgba(0,0,0,.1);
 }
 .opt-stack-l { display: flex; flex-direction: column; gap: 4px; }
@@ -2919,7 +2933,7 @@ html { scroll-behavior: smooth; }
   display: inline-flex; align-items: baseline; gap: 4px;
   padding: 8px 14px;
   background: color-mix(in oklab, var(--berry) 8%, #fff);
-  border-radius: 12px;
+  border-radius: 0;
   border: 1px solid color-mix(in oklab, var(--berry) 18%, transparent);
 }
 .opt-pill.empty {
@@ -2966,7 +2980,7 @@ html { scroll-behavior: smooth; }
   font-family: var(--hand-ja); font-weight: 700;
   font-size: 14px; color: var(--ink);
   background: #fff;
-  border-radius: 14px 4px 4px 14px;
+  border-radius: 0;
 }
 .opt-grid-cell {
   padding: 16px;
@@ -2975,10 +2989,10 @@ html { scroll-behavior: smooth; }
   font-family: var(--hand-ja);
   font-size: 14px; font-weight: 600;
   color: var(--ink);
-  border-radius: 4px;
+  border-radius: 0;
 }
 .opt-grid-row > .opt-grid-cell:last-child {
-  border-radius: 4px 14px 14px 4px;
+  border-radius: 0;
 }
 .opt-grid-cell small {
   display: block;
@@ -2997,7 +3011,7 @@ html { scroll-behavior: smooth; }
 }
 .opt-badge-col {
   background: #fff;
-  border-radius: 18px;
+  border-radius: 0;
   padding: 0;
   box-shadow: 0 6px 18px -10px rgba(0,0,0,.14);
   overflow: hidden;
@@ -3058,7 +3072,7 @@ html { scroll-behavior: smooth; }
   display: flex; flex-direction: column;
   padding: 28px 24px 24px;
   background: #ffffff;
-  border-radius: 22px 26px 22px 24px / 22px 22px 24px 22px;
+  border-radius: 0;
   box-shadow: 0 6px 22px -10px rgba(0,0,0,.16);
   transition: transform .25s cubic-bezier(.4,1.4,.4,1), box-shadow .25s;
   overflow: visible;
@@ -3207,7 +3221,7 @@ html { scroll-behavior: smooth; }
   padding: 6px 18px;
   background: var(--berry);
   color: #fff;
-  border-radius: 999px;
+  border-radius: 0;
   box-shadow: 0 6px 16px -4px color-mix(in oklab, var(--berry) 50%, transparent);
   white-space: nowrap;
   animation: ribbonWobble 4s ease-in-out infinite;
@@ -3357,7 +3371,7 @@ html { scroll-behavior: smooth; }
 .skill-bars .bar { height: 80px; position: relative; display: flex; align-items: flex-end; justify-content: center; }
 .skill-bars .bar > i {
   display: block; width: 26px; background: linear-gradient(to top, var(--grape), var(--berry));
-  border-radius: 999px;
+  border-radius: 0;
 }
 .skill-bars .name { font-size: 13px; margin-top: 6px; }
 .skill-bars .pct  { font-size: 11px; color: var(--ink-soft); }
@@ -3371,7 +3385,7 @@ html { scroll-behavior: smooth; }
 }
 .kami-frame {
   position: relative;
-  border-radius: 32px 38px 30px 36px / 30px 32px 36px 32px;
+  border-radius: 0;
   background:
     radial-gradient(circle at 18% 22%, color-mix(in oklab, var(--berry) 8%, transparent) 0%, transparent 60%),
     radial-gradient(circle at 82% 78%, color-mix(in oklab, var(--grape) 10%, transparent) 0%, transparent 60%),
@@ -3383,9 +3397,8 @@ html { scroll-behavior: smooth; }
   position: relative;
   height: 540px;
   overflow: hidden;
-  border-radius: 22px 26px 22px 24px / 22px 22px 24px 22px;
+  border-radius: 0;
   background: var(--paper);
-  cursor: pointer;
 }
 .kami-scene {
   position: absolute; inset: 0;
@@ -3407,7 +3420,7 @@ html { scroll-behavior: smooth; }
 .kami-photo { align-self: stretch; display: flex; align-items: center; }
 .kami-photo .imgph {
   width: 100%; aspect-ratio: 3/3;
-  border-radius: 18px 24px 18px 22px / 20px 18px 22px 18px;
+  border-radius: 0;
 }
 .kami-photo .imgph.round-photo {
   aspect-ratio: 1; border-radius: 50%;
@@ -3452,7 +3465,7 @@ html { scroll-behavior: smooth; }
 img.kami-main-img {
   width: 400px; height: 400px;
   object-fit: contain;
-  border-radius: 12px;
+  border-radius: 0;
   display: block;
 }
 
@@ -3462,7 +3475,7 @@ img.kami-main-img {
 }
 .kami-thumb {
   width: 100px; height: 100px;
-  border-radius: 8px; overflow: hidden;
+  border-radius: 0; overflow: hidden;
   cursor: pointer; flex-shrink: 0;
   border: 2px solid transparent;
   transition: border-color .2s, transform .15s;
@@ -3470,7 +3483,7 @@ img.kami-main-img {
 .kami-thumb .imgph,
 .kami-thumb img {
   width: 100%; height: 100%; object-fit: cover;
-  border-radius: 6px;
+  border-radius: 0;
 }
 .kami-thumb .lbl { font-size: 10px; }
 .kami-thumb:hover { transform: scale(1.06); }
@@ -3547,7 +3560,7 @@ img.kami-main-img {
 
 /* Certificate link */
 .cert-link { display: inline-block; margin-top: 12px; text-decoration: none; }
-.cert-img { display: block; max-width: 220px; border-radius: 8px; box-shadow: 0 4px 14px rgba(0,0,0,.15); transition: transform .2s, box-shadow .2s; }
+.cert-img { display: block; max-width: 220px; border-radius: 0; box-shadow: 0 4px 14px rgba(0,0,0,.15); transition: transform .2s, box-shadow .2s; }
 .cert-link:hover .cert-img { transform: scale(1.03); box-shadow: 0 6px 20px rgba(0,0,0,.22); }
 .cert-caption { display: block; margin-top: 6px; font-size: 11px; color: var(--ink-soft); letter-spacing: .04em; }
 
@@ -3593,7 +3606,7 @@ img.kami-main-img {
 /* ===== Featured movie ===== */
 .movie-feature { max-width: 720px; margin: 0 auto; }
 .movie-thumb-wrap {
-  position: relative; border-radius: var(--radius-lg); overflow: hidden; cursor: pointer;
+  position: relative; border-radius: 0; overflow: hidden; cursor: pointer;
   box-shadow: 0 8px 32px rgba(0,0,0,.12);
 }
 .movie-thumb-img { width: 100%; height: auto; display: block; }
@@ -3615,7 +3628,7 @@ img.kami-main-img {
   text-shadow: 0 2px 8px rgba(0,0,0,.4);
 }
 .movie-embed-wrap {
-  border-radius: var(--radius-lg); overflow: hidden;
+  border-radius: 0; overflow: hidden;
   box-shadow: 0 8px 32px rgba(0,0,0,.12);
   aspect-ratio: 16 / 9;
 }
@@ -3629,7 +3642,7 @@ img.kami-main-img {
 }
 .reg-tile {
   position: relative;
-  border-radius: 18px 22px 18px 20px / 20px 18px 22px 18px;
+  border-radius: 0;
   overflow: hidden;
   transition: transform .25s;
   cursor: pointer;
@@ -3662,7 +3675,7 @@ img.kami-main-img {
   background: rgba(42, 32, 48, .35);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border-radius: 999px;
+  border-radius: 0;
   width: fit-content;
   opacity: 0;
   transition: opacity .2s, transform .2s;
@@ -3682,7 +3695,7 @@ img.kami-main-img {
 }
 .playlist-tab {
   padding: 8px 18px;
-  border-radius: 999px;
+  border-radius: 0;
   border: none; cursor: pointer;
   font-family: var(--hand-ja); font-size: 14px;
   background: color-mix(in oklab, var(--ink) 4%, transparent);
@@ -3697,7 +3710,7 @@ img.kami-main-img {
 
 .apple-player {
   max-width: 760px; margin: 14px auto 0;
-  border-radius: 18px;
+  border-radius: 0;
   background: var(--paper);
   box-shadow: 0 20px 50px -20px color-mix(in oklab, var(--ink) 30%, transparent);
   overflow: hidden;
@@ -3716,7 +3729,7 @@ img.kami-main-img {
 }
 .apple-player-cover {
   width: 200px; height: 200px;
-  border-radius: 14px;
+  border-radius: 0;
   background:
     radial-gradient(circle at 30% 30%, #ffe6f0 0%, transparent 55%),
     radial-gradient(circle at 70% 70%, color-mix(in oklab, var(--berry) 50%, var(--paper)) 0%, transparent 65%),
@@ -3806,7 +3819,7 @@ img.kami-main-img {
 }
 .media-tab {
   padding: 8px 18px;
-  border-radius: 999px;
+  border-radius: 0;
   border: none; cursor: pointer;
   font-family: var(--hand-ja); font-size: 14px;
   background: color-mix(in oklab, var(--ink) 4%, transparent);
@@ -3843,7 +3856,7 @@ img.kami-main-img {
 .media-poster {
   position: relative;
   aspect-ratio: 2 / 3;
-  border-radius: 10px 14px 10px 12px / 12px 10px 14px 10px;
+  border-radius: 0;
   overflow: hidden;
   display: flex; align-items: center; justify-content: center;
   background:
@@ -3860,7 +3873,7 @@ img.kami-main-img {
   position: absolute; left: 10px; bottom: 10px;
   font-family: var(--script);
   color: #fff; font-size: 13px;
-  padding: 3px 10px; border-radius: 999px;
+  padding: 3px 10px; border-radius: 0;
   background: rgba(42, 32, 48, .45);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -3889,7 +3902,7 @@ img.kami-main-img {
   width: min(620px, 92vw);
   max-height: 88vh;
   background: var(--paper);
-  border-radius: 22px 26px 22px 24px / 22px 22px 24px 22px;
+  border-radius: 0;
   box-shadow: 0 30px 80px -20px color-mix(in oklab, var(--grape) 35%, rgba(0,0,0,.3));
   overflow: hidden;
   display: flex; flex-direction: column;
@@ -3924,7 +3937,7 @@ img.kami-main-img {
 .media-modal-body { padding: 22px 26px 28px; }
 .media-modal-tag {
   display: inline-block; padding: 3px 12px;
-  border-radius: 999px;
+  border-radius: 0;
   background: color-mix(in oklab, var(--grape) 14%, var(--paper));
   color: var(--grape);
   font-family: var(--script); font-size: 13px;
@@ -3946,7 +3959,7 @@ img.kami-main-img {
 }
 .scrap-card {
   position: relative;
-  border-radius: 14px 18px 14px 16px / 16px 14px 18px 14px;
+  border-radius: 0;
   overflow: hidden;
   cursor: pointer;
   transform: rotate(var(--rot, 0deg));
@@ -3976,7 +3989,7 @@ img.kami-main-img {
   font-family: var(--script);
   font-size: 13px;
   color: #fff;
-  padding: 5px 10px; border-radius: 999px;
+  padding: 5px 10px; border-radius: 0;
   background: rgba(42, 32, 48, .35);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -4005,7 +4018,7 @@ img.kami-main-img {
   position: relative; z-index: 1;
   width: min(540px, 92vw);
   background: var(--paper);
-  border-radius: 22px 26px 22px 24px / 22px 22px 24px 22px;
+  border-radius: 0;
   box-shadow: 0 30px 80px -20px color-mix(in oklab, var(--grape) 35%, rgba(0,0,0,.3));
   overflow: hidden;
   transform: translateY(20px) scale(.96);
@@ -4020,7 +4033,7 @@ img.kami-main-img {
 }
 .scrap-modal-img {
   width: 100%; aspect-ratio: 4 / 3;
-  border-radius: 22px 26px 0 0 / 22px 22px 0 0;
+  border-radius: 0;
 }
 .scrap-modal-body { padding: 20px 26px 24px; }
 .scrap-modal-note {
@@ -4040,7 +4053,7 @@ img.kami-main-img {
   position: relative;
   padding: 50px 40px;
   text-align: center;
-  border-radius: 32px 38px 30px 36px / 30px 32px 36px 32px;
+  border-radius: 0;
   background:
     radial-gradient(circle at 25% 30%, color-mix(in oklab, var(--berry) 16%, transparent) 0%, transparent 60%),
     radial-gradient(circle at 80% 75%, color-mix(in oklab, var(--grape) 18%, transparent) 0%, transparent 65%),
@@ -4060,7 +4073,7 @@ img.kami-main-img {
   letter-spacing: .2em; font-size: 16px;
 }
 .thanks-ttl {
-  font-size: clamp(28px, 4vw, 40px);
+  font-size: clamp(21px, 4vw, 40px);
   margin: 8px 0 18px;
   font-weight: 500;
 }
@@ -4097,7 +4110,7 @@ img.kami-main-img {
   width: min(720px, 88vw);
   height: min(540px, 78vh);
   aspect-ratio: auto;
-  border-radius: 18px 24px 18px 22px / 20px 18px 22px 18px;
+  border-radius: 0;
 }
 .reg-lightbox-cap {
   margin-top: 14px;
@@ -4131,12 +4144,20 @@ img.kami-main-img {
 
 /* ───────── WORKS ───────── */
 .works-layout { display: grid; grid-template-columns: 220px 1fr; gap: 40px; padding-top: 30px; }
+/* PCは左の絞り込みを追従（固定ヘッダー76pxの下で止まる） */
+@media (min-width: 721px) {
+  .works-layout > .filter-side {
+    position: sticky; top: 96px; align-self: start;
+    max-height: calc(100vh - 116px); overflow-y: auto; scrollbar-width: none;
+  }
+  .works-layout > .filter-side::-webkit-scrollbar { display: none; }
+}
 .filter-side .group { margin-bottom: 22px; }
 .filter-side .group h4 { font-size: 14px; margin-bottom: 8px; margin-top: 30px; }
 .filter-side .group h4 .en { font-family: var(--script); color: var(--grape); margin-left: 4px; font-size: 13px; }
 .filter-side .opt {
   display: flex; align-items: center; gap: 8px; padding: 5px 8px;
-  border-radius: 12px; cursor: pointer; font-size: 14px;
+  border-radius: 0; cursor: pointer; font-size: 14px;
   transition: background .15s;
   border-bottom: 1px dotted rgba(0,0,0,0.12);
 }
@@ -4146,19 +4167,41 @@ img.kami-main-img {
 .filter-side .opt.on .dot { background: var(--berry); opacity: 1; }
 .filter-side .opt .count { margin-left: auto; font-size: 12px; color: var(--ink-soft); }
 
-.featured-work { padding: 14px; background: color-mix(in oklab, #9671bd 10%, #edccca); border-radius: 28px 34px 26px 32px / 26px 28px 32px 30px; position: relative; overflow: hidden; }
-.featured-work .imgph { aspect-ratio: 16/9; }
-.featured-work .ftitle { display: flex; gap: 16px; align-items: baseline; margin-top: 14px; flex-wrap: wrap; }
+.featured-work {
+  /* ルーズリーフに写真をテープで貼った見た目 */
+  --lh: 34px;
+  position: relative;
+  padding: 34px 34px 26px 78px;
+  border-radius: 0;
+  background-color: #fffdf8;
+  background-image:
+    linear-gradient(90deg, transparent 50px, color-mix(in oklab, var(--berry) 22%, transparent) 50px 51.5px, transparent 51.5px),
+    repeating-linear-gradient(transparent 0 calc(var(--lh) - 1px), color-mix(in oklab, var(--grape) 13%, transparent) calc(var(--lh) - 1px) var(--lh));
+  box-shadow: 0 16px 34px -22px rgba(0,0,0,.3);
+}
+/* ルーズリーフの穴 */
+.featured-work::before {
+  content: ""; position: absolute; left: 18px; top: 28px; bottom: 28px; width: 14px;
+  background: radial-gradient(circle, var(--paper) 0 6px, transparent 6.5px) 0 0 / 14px 56px repeat-y;
+}
+.featured-work .imgph {
+  aspect-ratio: 16/9; border-radius: 0;
+  border: 8px solid #fff;
+  box-shadow: 0 10px 20px -12px rgba(0,0,0,.4);
+}
+/* サムネイルから上にスクロールしたとき、固定ヘッダーに隠れないように */
+.featured-work { scroll-margin-top: 96px; }
+.featured-work .ftitle { display: flex; gap: 16px; align-items: baseline; margin-top: 22px; flex-wrap: wrap; }
 .featured-work .ftitle h3 { font-size: 22px; }
 .featured-work .ftitle .meta { color: var(--ink-soft); font-size: 13px; }
 .featured-work .desc { color: var(--ink-soft); font-size: 14px; margin-top: 8px; max-width: 80%; }
 .featured-work .corner1 { position: absolute; left: -16px; top: -16px; opacity: .25; }
 .featured-work .corner2 { position: absolute; right: -16px; bottom: -16px; opacity: .25; }
 .click-badge {
-  position: absolute; top: 14px; left: 14px; z-index: 2;
+  position: absolute; top: 18px; left: 56px; z-index: 2;
   background: var(--berry); color: #fff;
   font-family: var(--script); font-size: 18px; letter-spacing: .06em;
-  padding: 7px 20px; border-radius: 999px;
+  padding: 7px 20px; border-radius: 0;
   transform-origin: center;
   box-shadow: 0 3px 12px rgba(0,0,0,.22);
   pointer-events: none;
@@ -4170,22 +4213,22 @@ img.kami-main-img {
 }
 
 .thumb-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 18px; }
-.thumb-row .t { padding: 6px; border-radius: 16px; cursor: pointer; transition: background .15s; }
+.thumb-row .t { padding: 6px; border-radius: 0; cursor: pointer; transition: background .15s; }
 .thumb-row .t.on { background: color-mix(in oklab, var(--berry) 26%, var(--paper)); }
-.thumb-row .t .imgph { aspect-ratio: 4/3; }
+.thumb-row .t .imgph { aspect-ratio: 4/3; border-radius: 0; }
 .thumb-row .t .cap { font-size: 11px; text-align: center; margin-top: 5px; color: var(--ink-soft); }
 
 /* ───────── MENU ───────── */
 .plan-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; padding-top: 20px; }
 .plan {
-  padding: 26px 22px; border-radius: var(--radius-blob); position: relative;
+  padding: 26px 22px; border-radius: 0; position: relative;
   background: color-mix(in oklab, var(--ink) 3%, transparent);
 }
 .plan.best { background: color-mix(in oklab, var(--grape) 16%, var(--paper)); transform: translateY(-6px); }
 .plan .ribbon {
   position: absolute; top: -14px; left: 18px;
   background: var(--berry); color: #fff; font-family: var(--script); font-size: 15px;
-  padding: 4px 14px; border-radius: 999px;
+  padding: 4px 14px; border-radius: 0;
   transform: rotate(-3deg);
 }
 .plan .pname { font-family: var(--script); color: var(--grape); font-size: 16px; letter-spacing: .12em; }
@@ -4209,7 +4252,7 @@ img.kami-main-img {
 .menu-list .pr { font-family: var(--script); font-size: 16px; color: var(--grape); }
 
 .combos { display: flex; flex-direction: column; gap: 12px; }
-.combos .combo { padding: 14px 18px; border-radius: 22px 28px 22px 26px / 22px 22px 28px 22px; background: color-mix(in oklab, var(--berry) 7%, var(--paper)); }
+.combos .combo { padding: 14px 18px; border-radius: 0; background: color-mix(in oklab, var(--berry) 7%, var(--paper)); }
 .combos .combo h4 { font-size: 15px; }
 .combos .combo p { font-size: 12px; color: var(--ink-soft); margin: 4px 0 0; }
 
@@ -4217,7 +4260,7 @@ img.kami-main-img {
 .flow-row .step {
   padding: 14px; text-align: center;
   background: color-mix(in oklab, var(--grape) 8%, var(--paper));
-  border-radius: 18px 22px 18px 22px;
+  border-radius: 0;
   position: relative;
 }
 .flow-row .step:first-child { background: color-mix(in oklab, var(--berry) 14%, var(--paper)); }
@@ -4233,14 +4276,14 @@ img.kami-main-img {
 }
 .progress .step {
   display: flex; align-items: center; gap: 8px; padding: 4px 10px;
-  border-radius: 999px;
+  border-radius: 0;
 }
 .progress .step .b { width: 26px; height: 30px; }
 .progress .step.now  { background: color-mix(in oklab, var(--berry) 10%, var(--paper)); }
 .progress .step.done .lbl { color: var(--ink); }
 .progress .step.next { opacity: .55; }
 .progress .bar {
-  flex: 1; height: 3px; border-radius: 2px;
+  flex: 1; height: 3px; border-radius: 0;
   background: color-mix(in oklab, var(--grape) 18%, transparent);
 }
 .progress .bar.done { background: var(--berry); }
@@ -4254,8 +4297,24 @@ label .req {
   font-weight: 700;
   color: #fff;
   background: var(--berry);
-  border-radius: 4px;
+  border-radius: 0;
   padding: 1px 6px;
+  margin-left: 6px;
+  vertical-align: middle;
+  letter-spacing: .04em;
+  line-height: 1.6;
+}
+/* 任意：必須と同じ形で色を逆に（白地にピンクの文字と枠） */
+.form-field label .opt,
+label .opt {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--berry);
+  background: #fff;
+  border: 1px solid var(--berry);
+  border-radius: 0;
+  padding: 0 5px;
   margin-left: 6px;
   vertical-align: middle;
   letter-spacing: .04em;
@@ -4264,11 +4323,21 @@ label .req {
 .form-field input, .form-field textarea, .form-field select {
   width: 100%; padding: 12px 14px; font-family: inherit;
   background: #f0eff5;
-  border: none; border-radius: 14px;
+  border: none; border-radius: 0;
   outline: 1.5px solid transparent; transition: outline-color .2s, background .2s;
 }
 .form-field input:focus, .form-field textarea:focus, .form-field select:focus {
-  outline-color: var(--grape); background: #fff;
+  outline-color: var(--grape); background-color: #fff;
+}
+/* セレクト：ブラウザ標準の矢印をやめ、右端から余白をとって自前の矢印を置く */
+.form-field select {
+  -webkit-appearance: none; appearance: none;
+  padding-right: 48px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b3aa0' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 12px 8px;
+  cursor: pointer;
 }
 .form-field textarea { min-height: 110px; resize: vertical; }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -4305,7 +4374,7 @@ label .req {
   width: 18px;
   height: 18px;
   border: 1.5px solid #c4b0ec;
-  border-radius: 4px;
+  border-radius: 0;
   background: #f0eff5;
   transition: border-color .15s;
 }
@@ -4352,7 +4421,7 @@ label .req {
   background-position: 0 0, 0 14px;
   border: 1px solid #dde0ea;
   border-top: 4px solid color-mix(in oklab, var(--berry) 55%, var(--grape));
-  border-radius: 2px;
+  border-radius: 0;
   box-shadow:
     0 4px 20px -4px rgba(100,90,160,.14),
     0 1px 4px rgba(0,0,0,.05);
@@ -4384,7 +4453,7 @@ label .req {
   display: flex; align-items: flex-end; gap: 14px;
   padding: 16px 22px; margin-top: 24px;
   background: color-mix(in oklab, var(--berry) 6%, var(--paper));
-  border-radius: var(--radius-blob);
+  border-radius: 0;
 }
 .growth-strip .label { font-size: 13px; }
 .growth-strip .berries { display: flex; align-items: flex-end; gap: 14px; flex: 1; justify-content: center; }
@@ -4397,11 +4466,11 @@ label .req {
   display: flex; align-items: center; gap: 12px;
   padding: 14px 18px; margin: 26px 0 14px;
   background: color-mix(in oklab, var(--grape) 8%, var(--paper));
-  border-radius: var(--radius-blob);
+  border-radius: 0;
 }
 .search-box input {
   flex: 1; background: var(--paper); border: none; padding: 10px 14px;
-  border-radius: 999px; font-family: inherit; outline: none;
+  border-radius: 0; font-family: inherit; outline: none;
 }
 .search-box .tag-row { display: flex; gap: 6px; flex-wrap: wrap; padding: 10px 18px 0; align-items: center; font-size: 12px; }
 
@@ -4419,7 +4488,7 @@ label .req {
   margin: 56px auto 0;
 }
 .bboard {
-  border-radius: 10px;
+  border-radius: 0;
   padding: 14px;
   background: linear-gradient(160deg, #c9adb8 0%, #b89aaa 100%);
   box-shadow:
@@ -4428,7 +4497,7 @@ label .req {
 }
 .bboard-inner {
   position: relative;
-  border-radius: 4px;
+  border-radius: 0;
   padding: 40px 32px 44px;
   background:
     radial-gradient(ellipse at 15% 25%, rgba(255,240,230,.6) 0%, transparent 55%),
@@ -4440,7 +4509,7 @@ label .req {
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: 4px;
+  border-radius: 0;
   pointer-events: none;
   background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Ccircle cx='1' cy='1' r='.6' fill='rgba(90,50,10,.07)'/%3E%3Ccircle cx='4' cy='4' r='.5' fill='rgba(70,35,5,.05)'/%3E%3Ccircle cx='1' cy='5' r='.3' fill='rgba(110,65,15,.04)'/%3E%3C/svg%3E");
@@ -4457,7 +4526,7 @@ label .req {
       transparent 1px,
       transparent 10px
     );
-  border-radius: 2px;
+  border-radius: 0;
   padding: 22px 30px 20px;
   max-width: 480px;
   margin: 0 auto 36px;
@@ -4493,7 +4562,7 @@ label .req {
 }
 .bboard-note {
   position: relative;
-  border-radius: 2px;
+  border-radius: 0;
   padding: 30px 18px 22px;
   box-shadow:
     2px 5px 16px rgba(160,110,130,.2),
@@ -4642,7 +4711,7 @@ label .req {
   padding: 22px 16px 20px;
   background: #fff;
   border: 2px solid color-mix(in oklab, var(--grape) 14%, transparent);
-  border-radius: 18px 22px 18px 20px / 20px 18px 22px 18px;
+  border-radius: 0;
   cursor: pointer;
   text-align: center;
   font: inherit;
@@ -4690,7 +4759,7 @@ label .req {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  border-radius: 6px;
+  border-radius: 0;
   display: block;
 }
 
@@ -4701,7 +4770,7 @@ label .req {
   margin: 26px auto 0;
   padding: 30px 36px 32px;
   background: #fff;
-  border-radius: 22px 28px 22px 26px / 24px 22px 28px 22px;
+  border-radius: 0;
   box-shadow: 0 18px 40px -22px color-mix(in oklab, var(--berry) 30%, rgba(0,0,0,.18));
   border: 2px dashed color-mix(in oklab, var(--berry) 30%, transparent);
   opacity: 0;
@@ -4713,7 +4782,7 @@ label .req {
 .type-result-photo {
   width: 100%;
   aspect-ratio: 16/7;
-  border-radius: 14px;
+  border-radius: 0;
   overflow: hidden;
   margin-bottom: 20px;
   background: color-mix(in oklab, var(--grape) 8%, var(--paper));
@@ -4771,7 +4840,7 @@ label .req {
   gap: 14px;
   padding: 10px 18px;
   background: color-mix(in oklab, var(--berry) 6%, transparent);
-  border-radius: 999px;
+  border-radius: 0;
   margin-bottom: 22px;
 }
 .type-result-meta-l {
@@ -4800,7 +4869,7 @@ label .req {
   background: linear-gradient(120deg,
     color-mix(in oklab, var(--grape) 18%, #fff),
     color-mix(in oklab, var(--berry) 18%, #fff));
-  border-radius: 24px;
+  border-radius: 0;
   text-decoration: none;
   box-shadow: 0 10px 32px -12px color-mix(in oklab, var(--berry) 30%, transparent);
   transition: transform .2s, box-shadow .2s;
@@ -4871,7 +4940,7 @@ label .req {
   max-width: 880px;
   margin: 36px auto 0;
   padding: 48px 180px 52px;
-  border-radius: 28px;
+  border-radius: 0;
   text-align: center;
   overflow: hidden;
 }
@@ -4913,7 +4982,7 @@ label .req {
   font-weight: 700;
   font-size: 12px;
   padding: 4px 14px;
-  border-radius: 999px;
+  border-radius: 0;
   white-space: nowrap;
   box-shadow: 0 4px 10px -4px color-mix(in oklab, var(--berry) 50%, transparent);
 }
@@ -4927,7 +4996,7 @@ label .req {
   padding: 18px 18px 18px 32px;
   background: #fff;
   border: 2.5px solid color-mix(in oklab, var(--grape) 30%, transparent);
-  border-radius: 999px;
+  border-radius: 0;
   text-decoration: none;
   box-shadow: 0 6px 20px -8px color-mix(in oklab, var(--grape) 25%, transparent);
   transition: transform .18s, box-shadow .18s;
@@ -4975,16 +5044,33 @@ label .req {
 .checklist-section { max-width: 760px; margin: 0 auto; }
 .checklist-card {
   margin-top: 26px;
-  padding: 30px 36px 26px;
+  position: relative;
+  isolation: isolate;
+  padding: 44px 36px 26px;
+  /* 影は破れた形に沿うように drop-shadow で */
+  filter: drop-shadow(0 12px 18px rgba(0,0,0,.08));
+}
+/* リングノートから切り取った紙の上辺（FAQのヒアリング・お問い合わせフォームで共通） */
+:root { --torn-top: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='28'><path d='M0 2.5 L2.5 1 L5 3 L7.5 1.2 L10 2.8 L11 1.6 L11.5 5 L11 7.5 L11.4 10 C11 14.5 12.8 16.5 15 16.5 C17.2 16.5 19 14.5 18.6 10 L19 7 L18.5 4.5 L19 1.8 L20.5 3 L23 1 L25.5 2.6 L28 1.2 L30 2.5 V28 H0 Z' fill='%23000'/></svg>"); }
+/* 紙の部分：リングノートから切り取ったように、上の辺に破れた穴の跡を並べる */
+.checklist-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: #fff;
-  border-radius: 22px 26px 22px 24px / 22px 22px 26px 22px;
-  box-shadow: 0 14px 32px -18px rgba(0,0,0,.15);
   background-image:
     repeating-linear-gradient(0deg,
       transparent 0,
       transparent 39px,
       color-mix(in oklab, var(--berry) 6%, transparent) 39px,
       color-mix(in oklab, var(--berry) 6%, transparent) 40px);
+  -webkit-mask:
+    var(--torn-top) left top / 30px 28px round no-repeat,
+    linear-gradient(#000, #000) left 28px / 100% calc(100% - 28px) no-repeat;
+          mask:
+    var(--torn-top) left top / 30px 28px round no-repeat,
+    linear-gradient(#000, #000) left 28px / 100% calc(100% - 28px) no-repeat;
 }
 .checklist {
   list-style: none;
@@ -5006,7 +5092,7 @@ label .req {
   -webkit-appearance: none;
   width: 22px; height: 22px;
   border: 2px solid color-mix(in oklab, var(--berry) 38%, transparent);
-  border-radius: 6px;
+  border-radius: 0;
   background: #fff;
   cursor: pointer;
   margin-top: 2px;
@@ -5072,7 +5158,7 @@ label .req {
 .casual-cta {
   position: relative;
   padding: 48px 56px 44px;
-  border-radius: 30px 34px 28px 32px / 28px 30px 32px 28px;
+  border-radius: 0;
   background:
     radial-gradient(circle at 12% 18%, color-mix(in oklab, var(--berry) 28%, transparent) 0%, transparent 55%),
     radial-gradient(circle at 86% 78%, color-mix(in oklab, var(--grape) 28%, transparent) 0%, transparent 55%),
@@ -5121,7 +5207,7 @@ label .req {
 .faq-cats { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
 .faq-cats button {
   padding: 7px 18px;
-  border-radius: 999px;
+  border-radius: 0;
   border: none;
   cursor: pointer;
   font-family: var(--script);
@@ -5143,7 +5229,7 @@ label .req {
 }
 .faq-item {
   background: #fff;
-  border-radius: 14px;
+  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 2px 12px -3px rgba(120,80,160,.15);
   transition: box-shadow .2s;
@@ -5164,7 +5250,7 @@ label .req {
 .faq-item .ans { padding: 0 18px 16px 46px; color: var(--ink-soft); font-size: 13px; line-height: 1.8; }
 
 .voice-feature {
-  padding: 22px; border-radius: var(--radius-blob); position: relative; overflow: hidden;
+  padding: 22px; border-radius: 0; position: relative; overflow: hidden;
   background: #fff;
   box-shadow: 0 4px 20px -4px rgba(120,80,160,.18);
 }
@@ -5192,7 +5278,7 @@ label .req {
   position: fixed; left: 18px; bottom: 70px; z-index: 70;
   width: 280px; padding: 18px;
   background: var(--paper); color: var(--ink);
-  border-radius: 22px;
+  border-radius: 0;
   box-shadow: 0 16px 50px -10px color-mix(in oklab, var(--ink) 30%, transparent);
   display: none;
   font-family: var(--hand-ja);
@@ -5207,7 +5293,7 @@ label .req {
 .tweaks-panel .twk-seg button {
   flex: 1; padding: 7px 6px; font-size: 12px; font-family: inherit; cursor: pointer;
   background: color-mix(in oklab, var(--ink) 4%, transparent); border: none;
-  color: var(--ink-soft); border-radius: 10px;
+  color: var(--ink-soft); border-radius: 0;
 }
 .tweaks-panel .twk-seg button.on { background: var(--grape); color: #fff; }
 .tweaks-panel input[type="range"] { width: 100%; accent-color: var(--grape); }
@@ -5263,7 +5349,7 @@ label .req {
   width: 106px;
   background: #fefef8;
   border: 1px solid #ddd0b8;
-  border-radius: 2px;
+  border-radius: 0;
   padding: 12px 14px;
   display: flex;
   flex-direction: column;
@@ -5275,7 +5361,7 @@ label .req {
   display: block;
   height: 2px;
   background: rgba(157,78,221,.28);
-  border-radius: 1px;
+  border-radius: 0;
 }
 .mail-letter span:nth-child(1) { width: 80%; }
 .mail-letter span:nth-child(2) { width: 55%; }
@@ -5298,7 +5384,7 @@ label .req {
   inset: 0;
   background: linear-gradient(160deg, #f8f0e0 0%, #f0e4c8 100%);
   border: 1.5px solid #ddd0b4;
-  border-radius: 2px;
+  border-radius: 0;
   overflow: hidden;
 }
 /* 封筒内側のひし形折り目 */
@@ -5329,7 +5415,7 @@ label .req {
   width: 22px; height: 26px;
   background: color-mix(in oklab, var(--berry) 12%, #fff);
   border: 1.5px solid color-mix(in oklab, var(--berry) 30%, transparent);
-  border-radius: 1px;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5426,7 +5512,7 @@ label .req {
   overflow: hidden;
   display: flex; flex-direction: column;
   background: var(--paper);
-  border-radius: 28px 32px 26px 30px / 26px 28px 30px 28px;
+  border-radius: 0;
   box-shadow: 0 30px 80px -20px color-mix(in oklab, var(--grape) 35%, rgba(0,0,0,.3));
   transform: translateY(20px) scale(.96);
   transition: transform .3s cubic-bezier(.2, .8, .2, 1);
@@ -5454,7 +5540,7 @@ label .req {
 .work-modal-scroll::-webkit-scrollbar-track { background: transparent; }
 .work-modal-scroll::-webkit-scrollbar-thumb {
   background: transparent;
-  border-radius: 999px;
+  border-radius: 0;
   transition: background .3s;
 }
 .work-modal-scroll:hover::-webkit-scrollbar-thumb {
@@ -5473,7 +5559,7 @@ label .req {
   display: block;
   margin: 0;
   aspect-ratio: 16/9;
-  border-radius: 28px 32px 0 0 / 26px 28px 0 0;
+  border-radius: 0;
 }
 .work-modal-card .work-modal-img.has-img,
 .work-modal-card .work-modal-img.imgph.has-img {
@@ -5485,7 +5571,7 @@ label .req {
   height: auto;
   display: block;
   object-fit: unset;
-  border-radius: 28px 32px 0 0 / 26px 28px 0 0;
+  border-radius: 0;
 }
 .work-modal-card .work-modal-img.multi-img {
   display: flex;
@@ -5496,11 +5582,11 @@ label .req {
   border-radius: 0;
 }
 .work-modal-card .work-modal-img.multi-img img:first-child {
-  border-radius: 28px 32px 0 0 / 26px 28px 0 0;
+  border-radius: 0;
 }
 .work-modal-body { padding: 22px 26px 26px; }
 .work-modal-cat {
-  display: inline-block; padding: 3px 12px; border-radius: 999px;
+  display: inline-block; padding: 3px 12px; border-radius: 0;
   background: color-mix(in oklab, var(--grape) 14%, var(--paper));
   color: var(--grape); font-family: var(--script); font-size: 13px;
   letter-spacing: .08em; margin-bottom: 8px;
@@ -5512,6 +5598,7 @@ label .req {
 
 /* ===== Works.html case-study modal (refreshed editorial layout) ===== */
 .work-modal-card.wm-big {
+  background: #fffdf8;
   width: min(1080px, 94vw);
   max-height: 90vh;
   overflow: hidden;
@@ -5531,7 +5618,7 @@ label .req {
   overflow-y: auto;
 }
 .wm-big .wm-left::-webkit-scrollbar { width: 4px; }
-.wm-big .wm-left::-webkit-scrollbar-thumb { background: color-mix(in oklab, var(--grape) 30%, transparent); border-radius: 2px; }
+.wm-big .wm-left::-webkit-scrollbar-thumb { background: color-mix(in oklab, var(--grape) 30%, transparent); border-radius: 0; }
 .wm-big .work-modal-img {
   width: 100%;
   aspect-ratio: 4/3;
@@ -5544,73 +5631,38 @@ label .req {
   flex: none;
 }
 
-/* Decorative filler shown beneath the work image */
+/* 画像の下の飾り：白い紙に、作品の色をほんのりにじませ、ざらざらの質感を重ねる */
 .wm-left-deco {
   position: relative;
-  flex: 1;
-  min-height: 80px;
+  flex: 1 0 auto;
+  min-height: 220px;
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
-  gap: 14px;
+  gap: 6px;
   padding: 24px 28px;
   overflow: hidden;
-  background:
-    radial-gradient(60% 60% at 80% 30%, color-mix(in oklab, var(--berry) 8%, transparent), transparent 70%),
-    radial-gradient(50% 60% at 20% 80%, color-mix(in oklab, var(--grape) 10%, transparent), transparent 70%);
-}
-.wm-deco-watermark {
   text-align: center;
-  z-index: 1;
-  line-height: 1;
+  color: var(--ink);
+  background: #fffdf8;
 }
-.wm-deco-en {
-  display: block;
-  font-family: var(--script);
-  font-weight: 700;
-  font-size: clamp(36px, 5vw, 64px);
-  color: color-mix(in oklab, var(--grape) 60%, var(--paper));
-  letter-spacing: -.02em;
-  line-height: .9;
+/* 作品画像を強くぼかして、色だけを薄くのせる */
+.wm-left-deco::before {
+  content: ""; position: absolute; inset: -140px;
+  background: var(--deco-bg, none) center / cover;
+  filter: blur(70px) saturate(1.4);
+  opacity: .35;
 }
-.wm-deco-jp {
-  display: block;
-  font-family: var(--script);
-  font-size: 14px;
-  color: var(--ink-soft);
-  letter-spacing: .25em;
-  margin-top: 6px;
+/* 白をかぶせて白っぽくし、紙のざらざら（細かい粒）を重ねる */
+.wm-left-deco::after {
+  content: ""; position: absolute; inset: 0;
+  background: rgba(255,253,248,.45) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .25 0 0 0 0 .35 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-.wm-deco-tag {
-  font-family: var(--script);
-  font-size: 13px;
-  letter-spacing: .2em;
-  color: var(--berry);
-  z-index: 1;
-}
-.wm-deco-berries {
-  position: absolute; inset: 0;
-  pointer-events: none;
-}
-.wm-deco-berry {
-  position: absolute;
-  width: 32px; height: 38px;
-  background: var(--berry);
-  border-radius: 50% 50% 45% 45% / 35% 35% 75% 75%;
-  opacity: .18;
-  transform-origin: center;
-}
-.wm-deco-berry::before {
-  content: ""; position: absolute;
-  top: -4px; left: 50%;
-  width: 14px; height: 8px;
-  background: var(--leaf);
-  border-radius: 50% 50% 60% 60% / 80% 80% 30% 30%;
-  transform: translateX(-50%) rotate(-12deg);
-  opacity: .85;
-}
-.wm-deco-berry.b1 { left: 12%; top: 25%; transform: rotate(-14deg) scale(1); }
-.wm-deco-berry.b2 { right: 14%; top: 18%; transform: rotate(18deg) scale(1.4); opacity: .14; }
-.wm-deco-berry.b3 { left: 28%; bottom: 14%; transform: rotate(8deg) scale(.8); opacity: .22; }
+.wm-left-deco > * { position: relative; z-index: 1; }
+.wm-deco-k { font-family: var(--script); letter-spacing: .25em; font-size: 16px; color: var(--berry); }
+.wm-deco-ttl { font-size: 22px; line-height: 1.5; }
+.wm-deco-meta { font-size: 13px; color: var(--ink-soft); }
+.wm-deco-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 10px; }
+.wm-deco-tags span { border: 1px solid var(--grape-soft); color: var(--grape); background: rgba(255,255,255,.6); border-radius: 0; padding: 2px 12px; font-size: 12px; }
 /* ---- Stats strip (compact card row) ---- */
 .wm-stats-strip {
   display: grid;
@@ -5624,7 +5676,7 @@ label .req {
   text-align: center;
   padding: 10px 6px;
   background: var(--paper);
-  border-radius: 12px;
+  border-radius: 0;
   box-shadow: 0 2px 8px -4px rgba(0,0,0,.12);
 }
 .wm-stat + .wm-stat { border-left: none; }
@@ -5654,14 +5706,25 @@ label .req {
 /* ---- Right column ---- */
 .wm-big .wm-right {
   overflow-y: auto;
-  padding: 30px 36px 26px;
+  padding: 30px 36px 26px 76px;
+  /* ルーズリーフ：罫線＋赤い余白線（スクロールしても線が一緒に流れるよう local） */
+  --lh: 34px;
+  background-color: #fffdf8;
+  background-image:
+    linear-gradient(90deg, transparent 50px, color-mix(in oklab, var(--berry) 22%, transparent) 50px 51.5px, transparent 51.5px),
+    repeating-linear-gradient(transparent 0 calc(var(--lh) - 1px), color-mix(in oklab, var(--grape) 11%, transparent) calc(var(--lh) - 1px) var(--lh)),
+    radial-gradient(circle, color-mix(in oklab, var(--grape) 10%, var(--paper)) 0 6px, transparent 6.5px);
+  background-size: auto, auto, 14px 56px;
+  background-position: 0 0, 0 0, 18px 28px;
+  background-repeat: no-repeat, repeat, repeat-y;
+  background-attachment: local;
   scrollbar-width: thin;
   scrollbar-color: color-mix(in oklab, var(--grape) 25%, transparent) transparent;
 }
 .wm-big .wm-right::-webkit-scrollbar { width: 6px; }
 .wm-big .wm-right::-webkit-scrollbar-thumb {
   background: color-mix(in oklab, var(--grape) 25%, transparent);
-  border-radius: 999px;
+  border-radius: 0;
 }
 
 /* ---- Work title block ---- */
@@ -5730,7 +5793,7 @@ label .req {
   display: flex; flex-direction: column; gap: 10px;
   padding: 16px 16px 18px;
   background: #e7ecf0;
-  border-radius: 14px;
+  border-radius: 0;
 }
 .wm-chat-row { display: flex; }
 .wm-chat-row.client { justify-content: flex-start; }
@@ -5740,21 +5803,21 @@ label .req {
   padding: 10px 14px;
   font-size: 13px;
   line-height: 1.7;
-  border-radius: 18px;
+  border-radius: 0;
   background: #fff;
   box-shadow: 0 1px 2px rgba(0,0,0,.08);
 }
-.wm-chat-row.client .wm-chat-bubble { border-top-left-radius: 4px; }
+.wm-chat-row.client .wm-chat-bubble { border-top-left-radius: 0; }
 .wm-chat-row.me     .wm-chat-bubble {
   background: #06c755; color: #fff;
-  border-top-right-radius: 4px;
+  border-top-right-radius: 0;
 }
 
 /* ---- Schedule: contribution graph ---- */
 .wm-schedule {
   background: #fff;
   border: 1px solid color-mix(in oklab, var(--ink) 6%, transparent);
-  border-radius: 14px;
+  border-radius: 0;
   padding: 18px 18px 16px;
 }
 .wm-sch-header {
@@ -5775,7 +5838,7 @@ label .req {
 .wm-cgraph::-webkit-scrollbar { height: 6px; }
 .wm-cgraph::-webkit-scrollbar-thumb {
   background: color-mix(in oklab, var(--grape) 22%, transparent);
-  border-radius: 999px;
+  border-radius: 0;
 }
 .wm-cmonth { flex: 0 0 auto; }
 .wm-cmonth-h {
@@ -5795,7 +5858,7 @@ label .req {
 }
 .wm-ccell {
   width: 14px; height: 14px;
-  border-radius: 3px;
+  border-radius: 0;
   background: color-mix(in oklab, var(--ink) 6%, transparent);
   transition: transform .15s;
 }
@@ -5817,7 +5880,7 @@ label .req {
 }
 .wm-sch-dot {
   width: 12px; height: 12px;
-  border-radius: 3px;
+  border-radius: 0;
   background: var(--berry);
   flex: 0 0 auto;
 }
@@ -5868,7 +5931,7 @@ label .req {
   font-size: 13px;
   border-bottom: 1px dashed color-mix(in oklab, var(--ink) 8%, transparent);
 }
-.wm-leg-sw { width: 12px; height: 12px; border-radius: 3px; flex: 0 0 auto; }
+.wm-leg-sw { width: 12px; height: 12px; border-radius: 0; flex: 0 0 auto; }
 .wm-leg-l { flex: 1; color: var(--ink); }
 .wm-leg-h {
   color: var(--ink-soft);
@@ -5881,7 +5944,7 @@ label .req {
 /* ---- Before / After ---- */
 .wm-ba {
   position: relative; width: 100%; aspect-ratio: 16/9;
-  border-radius: 14px;
+  border-radius: 0;
   overflow: hidden;
   background: color-mix(in oklab, var(--ink) 5%, transparent);
 }
@@ -5922,7 +5985,7 @@ label .req {
   font-family: var(--script);
   font-size: 12px;
   letter-spacing: .08em;
-  border-radius: 999px;
+  border-radius: 0;
   pointer-events: none;
 }
 .wm-ba-tag-l { left: 12px; }
@@ -5933,7 +5996,7 @@ label .req {
   display: flex;
   width: 100%;
   height: 130px;
-  border-radius: 14px;
+  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 8px 22px -8px color-mix(in oklab, var(--ink) 30%, transparent);
 }
@@ -5961,7 +6024,7 @@ label .req {
   font-family: ui-monospace, monospace;
   font-size: 11px;
   letter-spacing: .04em;
-  border-radius: 999px;
+  border-radius: 0;
   white-space: nowrap;
   opacity: 0;
   transform: translateY(6px);
@@ -5980,7 +6043,7 @@ label .req {
   padding: 14px 6px 12px;
   background: #fff;
   border: 1px solid color-mix(in oklab, var(--ink) 6%, transparent);
-  border-radius: 14px;
+  border-radius: 0;
 }
 .wm-gauge svg { display: block; margin: 0 auto; }
 .wm-gauge circle { transition: stroke-dasharray .9s cubic-bezier(.4,1.4,.4,1); }
@@ -6009,7 +6072,7 @@ label .req {
   position: relative;
   padding: 28px 20px 22px;
   background: color-mix(in oklab, #ffd86e 30%, var(--paper));
-  border-radius: 4px;
+  border-radius: 0;
   box-shadow:
     2px 5px 14px -4px rgba(0,0,0,.22),
     inset 0 0 0 1px rgba(255,255,255,.6);
@@ -6050,7 +6113,7 @@ label .req {
   padding: 10px 16px;
   background: var(--paper);
   border: 1px solid color-mix(in oklab, var(--ink) 10%, transparent);
-  border-radius: 10px;
+  border-radius: 0;
 }
 .wm-process-clean .wm-step::before,
 .wm-process-clean .wm-step::after { content: none; }
@@ -6082,7 +6145,7 @@ label .req {
   color: var(--ink);
   font-family: var(--hand-ja);
   font-size: 13px;
-  border-radius: 8px;
+  border-radius: 0;
   letter-spacing: .02em;
 }
 .wm-tools-clean .wm-tool::before { content: none; }
@@ -6176,7 +6239,7 @@ label .req {
   display: flex; flex-direction: column; align-items: center; gap: 8px;
   padding: 14px 4px 10px;
   background: var(--paper);
-  border-radius: 14px;
+  border-radius: 0;
   box-shadow: 0 4px 14px -8px color-mix(in oklab, var(--ink) 30%, transparent);
   border: none;
   font-size: 11px; color: var(--ink); font-weight: 600;
@@ -6211,7 +6274,7 @@ label .req {
 }
 .wm-tools-row .wm-tool::before {
   content: attr(data-initial);
-  width: 36px; height: 36px; border-radius: 8px;
+  width: 36px; height: 36px; border-radius: 0;
   background: var(--grape); color: #fff;
   display: flex; align-items: center; justify-content: center;
   font-family: var(--hand-ja); font-weight: 700; font-size: 16px;
@@ -6230,7 +6293,7 @@ label .req {
 .wm-tools-square .wm-tool {
   position: relative;
   aspect-ratio: 1;
-  border-radius: 16px;
+  border-radius: 0;
   background: color-mix(in oklab, var(--berry) 12%, var(--paper));
   border: none;
   display: flex; flex-direction: column;
@@ -6247,7 +6310,7 @@ label .req {
 .wm-tools-square .wm-tool::after {
   content: ""; position: absolute;
   inset: 8px; border: 1.5px dashed color-mix(in oklab, var(--berry) 30%, transparent);
-  border-radius: 12px;
+  border-radius: 0;
   pointer-events: none;
 }
 
@@ -6277,7 +6340,7 @@ label .req {
 .wm-points-badge .wm-point {
   display: grid; grid-template-columns: 78px 1fr;
   background: var(--paper);
-  border-radius: 16px;
+  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 4px 14px -8px rgba(0,0,0,.18);
 }
@@ -6321,7 +6384,7 @@ label .req {
   content: ""; display: block;
   width: 28px; height: 3px;
   background: var(--berry);
-  margin: 6px auto 0; border-radius: 2px;
+  margin: 6px auto 0; border-radius: 0;
 }
 
 /* H · ふせん：ピンで止めた付箋風 */
@@ -6331,7 +6394,7 @@ label .req {
   position: relative;
   padding: 22px 18px 18px;
   background: color-mix(in oklab, #ffd86e 30%, var(--paper));
-  border-radius: 4px;
+  border-radius: 0;
   box-shadow: 2px 4px 12px -4px rgba(0,0,0,.22);
   transform: rotate(var(--rot, -1.2deg));
 }
@@ -6366,7 +6429,7 @@ label .req {
 }
 .wm-points-step .wm-point-step-line {
   width: 4px; background: color-mix(in oklab, var(--berry) 22%, transparent);
-  border-radius: 2px; margin-left: 0;
+  border-radius: 0; margin-left: 0;
 }
 .wm-points-step .wm-point:last-child .wm-point-step-line { background: transparent; }
 .wm-points-step .wm-point > div:last-child { padding-top: 8px; }
@@ -6377,7 +6440,7 @@ label .req {
 .wm-points-card3d .wm-point-3d {
   position: relative;
   background: var(--paper);
-  border-radius: 14px;
+  border-radius: 0;
   overflow: hidden;
   box-shadow:
     0 1px 0 color-mix(in oklab, var(--ink) 8%, transparent),
@@ -6417,7 +6480,7 @@ label .req {
   padding: 8px 14px;
   background: #fff;
   border: 1px solid color-mix(in oklab, var(--grape) 22%, transparent);
-  border-radius: 999px;
+  border-radius: 0;
 }
 .wm-process-arrow .wm-step::before,
 .wm-process-arrow .wm-step::after { content: none; }
@@ -6484,7 +6547,7 @@ label .req {
   content: ""; position: absolute;
   left: 8px; top: 12px;
   width: 12px; height: 12px;
-  background: var(--berry); border-radius: 3px;
+  background: var(--berry); border-radius: 0;
   border: none;
   box-shadow: 0 0 0 3px var(--paper);
 }
@@ -6547,7 +6610,7 @@ label .req {
   background: linear-gradient(135deg,
     color-mix(in oklab, var(--grape) 14%, var(--paper)),
     color-mix(in oklab, var(--berry) 12%, var(--paper)));
-  border-radius: 14px;
+  border-radius: 0;
   text-align: center;
   font-family: var(--hand-ja);
   font-size: 11px;
@@ -6576,7 +6639,7 @@ label .req {
   padding: 6px 14px 6px 6px;
   background: var(--paper);
   border: 1px solid color-mix(in oklab, var(--grape) 22%, transparent);
-  border-radius: 999px;
+  border-radius: 0;
   color: var(--ink); font-size: 13px;
 }
 .wm-tools-bar .wm-tool::before {
@@ -6640,7 +6703,7 @@ label .req {
   border: 1px solid color-mix(in oklab, var(--grape) 25%, transparent);
   color: var(--ink-soft);
   font-family: var(--hand-ja); font-size: 12px;
-  border-radius: 999px;
+  border-radius: 0;
   cursor: pointer;
   transition: background .15s, color .15s;
 }
@@ -6668,7 +6731,7 @@ label .req {
   display: flex; flex-direction: column; gap: 8px;
   padding: 16px 18px;
   background: color-mix(in oklab, var(--grape) 7%, var(--paper));
-  border-radius: 14px;
+  border-radius: 0;
 }
 .wm-points-cards .wm-point-n {
   align-self: flex-start;
@@ -6702,7 +6765,7 @@ label .req {
   display: grid; grid-template-columns: 84px 1fr; gap: 0;
   background: var(--paper);
   border: 1.5px dashed color-mix(in oklab, var(--grape) 35%, transparent);
-  border-radius: 14px;
+  border-radius: 0;
   overflow: hidden;
 }
 .wm-points-ticket .wm-point-tic-l {
@@ -6743,7 +6806,7 @@ label .req {
   padding: 14px 18px;
   background: #fff;
   border: 2px solid var(--ink);
-  border-radius: 14px;
+  border-radius: 0;
   box-shadow: 4px 4px 0 var(--ink);
 }
 .wm-points-comic .wm-point-bubble::after {
@@ -6793,7 +6856,7 @@ label .req {
   padding: 8px 14px;
   background: #fff;
   border: 1px solid color-mix(in oklab, var(--grape) 22%, transparent);
-  border-radius: 999px;
+  border-radius: 0;
 }
 .wm-step::before { content: none; }
 .wm-step::after  { content: none; }
@@ -6828,7 +6891,7 @@ label .req {
   color: var(--grape);
   font-family: var(--hand-ja);
   font-size: 12px;
-  border-radius: 999px;
+  border-radius: 0;
   letter-spacing: .04em;
 }
 .wm-tool::before { content: none; }
@@ -6887,7 +6950,7 @@ label .req {
   background: #fff;
   color: var(--ink);
   padding: 10px 14px;
-  border-radius: 14px;
+  border-radius: 0;
   box-shadow: 0 14px 30px -10px rgba(0,0,0,.25);
   font-size: 13px;
   z-index: 3;
@@ -6916,7 +6979,7 @@ label .req {
 .wm-hint {
   position: absolute; left: 50%; bottom: 12px;
   transform: translateX(-50%);
-  padding: 5px 14px; border-radius: 999px;
+  padding: 5px 14px; border-radius: 0;
   background: rgba(42, 32, 48, .55);
   color: #fff;
   font-family: var(--script); font-size: 13px;
@@ -7140,7 +7203,7 @@ label .req {
 }
 
 /* Page chrome z-indexes (don't override .fab's fixed positioning) */
-.site-head { position: relative; z-index: 50; }
+.site-head { position: sticky; top: 0; z-index: 50; }
 main.wrap, .site-foot { position: relative; z-index: 1; }
 .fab, .fab-works, .tweaks-panel, .tweaks-toggle { z-index: 60; }
 
@@ -7157,7 +7220,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   position: relative;
   padding: 26px 26px 24px;
   background: #fff;
-  border-radius: 18px 22px 18px 20px / 20px 18px 22px 18px;
+  border-radius: 0;
   box-shadow: 0 14px 30px -18px rgba(0,0,0,.16);
   display: flex; flex-direction: column; gap: 14px;
 }
@@ -7232,7 +7295,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
 .blog-plan {
   position: relative; padding: 30px 28px 28px;
   background: #fff;
-  border-radius: 22px 26px 22px 24px / 22px 22px 26px 22px;
+  border-radius: 0;
   box-shadow: 0 14px 30px -18px rgba(0,0,0,.16);
   display: flex; flex-direction: column; gap: 18px;
 }
@@ -7271,11 +7334,26 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
 @media (prefers-reduced-motion: reduce) {
   .blog-plan-best, .blog-plan-best .btn.berry::after { animation: none; }
 }
+/* ブログ・運用代行：一括払いキャンペーン（手書きメモ＋マーカー） */
+.blog-promo {
+  margin: 22px auto 60px;
+  text-align: center;
+  color: var(--ink);
+  font-size: 16px;
+  letter-spacing: .04em;
+}
+.blog-promo .sl { color: var(--berry); font-size: 18px; margin: 0 6px; }
+.blog-promo b {
+  color: var(--berry);
+  font-size: 1.3em;
+  padding: 0 4px;
+  background: linear-gradient(transparent 62%, color-mix(in oklab, var(--berry) 25%, transparent) 62%);
+}
 .blog-plan-ribbon {
   position: absolute; top: -14px; left: 50%;
   padding: 6px 14px; background: var(--berry); color: #fff;
   font-family: var(--script); font-size: 13px;
-  letter-spacing: .1em; font-weight: 700; border-radius: 999px;
+  letter-spacing: .1em; font-weight: 700; border-radius: 0;
   box-shadow: 0 6px 14px -4px color-mix(in oklab, var(--berry) 60%, transparent);
   white-space: nowrap;
   animation: tagWobble 4s ease-in-out infinite;
@@ -7355,7 +7433,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   align-items: center;
   gap: 6px;
   padding: 6px 16px;
-  border-radius: 999px;
+  border-radius: 0;
   border: 1.5px solid color-mix(in oklab, var(--ink) 14%, transparent);
   background: transparent;
   font-family: var(--hand-ja);
@@ -7391,7 +7469,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
 }
 
 .cg-card {
-  border-radius: 12px 14px 12px 14px / 10px 12px 14px 12px;
+  border-radius: 0;
   overflow: hidden;
   background: var(--paper-2);
   cursor: pointer;
@@ -7467,7 +7545,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   z-index: 1;
   width: min(820px, 95vw);
   background: var(--paper);
-  border-radius: 20px 24px 20px 24px / 18px 20px 24px 20px;
+  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 24px 64px rgba(42,32,48,.22);
   transform: translateY(20px) scale(.97);
@@ -7551,7 +7629,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
 .color-modal-card::-webkit-scrollbar { width: 4px; }
 .color-modal-card::-webkit-scrollbar-thumb {
   background: color-mix(in oklab, var(--ink) 18%, transparent);
-  border-radius: 4px;
+  border-radius: 0;
 }
 
 /* tab switcher */
@@ -7565,7 +7643,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
 }
 .cm-ex-tab {
   padding: 6px 18px;
-  border-radius: 999px;
+  border-radius: 0;
   border: 1.5px solid color-mix(in oklab, var(--ink) 14%, transparent);
   background: transparent;
   font-family: var(--hand-ja);
@@ -7589,17 +7667,17 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
 
 /* shared mock base */
 .cex {
-  border-radius: 10px;
+  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(42,32,48,.14);
 }
 .cex-bar {
-  border-radius: 4px;
+  border-radius: 0;
   margin-bottom: 8px;
   flex-shrink: 0;
 }
 .cex-bar:last-child { margin-bottom: 0; }
-.cex-btn { border-radius: 999px; margin-top: 6px; }
+.cex-btn { border-radius: 0; margin-top: 6px; }
 
 /* banner mock — 4:1, full width */
 .cex-banner {
@@ -7702,7 +7780,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   height: 80px;
   flex-shrink: 0;
   background: var(--mc, var(--grape));
-  border-radius: 10px;
+  border-radius: 0;
 }
 
 /* 右側テキスト */
@@ -7723,7 +7801,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   color: var(--mc, var(--grape));
   background: color-mix(in oklab, var(--mc, var(--grape)) 10%, transparent);
   padding: 2px 8px;
-  border-radius: 999px;
+  border-radius: 0;
   letter-spacing: .03em;
 }
 .cg-mrow-desc {
@@ -7773,6 +7851,9 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
 
   /* ----- Header / Nav ----- */
   .nav-toggle { display: flex; }
+  /* SPはヘッダーを低めに（76px → 約60px） */
+  .berry-icon-wrap { width: 42px; height: 48px; }
+  .brand .name .en { font-size: 20px; }
 
   .nav {
     display: none;
@@ -7790,26 +7871,60 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   }
   .site-head[data-nav-open="true"] .nav { display: flex; }
   .nav a { font-size: 18px; padding: 14px 24px; border-radius: 0; white-space: nowrap; justify-content: center; }
+  html[lang="ja"] .nav .nav-en { font-size: 15px; }
   .nav a::before, .nav a::after { display: none; }
 
   /* ----- Hero ----- */
   .hero { padding: 24px 16px 48px; }
+  /* 下のフェードを余白部分だけにして、目次の文字が薄くならないように */
+  .hero {
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 calc(100% - 48px), rgba(0,0,0,0) 100%);
+            mask-image: linear-gradient(to bottom, #000 0%, #000 calc(100% - 48px), rgba(0,0,0,0) 100%);
+  }
 
   .hero-mag .hero-split {
     grid-template-columns: 1fr;
     gap: 0;
   }
-  .hero-mag .hero-right { display: none; }
+  /* SPはCTAボタンを外し、その位置に手といちごのステージを表示 */
+  .hero-mag .hero-left .cta-row { display: none; }
+  .hero-mag .service-chips .chip-break { display: none; }
+  .hero-mag .masthead { align-items: center; }
+  .hero-mag .hero-en,
+  .hero-mag .hero-jp { text-align: center; }
+  .hero-mag .hero-lede { text-align: center; margin-left: auto; margin-right: auto; }
+  br.sp-only { display: inline; }
+  /* お部屋ページ：合格証書の画像と注記を中央に */
+  .cert-link { display: table; margin-left: auto; margin-right: auto; }
+  .cert-caption { text-align: center; }
+  /* お部屋ページ：おすすめ作品は2列 */
+  .media-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 12px; }
+  .media-poster-emoji { font-size: 44px; }
+  .profile-snip .lines { text-align: center; }
+  .hero-mag .hero-left .service-chips { margin-left: auto; justify-content: center; }
+  .hero-mag .hero-right { min-height: 0; margin-top: 8px; }
+  .hero-mag .big-berry-stage { height: 260px; }
+  .hero-mag .big-berry { left: 50%; top: 66%; width: 130px; height: 130px; }
+  .hero-mag .mini-berry.mini-1 { top: 42%; }
+  .hero-mag .mini-berry.mini-3 { left: 14%; bottom: 6%; }
+  .hero-mag .reach-hand {
+    top: 40px; right: 0;
+    width: 190px; height: auto;
+  }
 
   .hero-mag .hero-en { font-size: clamp(44px, 12vw, 64px); }
   .hero-mag .hero-jp { font-size: clamp(18px, 5vw, 24px); margin-top: 10px; }
   .hero-mag .hero-lede { font-size: 13px; }
 
+  /* 6列グリッドで各項目2列分。下段の2つは中央に寄せる */
   .hero-mag .toc-strip {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 8px;
     padding: 14px 4px 0;
   }
+  .hero-mag .toc-item { grid-column: span 2; }
+  .hero-mag .toc-item:nth-child(4) { grid-column: 2 / span 2; }
+  .hero-mag .toc-item .page-ttl { font-size: 12px; }
 
   /* ----- Profile snip ----- */
   .profile-snip {
@@ -7820,6 +7935,14 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
     animation: none;
   }
   .profile-snip h3 { font-size: 16px; }
+
+  /* ----- 実績カード：カテゴリの下に年 ----- */
+  .work-card .meta { flex-direction: column; align-items: flex-start; gap: 2px; }
+  /* 区切りの点線をカードの間の真ん中に（列の間14px・行の間14px+下余白20px） */
+  .work-card::before { right: -7px; }
+  .work-card:nth-child(3n)::before { display: block; }
+  .work-card:nth-child(2n)::before { display: none; }
+  .work-card::after { bottom: -17px; }
 
   /* ----- Works: スマホ最適化 -----*/
   .works-layout { grid-template-columns: 1fr; gap: 20px; }
@@ -7837,7 +7960,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   #cat-list { display: flex; flex-direction: row; flex-wrap: wrap; gap: 4px; }
   .filter-side .opt {
     font-size: 11px; padding: 3px 8px; white-space: nowrap;
-    border-bottom: none; border-radius: 99px;
+    border-bottom: none; border-radius: 0;
     background: color-mix(in oklab, var(--ink) 5%, transparent);
   }
   .filter-side .opt.on { background: color-mix(in oklab, var(--berry) 15%, transparent); }
@@ -7849,11 +7972,16 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   .thumb-row { grid-template-columns: repeat(2, 1fr); gap: 8px; }
   .thumb-row .t .cap { font-size: 10px; }
 
-  .featured-work { padding: 10px; }
+  .featured-work { --lh: 28px; padding: 24px 14px 18px 46px; }
+  .featured-work::before { left: 10px; top: 20px; bottom: 20px; width: 12px; background-size: 12px 46px; }
+  .featured-work { background-image:
+    linear-gradient(90deg, transparent 34px, color-mix(in oklab, var(--berry) 22%, transparent) 34px 35.5px, transparent 35.5px),
+    repeating-linear-gradient(transparent 0 calc(var(--lh) - 1px), color-mix(in oklab, var(--grape) 13%, transparent) calc(var(--lh) - 1px) var(--lh)); }
+  .featured-work .imgph { border-width: 5px; }
   .featured-work .ftitle h3 { font-size: 17px; }
   .featured-work .ftitle { gap: 8px; margin-top: 10px; }
   .featured-work .desc { max-width: 100%; font-size: 13px; }
-  .click-badge { font-size: 14px; padding: 5px 14px; top: 10px; left: 10px; }
+  .click-badge { font-size: 14px; padding: 5px 14px; top: 12px; left: 30px; }
 
   /* ----- FAQ: スマホ最適化 ----- */
   /* コルクボード：付箋を1列縦積みに */
@@ -7935,6 +8063,30 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   }
   .tab-pills::-webkit-scrollbar { display: none; }
   .tab-pills button { white-space: nowrap; flex-shrink: 0; }
+  /* SPは選ばれていないボタンにも薄い色をつけて、押せるのが分かるように */
+  .tab-pills button:not(.on) { background: var(--grape-pale); }
+
+  /* ----- 実績ポップアップ：SPは上下1列にして、全体をスクロール ----- */
+  .featured-work { scroll-margin-top: 76px; }
+  .work-modal-card.wm-big { overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  .wm-big .wm-grid { grid-template-columns: 1fr; height: auto; }
+  .wm-big .wm-left { overflow: visible; border-right: none; }
+  .wm-big .wm-left-deco { display: none; }
+  .wm-big .wm-right { overflow: visible; padding: 22px 18px 24px 52px; --lh: 30px;
+    background-image:
+      linear-gradient(90deg, transparent 36px, color-mix(in oklab, var(--berry) 22%, transparent) 36px 37.5px, transparent 37.5px),
+      repeating-linear-gradient(transparent 0 calc(var(--lh) - 1px), color-mix(in oklab, var(--grape) 11%, transparent) calc(var(--lh) - 1px) var(--lh)),
+      radial-gradient(circle, color-mix(in oklab, var(--grape) 10%, var(--paper)) 0 5px, transparent 5.5px);
+    background-size: auto, auto, 12px 48px; background-position: 0 0, 0 0, 11px 24px; }
+  /* 制作の流れ：中央に細い箱が並んで空白が目立つので、2列で幅いっぱいに */
+  .wm-process-clean { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .wm-process-clean .wm-step { width: auto; margin: 0; padding: 10px 12px; justify-content: flex-start; }
+  .wm-process-clean .wm-step + .wm-step::before { content: none; }
+  .wm-process-clean .wm-step-l { font-size: 13px; }
+  /* こだわりポイント：SPは縦に1つずつ */
+  .wm-points-postit { grid-template-columns: 1fr; gap: 16px; }
+  /* 詳細の文章：日本語を文節の切れ目で折り返し、最後の行に1〜2文字だけ残らないように */
+  .wm-big .wm-right { word-break: auto-phrase; text-wrap: pretty; }
 
   .works-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -7991,6 +8143,8 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   .optv-wrap { padding: 20px 18px 18px; }
   .opt-plan-l { font-size: 13px; }
   .opt-plan-r { font-size: 15px; }
+  .opt-plan-r { text-align: right; }
+  .opt-plan-r small { display: block; margin: 2px 0 0; }
 
   /* ブログプラン: 3列→1列、ベストカードのfloat解除 */
   .blog-row { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
@@ -8051,7 +8205,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   .type-result { padding: 18px 14px; }
 
   /* 診断結果パネル */
-  .type-result-meta { flex-direction: column; gap: 4px; padding: 10px 14px; border-radius: 14px; }
+  .type-result-meta { flex-direction: column; gap: 4px; padding: 10px 14px; border-radius: 0; }
 
   /* 制作の流れ */
   .flowv-ribbon .flv-step { grid-template-columns: 72px 1fr; gap: 4px; }
@@ -8092,7 +8246,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   width: min(220px, calc(100vw - 40px));
   background: #fff;
   border: 1.5px solid color-mix(in oklab, var(--grape) 20%, transparent);
-  border-radius: 12px;
+  border-radius: 0;
   padding: 10px 14px;
   font-size: 12px;
   line-height: 1.7;
@@ -8142,7 +8296,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
 }
 .blog-gloss-acc {
   border: 1.5px solid rgba(180, 100, 130, 0.2);
-  border-radius: 16px;
+  border-radius: 0;
   overflow: hidden;
   background: #fff;
 }
@@ -8180,7 +8334,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   align-items: flex-start;
   gap: 12px;
   background: #faf7fc;
-  border-radius: 12px;
+  border-radius: 0;
   padding: 16px;
 }
 .blog-gloss-icon {
@@ -8223,7 +8377,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   max-width: 680px;
   margin: 24px auto 0;
   background: #f3eef8;
-  border-radius: 99px;
+  border-radius: 0;
   height: 10px;
   position: relative;
   overflow: hidden;
@@ -8231,7 +8385,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
 .pre-progress-bar {
   height: 100%;
   background: linear-gradient(90deg, var(--berry), var(--grape));
-  border-radius: 99px;
+  border-radius: 0;
   transition: width 0.4s ease;
 }
 .pre-progress-label {
@@ -8258,7 +8412,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   font-weight: 700;
   color: var(--berry);
   background: rgba(208,74,108,0.08);
-  border-radius: 99px;
+  border-radius: 0;
   padding: 2px 10px;
   letter-spacing: .05em;
 }
@@ -8270,7 +8424,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   font-size: 11px;
   color: var(--muted, #999);
   background: #f5f5f5;
-  border-radius: 99px;
+  border-radius: 0;
   padding: 2px 10px;
 }
 .ph-check-row,
@@ -8286,7 +8440,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   display: inline-block;
   padding: 7px 16px;
   border: 1.5px solid rgba(180,100,130,0.25);
-  border-radius: 99px;
+  border-radius: 0;
   font-size: 13px;
   transition: background .15s, border-color .15s, color .15s;
   user-select: none;
@@ -8305,13 +8459,14 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   max-width: 360px;
   padding: 10px 14px;
   border: 1.5px solid rgba(180,100,130,0.25);
-  border-radius: 10px;
+  border-radius: 0;
   font-size: 14px;
   background: #fff;
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23d04a6c' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 14px center;
+  background-position: right 16px center;
+  padding-right: 42px;
   cursor: pointer;
 }
 .ph-select:focus {
@@ -8323,7 +8478,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   min-height: 100px;
   padding: 12px 14px;
   border: 1.5px solid rgba(180,100,130,0.25);
-  border-radius: 10px;
+  border-radius: 0;
   font-size: 14px;
   resize: vertical;
   font-family: inherit;
@@ -8374,7 +8529,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   font-weight: 700;
   color: var(--berry);
   background: rgba(208,74,108,0.08);
-  border-radius: 99px;
+  border-radius: 0;
   padding: 3px 12px;
   letter-spacing: .06em;
   white-space: nowrap;
@@ -8416,7 +8571,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   gap: 10px;
   background: rgba(208,74,108,0.07);
   border: 1.5px solid rgba(208,74,108,0.2);
-  border-radius: 12px;
+  border-radius: 0;
   padding: 12px 18px;
   margin-bottom: 28px;
   font-size: 13px;
@@ -8433,9 +8588,17 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   z-index: 40;
   background: #fefcf8;
   border: 1.5px solid rgba(180,100,130,0.18);
-  border-radius: 16px 16px 0 0;
-  padding: 14px 24px 12px;
+  border-top: none;
+  border-radius: 0;
+  padding: 30px 24px 12px;
   margin-bottom: -1px;
+  /* 上の辺をリングノートから切り取ったように */
+  -webkit-mask:
+    var(--torn-top) left top / 30px 28px round no-repeat,
+    linear-gradient(#000, #000) left 28px / 100% calc(100% - 28px) no-repeat;
+          mask:
+    var(--torn-top) left top / 30px 28px round no-repeat,
+    linear-gradient(#000, #000) left 28px / 100% calc(100% - 28px) no-repeat;
 }
 .cf-sticky-steps {
   display: flex;
@@ -8470,13 +8633,13 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
 .cf-sticky-track {
   height: 6px;
   background: #f3eef8;
-  border-radius: 99px;
+  border-radius: 0;
   overflow: hidden;
 }
 .cf-sticky-fill {
   height: 100%;
   background: linear-gradient(90deg, var(--berry), var(--grape));
-  border-radius: 99px;
+  border-radius: 0;
   transition: width .4s ease;
 }
 
@@ -8494,12 +8657,12 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   background-position: 0 0, 0 12px;
   border: 1.5px solid rgba(180,100,130,0.18);
   border-top: none;
-  border-radius: 0 0 20px 20px;
+  border-radius: 0;
   padding: 0 32px 8px 52px;
 }
 
 @media (max-width: 600px) {
-  .cf-sticky-bar { padding: 12px 14px 10px; top: 60px; }
+  .cf-sticky-bar { padding: 28px 14px 10px; top: 60px; }
   .cf-ss small { display: none; }
   .cf-ss { font-size: 11px; }
   .contact-long { padding: 0 16px 8px 44px; }
@@ -8511,7 +8674,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   padding: 16px 18px;
   background: rgba(208,74,108,0.05);
   border: 1.5px dashed rgba(208,74,108,0.3);
-  border-radius: 14px;
+  border-radius: 0;
 }
 .type-result-set-head {
   display: flex;
@@ -8540,7 +8703,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   font-size: 13px;
   font-weight: 700;
   padding: 6px 16px;
-  border-radius: 99px;
+  border-radius: 0;
   letter-spacing: .03em;
 }
 
@@ -8561,7 +8724,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
 
 .coupon-modal {
   background: #fff;
-  border-radius: 24px;
+  border-radius: 0;
   padding: 40px 32px;
   max-width: 420px;
   width: 90%;
@@ -8579,7 +8742,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
 .coupon-code-wrap {
   background: #faf7fc;
   border: 2px dashed rgba(208,74,108,0.3);
-  border-radius: 16px;
+  border-radius: 0;
   padding: 20px;
   margin-bottom: 24px;
 }
@@ -8604,7 +8767,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   z-index: 8888;
   background: var(--berry);
   color: #fff;
-  border-radius: 40px;
+  border-radius: 0;
   padding: 10px 18px;
   display: flex;
   flex-direction: column;
@@ -8641,7 +8804,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
 }
 .type-set-banner-inner {
   position: relative;
-  border-radius: 16px;
+  border-radius: 0;
   overflow: visible;
   border: 0.5px solid #f0c0cc;
   width: 100%;
@@ -8650,7 +8813,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   background: #d04a6c;
   padding: 12px 48px 12px 16px;
   text-align: center;
-  border-radius: 16px 16px 0 0;
+  border-radius: 0;
 }
 .type-set-banner-ttl {
   font-size: 14px;
@@ -8673,7 +8836,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   justify-content: center;
   flex-wrap: wrap;
   gap: 8px 16px;
-  border-radius: 0 0 16px 16px;
+  border-radius: 0;
 }
 .type-set-banner-col {
   display: flex;
@@ -8870,3 +9033,153 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   .lang-switch--mobile { display: inline-flex !important; }
   .lang-icon { font-size: 14px; }
 }
+
+/* ===== お問い合わせ：プライバシーポリシーのポップアップ ===== */
+.pp-open {
+  background: none; border: none; padding: 0; margin: 0;
+  font: inherit; color: var(--grape);
+  text-decoration: underline; text-underline-offset: 3px;
+  cursor: pointer;
+}
+.pp-open:hover { color: var(--berry); }
+.pp-modal {
+  width: min(640px, calc(100vw - 32px));
+  max-height: min(80vh, 720px);
+  padding: 0; border: none;
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 30px 80px -20px color-mix(in oklab, var(--grape) 35%, rgba(0,0,0,.3));
+}
+.pp-modal::backdrop { background: rgba(42, 32, 48, .55); backdrop-filter: blur(4px); }
+.pp-modal-inner {
+  position: relative;
+  max-height: inherit;
+  overflow-y: auto;
+  padding: 36px 32px 28px;
+  font-size: 14px; line-height: 1.9;
+}
+.pp-modal h2 { font-size: 22px; margin: 0 0 14px; color: var(--grape); font-weight: 500; }
+.pp-modal h3 {
+  font-size: 15px; margin: 24px 0 6px; padding-left: 10px;
+  border-left: 3px solid var(--berry); font-weight: 500;
+}
+.pp-modal p { margin: 0 0 8px; }
+.pp-modal ul { margin: 0 0 8px; padding-left: 1.4em; }
+.pp-modal .pp-owner { margin-top: 18px; text-align: right; color: var(--ink-soft); }
+.pp-close {
+  position: sticky; top: 0; float: right;
+  width: 36px; height: 36px; margin: -16px -12px 0 0;
+  border: none; border-radius: 50%;
+  background: var(--grape-pale); color: var(--ink);
+  font-size: 20px; line-height: 1; cursor: pointer;
+}
+.pp-actions { text-align: center; margin-top: 24px; }
+@media (max-width: 720px) {
+  .pp-modal-inner { padding: 28px 20px 22px; font-size: 13px; }
+  .pp-modal h2 { font-size: 19px; }
+}
+
+/* ===== トップ：制作への想い（ルーズリーフを1枚ずつめくる） ===== */
+.message-sec { max-width: 760px; margin: 80px auto 40px; }
+.message-sec .sect-title-centered { margin-bottom: 30px; }
+.message-sec .message-ttl { font-size: clamp(22px, 3.2vw, 32px); line-height: 1.6; font-weight: 500; }
+.leaf-book { --lh: 34px; }
+/* 全ページを同じマスに重ねる → 高さはいちばん長いページに合わせて自動 */
+.leaf-stack { display: grid; padding: 0 14px 14px 0; }
+.leaf {
+  grid-area: 1 / 1;
+  position: relative;
+  padding: 44px 44px 40px 78px;
+  border-radius: 0;
+  background-color: #fffdf8;
+  background-image:
+    linear-gradient(90deg, transparent 50px, color-mix(in oklab, var(--berry) 22%, transparent) 50px 51.5px, transparent 51.5px),
+    repeating-linear-gradient(transparent 0 calc(var(--lh) - 1px), color-mix(in oklab, var(--grape) 13%, transparent) calc(var(--lh) - 1px) var(--lh));
+  box-shadow: 0 16px 34px -22px rgba(0,0,0,.3);
+  font-size: 15px; line-height: var(--lh); color: var(--ink);
+  word-break: auto-phrase; text-wrap: pretty;
+  transition: transform .5s cubic-bezier(.2,.8,.2,1), opacity .45s;
+}
+/* ルーズリーフの穴 */
+.leaf::before {
+  content: ""; position: absolute; left: 18px; top: 28px; bottom: 28px; width: 14px;
+  background: radial-gradient(circle, var(--paper) 0 6px, transparent 6.5px) 0 0 / 14px 56px repeat-y;
+}
+.leaf h3 { font-size: 19px; font-weight: 500; color: var(--grape); line-height: var(--lh); margin: 0 0 var(--lh); }
+.leaf p { margin: 0; }
+.leaf p + p { margin-top: var(--lh); }
+.leaf .leaf-last { color: var(--grape); font-size: 16px; }
+.leaf .leaf-sign { text-align: right; font-family: var(--script); color: var(--berry); font-size: 24px; }
+.leaf.is-cur  { z-index: 3; }
+.leaf.is-next { z-index: 2; transform: translate(12px, 12px) rotate(1.4deg); }
+.leaf.is-hide { z-index: 1; transform: translate(12px, 12px) rotate(1.4deg); opacity: 0; }
+.leaf.is-gone { z-index: 4; transform: translateX(-110%) rotate(-8deg); opacity: 0; pointer-events: none; }
+.leaf-ctl { display: flex; justify-content: center; align-items: center; gap: 18px; margin-top: 28px; }
+.leaf-ctl button {
+  width: 46px; height: 46px; border-radius: 50%; border: none; cursor: pointer;
+  background: var(--grape-pale); color: var(--grape); font-size: 22px; line-height: 1;
+  transition: background .2s, opacity .2s;
+}
+.leaf-ctl button:hover:not(:disabled) { background: color-mix(in oklab, var(--grape) 20%, #fff); }
+.leaf-ctl button:disabled { opacity: .35; cursor: default; }
+.leaf-count { font-family: var(--script); font-size: 19px; color: var(--ink-soft); min-width: 54px; text-align: center; }
+@media (max-width: 720px) {
+  .message-sec { margin: 56px auto 24px; }
+  .leaf-book { --lh: 30px; }
+  .leaf { padding: 34px 20px 30px 54px; font-size: 14px; }
+  .leaf { background-image:
+    linear-gradient(90deg, transparent 40px, color-mix(in oklab, var(--berry) 22%, transparent) 40px 41.5px, transparent 41.5px),
+    repeating-linear-gradient(transparent 0 calc(var(--lh) - 1px), color-mix(in oklab, var(--grape) 13%, transparent) calc(var(--lh) - 1px) var(--lh)); }
+  .leaf::before { left: 12px; }
+  .leaf h3 { font-size: 17px; }
+}
+
+/* ===== トップ：プロフィール（小さめポラロイド＋テープ1枚） ===== */
+.profile-pol {
+  display: grid; grid-template-columns: 170px auto; gap: 44px; align-items: center;
+  /* 中身の幅に合わせて縮め、ページの中央に置く */
+  width: fit-content; max-width: 100%; margin: 40px auto 56px;
+}
+.pol-photo {
+  position: relative;
+  background: #fff; padding: 10px 10px 38px;
+  box-shadow: 0 14px 26px -16px rgba(0,0,0,.35);
+  transform: rotate(-4deg);
+}
+/* マスキングテープ（上に1枚） */
+.pol-photo::before {
+  content: ""; position: absolute; z-index: 1;
+  top: -9px; left: 50%; width: 70px; height: 18px;
+  transform: translateX(-50%) rotate(-4deg);
+  background: color-mix(in oklab, var(--grape-soft) 55%, transparent);
+}
+.pol-img { aspect-ratio: 1; background-size: cover; background-position: center; }
+.pol-cap {
+  position: absolute; left: 0; right: 0; bottom: 8px;
+  text-align: center; font-family: var(--script); font-size: 17px; color: var(--ink);
+}
+.pol-role { display: block; font-family: var(--script); color: var(--grape); font-size: 18px; }
+.pol-name { font-size: 20px; font-weight: 500; letter-spacing: .04em; margin: 2px 0 0; }
+.pol-lines { font-size: 15px; line-height: 1.9; color: var(--ink); margin: 12px 0 20px; }
+@media (max-width: 720px) {
+  .profile-pol { grid-template-columns: 1fr; gap: 28px; text-align: center; width: auto; margin: 32px auto 40px; }
+  .pol-photo { width: 160px; margin: 0 auto; }
+  .pol-name { font-size: 18px; }
+  .pol-lines { font-size: 14px; }
+}
+
+/* ===== 重ねて置くバッジ・吹き出しだけは角丸のまま（サイト全体は角丸なし） ===== */
+.click-badge,
+.plan-ribbon,
+.plan .ribbon,
+.blog-plan-ribbon,
+.hero-mag .cover-sticker,
+.reg-tile .reg-cap,
+.media-poster-tag,
+.scrap-note-peek,
+.wm-ba-tag,
+.wm-hint { border-radius: 999px; }
+.coupon-float { border-radius: 40px; }
+.wm-tip { border-radius: 14px; }
+.bp-tip { border-radius: 12px; }

@@ -69,8 +69,8 @@
   .opt-stack-row { grid-template-columns: 1fr; }
   .opt-grid { grid-template-columns: 1fr; gap: 4px; }
   .opt-grid-head { display: none; }
-  .opt-grid-name { border-radius: 14px 14px 4px 4px; }
-  .opt-grid-row > .opt-grid-cell:last-child { border-radius: 4px 4px 14px 14px; }
+  .opt-grid-name { border-radius: 0; }
+  .opt-grid-row > .opt-grid-cell:last-child { border-radius: 0; }
   .opt-badge { grid-template-columns: 1fr; }
 }
 
