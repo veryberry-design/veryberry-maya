@@ -6,9 +6,6 @@ $pageTitle = "VeryBerry — 料金・メニュー";
 $currentPage = "menu";
 include "header.php";
 ?>
-<!-- Falling strawberry decoration -->
-<div class="berry-rain" id="berry-rain" aria-hidden="true">
-</div>
 <!-- Static soft soap bubbles floating in the background -->
 <div class="bubbles-bg static-bubbles" id="static-bubbles" aria-hidden="true">
 </div>
@@ -31,7 +28,9 @@ include "header.php";
     <a href="#blog-update">ブログ運用 </a>
     <a href="#options">オプション料金 </a>
     <a href="#other-menu">そのほか </a>
+    <!-- ご利用条件は非表示中
     <a href="#notes">ご利用条件 </a>
+    -->
     <a href="#type">タイプ別診断 </a>
     <a href="#flow">制作の流れ </a>
     <a href="#quiz">Webクイズ </a>
@@ -45,7 +44,7 @@ include "header.php";
       <span class="scrib">Webサイト制作プラン </span>
     </h2>
     <p class="muted sm" style="max-width:480px; margin: 30px auto 0;">
-      Webサイトの基本プランです。お好みのプランをお選びください。
+      Webサイトの基本プランです。<br class="sp-only">お好みのプランをお選びください。
     </p>
   </div>
   <section class="plan-row plan-row-v2" style="margin-top: 56px;">
@@ -223,10 +222,11 @@ include "header.php";
     <h2>
       <span class="scrib">ブログ・運用代行 </span>
     </h2>
-    <p class="muted sm" style="max-width:520px; margin: 30px auto 60px;">
+    <p class="muted sm" style="max-width:520px; margin: 30px auto 0;">
       サイトを「作って終わり」にしないために。 <br/>
       ブログの定期更新やSNS連携、お知らせの差し替えなどを月額でサポートします。
     </p>
+    <p class="blog-promo"><span class="sl">＼</span>一括払いで<b>1ヶ月分無料</b>！<span class="sl">／</span></p>
   </div>
   <section class="blog-row" style="margin-top: 36px;">
     <div class="blog-plan">
@@ -324,8 +324,8 @@ include "header.php";
       <span class="scrib">そのほかのメニュー </span>
     </h2>
     <p class="muted sm" style="max-width:520px; margin: 30px auto 0;">
-      バナー、動画、チラシ、ロゴ、イラストなどの単発のご依頼も承っています。 <br/>
-      数量や内容によって変動するので、お見積もりにてご相談ください。
+      バナー、動画、チラシ、ロゴ、イラストなどの<br class="sp-only">単発のご依頼も承っています。 <br/>
+      数量や内容によって変動するので、<br class="sp-only">お見積もりにてご相談ください。
     </p>
   </div>
   <section class="other-grid" style="margin-top: 36px;">
@@ -394,14 +394,11 @@ include "header.php";
         <li>
           InstagramやLINE運用素材、メニューに無いものご相談ください
         </li>
-        <li>
-          まずはお気軽にご相談ください
-        </li>
       </ul>
       <a class="btn berry" href="/contact/">このメニューで相談 → </a>
     </article>
   </section>
-  <!-- Notes -->
+  <!-- Notes（ご利用条件）は非表示中。表示するときはこのコメントを外す
   <div class="sect-title sect-title-centered" style="margin-top: 100px;">
     <div class="en kicker-en">— terms & conditions —</div>
     <h2><span class="scrib">ご利用条件</span></h2>
@@ -429,6 +426,7 @@ include "header.php";
       </ol>
     </div>
   </div>
+  -->
   <!-- TYPE-BASED RECOMMENDATION -->
   <div id="type" class="sect-title sect-title-centered" style="margin-top: 100px;">
     <div class="en kicker-en">
@@ -591,7 +589,7 @@ include "header.php";
           制作
         </div>
         <p>
-          デザイン → コーディングの順で進めます。 <br>進捗を共有しながら一緒につくりあげます。
+          進捗を共有しながら一緒につくりあげます。
         </p>
       </div>
     </div>
@@ -690,7 +688,7 @@ include "header.php";
     <div class="coupon-code-wrap">
       <span class="coupon-code-label">クーポンコード</span>
       <div class="coupon-code">ONIGIRI</div>
-      <p class="coupon-code-desc">お問い合わせフォームの<br>「クーポンコード」欄に入力すると<br><strong>¥500 OFF</strong> になります！</p>
+      <p class="coupon-code-desc">お問い合わせフォームの<br>「クーポンコード」欄に入力すると<br><strong>¥1,000 OFF</strong> になります！</p>
       <p class="coupon-code-note">※ 1回限り有効 ／ 初回ご依頼時のみ適用</p>
     </div>
     <div class="coupon-modal-btns">
@@ -1336,29 +1334,6 @@ sw.querySelectorAll('.opt-ptab').forEach(x => x.classList.toggle('on', x === b))
 const p = b.dataset.plan;
 allViews.forEach(v => v.hidden = v.dataset.plan !== p);
 });
-})();
-
-(function () {
-const layer = document.getElementById('berry-rain');
-if (!layer) return;
-const BERRY_IMGS = (window.BB && window.BB.BERRY_IMGS) || [];
-function spawnBerry() {
-const b = document.createElement('img');
-b.src = BERRY_IMGS.length ? BERRY_IMGS[Math.floor(Math.random() * BERRY_IMGS.length)] :'<?php echo MAYA_URI; ?>/img/5.png';
-b.alt =''; b.className ='rain-berry';
-const size = 28 + Math.random() * 44;
-b.style.left = `${Math.random() * 100}%`;
-b.style.width = `${size}px`;
-b.style.animationDuration = `${8 + Math.random() * 6}s`;
-b.style.animationDelay = `${Math.random() * 1.4}s`;
-b.style.setProperty('--drift', `${(Math.random() - 0.5) * 80}px`);
-b.style.setProperty('--rotEnd', `${(Math.random() - 0.5) * 720}deg`);
-layer.appendChild(b);
-b.addEventListener('animationend', () => b.remove(), { once: true });
-}
-for (let i = 0; i
-        < 3; i++) setTimeout(spawnBerry, i * 900);
-setInterval(spawnBerry, 3000);
 })();
 
 (function () {

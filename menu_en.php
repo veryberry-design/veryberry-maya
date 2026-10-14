@@ -6,9 +6,6 @@ $pageTitle = "VeryBerry — Pricing & Menu";
 $currentPage = "menu";
 include "header_en.php";
 ?>
-<!-- Falling strawberry decoration -->
-<div class="berry-rain" id="berry-rain" aria-hidden="true">
-</div>
 <!-- Static soft soap bubbles floating in the background -->
 <div class="bubbles-bg static-bubbles" id="static-bubbles" aria-hidden="true">
 </div>
@@ -31,7 +28,9 @@ include "header_en.php";
     <a href="#blog-update">Blog Management </a>
     <a href="#options">Optional Add-ons </a>
     <a href="#other-menu">Other Services </a>
+    <!-- ご利用条件は非表示中
     <a href="#notes">Terms &amp; Conditions </a>
+    -->
     <a href="#type">Find Your Plan </a>
     <a href="#flow">How We Work </a>
     <a href="#quiz">Web Quiz </a>
@@ -223,10 +222,11 @@ include "header_en.php";
     <h2>
       <span class="scrib">Blog &amp; Site Management </span>
     </h2>
-    <p class="muted sm" style="max-width:520px; margin: 30px auto 60px;">
+    <p class="muted sm" style="max-width:520px; margin: 30px auto 0;">
       We go beyond just building your site. <br/>
       Monthly support for blog updates, SNS integration, and content management.
     </p>
+    <p class="blog-promo"><span class="sl">＼</span>Pay upfront, get <b>1 month free</b>!<span class="sl">／</span></p>
   </div>
   <section class="blog-row" style="margin-top: 36px;">
     <div class="blog-plan">
@@ -394,14 +394,11 @@ include "header_en.php";
         <li>
           Ask us about Instagram / LINE assets and anything not listed
         </li>
-        <li>
-          Feel free to reach out anytime
-        </li>
       </ul>
       <a class="btn berry" href="/contact-en/">&rarr; Consult this service &rarr; </a>
     </article>
   </section>
-  <!-- Notes / Terms -->
+  <!-- Notes / Terms（ご利用条件）は非表示中。表示するときはこのコメントを外す
   <div class="sect-title sect-title-centered" style="margin-top: 100px;">
     <div class="en kicker-en">— terms &amp; conditions —</div>
     <h2><span class="scrib">Terms &amp; Conditions</span></h2>
@@ -429,6 +426,7 @@ include "header_en.php";
       </ol>
     </div>
   </div>
+  -->
   <!-- TYPE-BASED RECOMMENDATION -->
   <div id="type" class="sect-title sect-title-centered" style="margin-top: 100px;">
     <div class="en kicker-en">
@@ -591,7 +589,7 @@ include "header_en.php";
           Production
         </div>
         <p>
-          We go from design to coding. Progress is shared along the way.
+          Progress is shared along the way.
         </p>
       </div>
     </div>
@@ -690,7 +688,7 @@ include "header_en.php";
     <div class="coupon-code-wrap">
       <span class="coupon-code-label">Coupon Code</span>
       <div class="coupon-code">ONIGIRI</div>
-      <p class="coupon-code-desc">Enter it in the<br>"Coupon Code" field on the contact form<br>to get <strong>&yen;500 OFF</strong>!</p>
+      <p class="coupon-code-desc">Enter it in the<br>"Coupon Code" field on the contact form<br>to get <strong>&yen;1,000 OFF</strong>!</p>
       <p class="coupon-code-note">* Valid once / Applicable on first order only</p>
     </div>
     <div class="coupon-modal-btns">
@@ -1235,29 +1233,6 @@ sw.querySelectorAll('.opt-ptab').forEach(x => x.classList.toggle('on', x === b))
 const p = b.dataset.plan;
 allViews.forEach(v => v.hidden = v.dataset.plan !== p);
 });
-})();
-
-(function () {
-const layer = document.getElementById('berry-rain');
-if (!layer) return;
-const BERRY_IMGS = (window.BB && window.BB.BERRY_IMGS) || [];
-function spawnBerry() {
-const b = document.createElement('img');
-b.src = BERRY_IMGS.length ? BERRY_IMGS[Math.floor(Math.random() * BERRY_IMGS.length)] :'<?php echo MAYA_URI; ?>/img/5.png';
-b.alt =''; b.className ='rain-berry';
-const size = 28 + Math.random() * 44;
-b.style.left = `${Math.random() * 100}%`;
-b.style.width = `${size}px`;
-b.style.animationDuration = `${8 + Math.random() * 6}s`;
-b.style.animationDelay = `${Math.random() * 1.4}s`;
-b.style.setProperty('--drift', `${(Math.random() - 0.5) * 80}px`);
-b.style.setProperty('--rotEnd', `${(Math.random() - 0.5) * 720}deg`);
-layer.appendChild(b);
-b.addEventListener('animationend', () => b.remove(), { once: true });
-}
-for (let i = 0; i
-        < 3; i++) setTimeout(spawnBerry, i * 900);
-setInterval(spawnBerry, 3000);
 })();
 
 (function () {
