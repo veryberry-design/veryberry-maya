@@ -77,10 +77,10 @@ include "header_en.php";
       <div class="hero-right">
         <div class="big-berry-stage">
           <img class="reach-hand" src="<?php echo MAYA_URI; ?>/img/hand.png" alt="" aria-hidden="true" />
-          <span class="big-berry" id="bigBerry" data-peelable="1"></span>
-          <span class="mini-berry mini-1" id="miniBerry1"></span>
-          <span class="mini-berry mini-2" id="miniBerry2"></span>
-          <span class="mini-berry mini-3" id="miniBerry3"></span>
+          <span class="big-berry" id="bigBerry" data-peelable="1"><img src="<?php echo MAYA_URI; ?>/img/5.webp" alt="" width="194" height="229" fetchpriority="high" style="width:100%; height:100%; object-fit:contain;" /></span>
+          <span class="mini-berry mini-1" id="miniBerry1"><img src="<?php echo MAYA_URI; ?>/img/3.webp" alt="" width="196" height="241" style="width:100%; height:100%; object-fit:contain;" /></span>
+          <span class="mini-berry mini-2" id="miniBerry2"><img src="<?php echo MAYA_URI; ?>/img/4.webp" alt="" width="192" height="227" style="width:100%; height:100%; object-fit:contain;" /></span>
+          <span class="mini-berry mini-3" id="miniBerry3"><img src="<?php echo MAYA_URI; ?>/img/7.webp" alt="" width="189" height="234" style="width:100%; height:100%; object-fit:contain;" /></span>
         </div>
       </div>
     </div>
@@ -337,17 +337,6 @@ if (b) popBubble(b, e);
       </script>
       <script>
         (function () {
-const big = document.getElementById('bigBerry');
-if (big) big.innerHTML ='<img src="<?php echo MAYA_URI; ?>/img/5.webp" alt="" style="width:100%; height:100%; object-fit:contain;" />';
-const m1 = document.getElementById('miniBerry1');
-if (m1) m1.innerHTML ='<img src="<?php echo MAYA_URI; ?>/img/3.webp" alt="" style="width:100%; height:100%; object-fit:contain;" />';
-const m2 = document.getElementById('miniBerry2');
-if (m2) m2.innerHTML ='<img src="<?php echo MAYA_URI; ?>/img/4.webp" alt="" style="width:100%; height:100%; object-fit:contain;" />';
-const m3 = document.getElementById('miniBerry3');
-if (m3) m3.innerHTML ='<img src="<?php echo MAYA_URI; ?>/img/7.webp" alt="" style="width:100%; height:100%; object-fit:contain;" />';
-})();
-
-(function () {
 /* Works data is managed in js/works-data_en.js */
 const WORKS = WORKS_DATA;
 const grid = document.getElementById('works-grid');
