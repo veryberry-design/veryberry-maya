@@ -27,12 +27,22 @@ if ( ! function_exists( 'maya_enqueue_assets' ) ) {
 		$theme_uri = get_template_directory_uri();
 		$theme_dir = get_template_directory();
 
-		// 1) ベースCSS（common.css は内部で phone.css を @import している）
+		// 1) ベースCSS（旧 phone.css も common.css に統合済み）
+		// 本番は minify 版 common.min.css を読み込む。編集は common.css で行い、
+		// テーマフォルダで次を実行して再生成する:
+		//   npx clean-css-cli@5.6.3 -O1 -o css/common.min.css css/common.css
+		// min が古い（common.css の方が新しい）ときは common.css をそのまま使う。
+		$common_rel = '/css/common.css';
+		$min_rel    = '/css/common.min.css';
+		if ( is_file( $theme_dir . $min_rel )
+			&& filemtime( $theme_dir . $min_rel ) >= filemtime( $theme_dir . $common_rel ) ) {
+			$common_rel = $min_rel;
+		}
 		wp_enqueue_style(
 			'maya-common',
-			$theme_uri . '/css/common.css',
+			$theme_uri . $common_rel,
 			array(),
-			filemtime( $theme_dir . '/css/common.css' )
+			filemtime( $theme_dir . $common_rel )
 		);
 
 		// 2) ページ固有CSS（css/{currentPage}.css があれば common の後に読み込む）
