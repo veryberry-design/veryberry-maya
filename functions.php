@@ -80,6 +80,22 @@ if ( ! function_exists( 'maya_enqueue_assets' ) ) {
 	add_action( 'wp_enqueue_scripts', 'maya_enqueue_assets' );
 }
 
+if ( ! function_exists( 'maya_async_font_css' ) ) {
+	/**
+	 * 日本語フォントのCSS（約90KB）が描画をブロックしないよう非同期で読み込む。
+	 * media="print" で読み込み、完了後に all へ切り替える定番の手法。
+	 * 読み込み完了までは予備のシステムフォントで表示され、その後差し替わる。
+	 */
+	function maya_async_font_css( $tag, $handle ) {
+		if ( 'maya-google-fonts' !== $handle ) {
+			return $tag;
+		}
+		$async = str_replace( "media='all'", "media='print' onload=\"this.media='all'\"", $tag );
+		return $async . '<noscript>' . $tag . '</noscript>' . "\n";
+	}
+	add_filter( 'style_loader_tag', 'maya_async_font_css', 10, 2 );
+}
+
 /* =========================================================================
  * お問い合わせフォーム（contact.php）のメール送信
  * admin-ajax.php 経由の Ajax で受け取り、wp_mail() で管理者へ送信する。
