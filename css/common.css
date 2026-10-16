@@ -231,6 +231,7 @@
   --grape-soft:  #a988c9;
   --grape-pale:  #ede2f7;
   --berry:       #d04a6c;
+  --berry-btn:   #ca4568; /* 白文字ボタン用（コントラスト比4.5:1以上） */
   --leaf:        #6aa15a;
   --cream:       #fff8e7;
 
@@ -457,7 +458,7 @@ html[lang="ja"] .nav .nav-en { font-family: var(--hand-ja); font-size: 13px; let
   display: flex; align-items: center; justify-content: center;
   flex-direction: column; gap: 8px;
   padding: 16px 0 14px;
-  background: var(--berry); color: #fff;
+  background: var(--berry-btn); color: #fff;
   border-radius: 0;
   border: none; cursor: pointer; text-decoration: none;
   transition: width .2s;
@@ -524,7 +525,7 @@ html[lang="ja"] .nav .nav-en { font-family: var(--hand-ja); font-size: 13px; let
 }
 .btn:hover { transform: translateY(-2px); }
 .btn.primary { background: var(--grape); color: #fff; }
-.btn.berry   { background: var(--berry); color: #fff; }
+.btn.berry   { background: var(--berry-btn); color: #fff; }
 .btn.ghost   { background: transparent; }
 .btn.lg { padding: 14px 30px; font-size: 16px; }
 
@@ -824,7 +825,7 @@ br.sp-only { display: none; }
   color: #fff;
 }
 .hero-mag .cta-row .btn:not(.berry) {
-  background: var(--berry);
+  background: var(--berry-btn);
   color: #fff;
 }
 .hero h1.title.editorial { font-size: clamp(38px, 5.4vw, 70px); line-height: 1.04; }
