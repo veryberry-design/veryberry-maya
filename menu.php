@@ -1124,7 +1124,7 @@ nextBtn.hidden = true;
 
 resetBtn.addEventListener('click', () => { correctCount = 0; answeredCount = 0; render(); paintGauge(); });
 
-const PF_BERRY_IMGS = (window.BB && window.BB.BERRY_IMGS) || ['<?php echo MAYA_URI; ?>/img/3.png','<?php echo MAYA_URI; ?>/img/4.png','<?php echo MAYA_URI; ?>/img/5.png','<?php echo MAYA_URI; ?>/img/7.png'];
+const PF_BERRY_IMGS = (window.BB && window.BB.BERRY_IMGS) || ['<?php echo MAYA_URI; ?>/img/3.webp','<?php echo MAYA_URI; ?>/img/4.webp','<?php echo MAYA_URI; ?>/img/5.webp','<?php echo MAYA_URI; ?>/img/7.webp'];
 function fxLayer() {
 let l = document.getElementById('perfect-fx-layer');
 if (!l) { l = document.createElement('div'); l.id ='perfect-fx-layer'; document.body.appendChild(l); }

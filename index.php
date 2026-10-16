@@ -253,7 +253,7 @@ include "header.php";
         <i><svg viewBox="0 0 20 20"><path d="M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5 Z" fill="currentColor"/></svg></i>
       </span>
       <div class="pol-photo">
-        <div class="pol-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/profile01.JPG?v=20261016');"></div>
+        <div class="pol-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/profile01.webp');"></div>
         <span class="pol-cap">hello, I'm Maya!</span>
       </div>
       <div class="pol-body">
@@ -434,13 +434,13 @@ if (b) popBubble(b, e);
       <script>
         (function () {
 const big = document.getElementById('bigBerry');
-if (big) big.innerHTML ='<img src="<?php echo MAYA_URI; ?>/img/5.png" alt="" style="width:100%; height:100%; object-fit:contain;" />';
+if (big) big.innerHTML ='<img src="<?php echo MAYA_URI; ?>/img/5.webp" alt="" style="width:100%; height:100%; object-fit:contain;" />';
 const m1 = document.getElementById('miniBerry1');
-if (m1) m1.innerHTML ='<img src="<?php echo MAYA_URI; ?>/img/3.png" alt="" style="width:100%; height:100%; object-fit:contain;" />';
+if (m1) m1.innerHTML ='<img src="<?php echo MAYA_URI; ?>/img/3.webp" alt="" style="width:100%; height:100%; object-fit:contain;" />';
 const m2 = document.getElementById('miniBerry2');
-if (m2) m2.innerHTML ='<img src="<?php echo MAYA_URI; ?>/img/4.png" alt="" style="width:100%; height:100%; object-fit:contain;" />';
+if (m2) m2.innerHTML ='<img src="<?php echo MAYA_URI; ?>/img/4.webp" alt="" style="width:100%; height:100%; object-fit:contain;" />';
 const m3 = document.getElementById('miniBerry3');
-if (m3) m3.innerHTML ='<img src="<?php echo MAYA_URI; ?>/img/7.png" alt="" style="width:100%; height:100%; object-fit:contain;" />';
+if (m3) m3.innerHTML ='<img src="<?php echo MAYA_URI; ?>/img/7.webp" alt="" style="width:100%; height:100%; object-fit:contain;" />';
 })();
 
 (function () {
@@ -463,7 +463,7 @@ card.innerHTML = `
           : (w.thumb ? ` style="background-image:url('${w.thumb}');background-size:cover;background-position:center;"` : '')
         }>
         ${w.youtube && w.thumb
-          ? `<img src="${w.thumb}" alt="" style="width:100%;height:140%;object-fit:cover;object-position:center;margin-top:-20%;display:block;">`
+          ? `<img src="${w.thumb}" alt="" loading="lazy" decoding="async" style="width:100%;height:140%;object-fit:cover;object-position:center;margin-top:-20%;display:block;">`
           : (w.thumb ? '' : `<span class="lbl">[ ${w.cat} ]</span>`)
         }
         </div>

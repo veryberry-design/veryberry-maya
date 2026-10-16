@@ -1,6 +1,6 @@
 /* VeryBerry — site-wide globals */
 (function () {
-  var BERRY_IMGS = ['/wp-content/themes/maya/img/3.png', '/wp-content/themes/maya/img/4.png', '/wp-content/themes/maya/img/5.png', '/wp-content/themes/maya/img/7.png'];
+  var BERRY_IMGS = ['/wp-content/themes/maya/img/3.webp', '/wp-content/themes/maya/img/4.webp', '/wp-content/themes/maya/img/5.webp', '/wp-content/themes/maya/img/7.webp'];
 
   // Returns an <img> using a strawberry PNG. `color` param is kept for
   // backwards compat with existing call sites but no longer applies.

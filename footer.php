@@ -73,7 +73,7 @@ btn.setAttribute('aria-expanded','false');
   </a>
   <!-- ===== Back to top ===== -->
   <button class="back-top" id="back-top" aria-label="トップへ戻る">
-  <img src="<?php echo MAYA_URI; ?>/img/7.png" alt="" aria-hidden="true" />
+  <img src="<?php echo MAYA_URI; ?>/img/7.webp" alt="" aria-hidden="true" />
   <span>top </span>
   </button>
   <script>

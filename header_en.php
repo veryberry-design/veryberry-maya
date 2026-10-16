@@ -17,8 +17,8 @@
         <div class="wrap">
           <a class="brand" href="/top-en/" aria-label="VeryBerry — Home">
           <span class="berry-icon-wrap" aria-hidden="true">
-            <img class="berry-logo berry-a" src="<?php echo MAYA_URI; ?>/img/3.png" alt="" />
-            <img class="berry-logo berry-b" src="<?php echo MAYA_URI; ?>/img/4.png" alt="" />
+            <img class="berry-logo berry-a" src="<?php echo MAYA_URI; ?>/img/3.webp" alt="" width="196" height="241" />
+            <img class="berry-logo berry-b" src="<?php echo MAYA_URI; ?>/img/4.webp" alt="" width="192" height="227" />
           </span>
           <span class="name"><span class="en">VeryBerry </span></span>
           </a>

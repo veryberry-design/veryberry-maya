@@ -8,7 +8,7 @@ const WORKS_DATA = [
     ttl:'Training Video',
     date:'2025', client:'', meta:'/ 2025',
     desc:'',
-    thumb:'/wp-content/themes/maya/img/works/thumb13.png',
+    thumb:'/wp-content/themes/maya/img/works/thumb13.webp',
     youtube:'fpVZkDfr2CQ'
   },
   {
@@ -16,7 +16,7 @@ const WORKS_DATA = [
     ttl:'basketball in Miyako',
     date:'2025', client:'', meta:'/ 2025',
     desc:'',
-    thumb:'/wp-content/themes/maya/img/works/thumb14.png',
+    thumb:'/wp-content/themes/maya/img/works/thumb14.webp',
     youtube:'GfylSVOsGJw'
   },
   {
@@ -24,7 +24,7 @@ const WORKS_DATA = [
     ttl:'宮古島の海でトレーニング',
     date:'2025', client:'', meta:'/ 2025',
     desc:'宮古島でのトレーニングの様子を撮影・編集した動画です。',
-    thumb:'/wp-content/themes/maya/img/works/thumb12.JPG',
+    thumb:'/wp-content/themes/maya/img/works/thumb12.webp',
     youtube:'qXuIzQaOu-4'
   },
   {
@@ -32,14 +32,14 @@ const WORKS_DATA = [
     ttl:'ホエールウォッチングバナー(架空)',
     date:'2025', client:'架空業者', meta:'架空業者 / 2025',
     desc:'',
-    thumb:'/wp-content/themes/maya/img/works/portfolilo_11.png', img:'/wp-content/themes/maya/img/works/portfolilo_11.png'
+    thumb:'/wp-content/themes/maya/img/works/portfolilo_11.webp', img:'/wp-content/themes/maya/img/works/portfolilo_11.png'
   },
   {
     cat:'web', tags:[{l:'デザイン＋コーディング', c:'both'}, {l:'ブログ運用', c:'blog'}],
     ttl:'リフォーム会社Webサイト',
     date:'2026.05', client:'', meta:'/ 2026.05',
     desc:'リフォーム会社向けのランディングページ。問い合わせにつながる構成と、信頼感を伝えるデザインにこだわりました。',
-    thumb:'/wp-content/themes/maya/img/works/portfolilo_10_2.jpg', img:'/wp-content/themes/maya/img/works/yui.jpg',
+    thumb:'/wp-content/themes/maya/img/works/portfolilo_10_2.webp', img:'/wp-content/themes/maya/img/works/yui.jpg',
     url:'https://yui-oki.jp/'
   },
   {
@@ -47,7 +47,7 @@ const WORKS_DATA = [
     ttl:'Richard Newberry',
     date:'2025', client:'Richard Newberry', meta:'/ 2026.05',
     desc:'',
-    thumb:'/wp-content/themes/maya/img/works/portfolilo_09.jpg',
+    thumb:'/wp-content/themes/maya/img/works/portfolilo_09.webp',
     imgs:['/wp-content/themes/maya/img/works/portfolilo_09.jpg','/wp-content/themes/maya/img/works/portfolilo_09_2.png','/wp-content/themes/maya/img/works/portfolilo_09_3.png','/wp-content/themes/maya/img/works/portfolilo_09_4.jpg','/wp-content/themes/maya/img/works/portfolilo_09_5.png']
   },
   {
@@ -55,7 +55,7 @@ const WORKS_DATA = [
     ttl:'パンケーキバナー（架空）',
     date:'2025', client:'', meta:'/ 2026.05',
     desc:'',
-    thumb:'/wp-content/themes/maya/img/works/portfolilo_08.jpg',
+    thumb:'/wp-content/themes/maya/img/works/portfolilo_08.webp',
     imgs:['/wp-content/themes/maya/img/works/portfolilo_08.jpg','/wp-content/themes/maya/img/works/portfolilo_08_2.png','/wp-content/themes/maya/img/works/portfolilo_08_3.jpg','/wp-content/themes/maya/img/works/portfolilo_08_4.jpg']
   },
   {
@@ -63,7 +63,7 @@ const WORKS_DATA = [
     ttl:'丼ものバナー（架空）',
     date:'2025', client:'', meta:'/ 2025',
     desc:'',
-    thumb:'/wp-content/themes/maya/img/works/portfolilo_07.png',
+    thumb:'/wp-content/themes/maya/img/works/portfolilo_07.webp',
     imgs:['/wp-content/themes/maya/img/works/portfolilo_07.png','/wp-content/themes/maya/img/works/portfolilo_07_2.png','/wp-content/themes/maya/img/works/portfolilo_07_3.jpg']
   },
   {
@@ -71,7 +71,7 @@ const WORKS_DATA = [
     ttl:'ハンバーガーバナー（架空）',
     date:'2025', client:'', meta:'/ 2025',
     desc:'',
-    thumb:'/wp-content/themes/maya/img/works/portfolilo_06.png',
+    thumb:'/wp-content/themes/maya/img/works/portfolilo_06.webp',
     imgs:['/wp-content/themes/maya/img/works/portfolilo_06.png','/wp-content/themes/maya/img/works/portfolilo_06_2.png','/wp-content/themes/maya/img/works/portfolilo_06_3.png','/wp-content/themes/maya/img/works/portfolilo_06_4.png']
   },
   {
@@ -79,21 +79,21 @@ const WORKS_DATA = [
     ttl:'発酵緑茶のLP（架空）',
     date:'2024', client:'', meta:'/ 2024',
     desc:'',
-    thumb:'/wp-content/themes/maya/img/works/thumb05.jpg', img:'/wp-content/themes/maya/img/works/portfolilo_05.jpg'
+    thumb:'/wp-content/themes/maya/img/works/thumb05.webp', img:'/wp-content/themes/maya/img/works/portfolilo_05.jpg'
   },
   {
     cat:'banner', tags:[{l:'デザイン', c:'design'}],
     ttl:'家事代行バナー（架空）',
     date:'2024', client:'', meta:'/ 2024',
     desc:'',
-    thumb:'/wp-content/themes/maya/img/works/portfolilo_04.jpg', img:'/wp-content/themes/maya/img/works/portfolilo_04.jpg'
+    thumb:'/wp-content/themes/maya/img/works/portfolilo_04.webp', img:'/wp-content/themes/maya/img/works/portfolilo_04.jpg'
   },
   {
     cat:'banner', tags:[{l:'デザイン', c:'design'}],
     ttl:'転職バナー',
     date:'2025', client:'', meta:'/ 2025',
     desc:'転職サービス向けバナー3点セット。',
-    thumb:'/wp-content/themes/maya/img/works/portfolilo_03.jpg',
+    thumb:'/wp-content/themes/maya/img/works/portfolilo_03.webp',
     imgs:['/wp-content/themes/maya/img/works/portfolilo_03.jpg','/wp-content/themes/maya/img/works/portfolilo_03_2.png','/wp-content/themes/maya/img/works/portfolilo_03_3.jpg']
   },
   {
@@ -101,14 +101,14 @@ const WORKS_DATA = [
     ttl:'YouTubeのサムネイル',
     date:'2025', client:'', meta:'/ 2025',
     desc:'チャンネルの世界観に合わせたサムネイルデザイン。クリック率を意識した構成です。',
-    thumb:'/wp-content/themes/maya/img/works/portfolilo_02.png', img:'/wp-content/themes/maya/img/works/portfolilo_02.png'
+    thumb:'/wp-content/themes/maya/img/works/portfolilo_02.webp', img:'/wp-content/themes/maya/img/works/portfolilo_02.png'
   },
   {
     cat:'flyer', tags:[{l:'デザイン', c:'design'}],
     ttl:'定食屋さんのメニュー',
     date:'2024', client:'定食屋', meta:'定食屋 / 2024 / メニュー表',
     desc:'',
-    thumb:'/wp-content/themes/maya/img/works/thumb01.jpg', img:'/wp-content/themes/maya/img/works/portfolilo_01.png'
+    thumb:'/wp-content/themes/maya/img/works/thumb01.webp', img:'/wp-content/themes/maya/img/works/portfolilo_01.png'
   },
 ];
 
