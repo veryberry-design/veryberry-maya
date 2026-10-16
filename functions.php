@@ -50,15 +50,19 @@ if ( ! function_exists( 'maya_enqueue_assets' ) ) {
 		}
 
 		// 3) Google Fonts
+		// Shippori Antique は body.font-clean 用だが未使用のため読み込まない
 		wp_enqueue_style(
 			'maya-google-fonts',
-			'https://fonts.googleapis.com/css2?family=Yomogi&family=Zen+Kurenaido&family=Kosugi+Maru&family=Shippori+Antique&family=Caveat:wght@400;500;700&display=swap',
+			'https://fonts.googleapis.com/css2?family=Yomogi&family=Zen+Kurenaido&family=Kosugi+Maru&family=Caveat:wght@400;500;700&display=swap',
 			array(),
 			null
 		);
+		// アイコンは使っているものだけに絞る（icon_names はアルファベット順）。
+		// アイコンを追加したらここにも名前を足すこと。
+		// display=block はリガチャ文字列（"language" 等）のチラ見え防止のため別リクエストのまま
 		wp_enqueue_style(
 			'maya-material-symbols',
-			'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block',
+			'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=check_circle,language,mark_email_read,touch_app&display=block',
 			array(),
 			null
 		);
