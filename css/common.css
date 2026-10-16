@@ -4436,8 +4436,8 @@ body.theme-dark .thanks-card { --thanks-card: var(--paper-2); --thanks-stripe: v
   .works-layout > .filter-side::-webkit-scrollbar { display: none; }
 }
 .filter-side .group { margin-bottom: 22px; }
-.filter-side .group h4 { font-size: 14px; margin-bottom: 8px; margin-top: 30px; }
-.filter-side .group h4 .en { font-family: var(--script); color: var(--grape); margin-left: 4px; font-size: 13px; }
+.filter-side .group .filter-ttl { font-size: 14px; margin-bottom: 8px; margin-top: 30px; }
+.filter-side .group .filter-ttl .en { font-family: var(--script); color: var(--grape); margin-left: 4px; font-size: 13px; }
 .filter-side .opt {
   display: flex; align-items: center; gap: 8px; padding: 5px 8px;
   border-radius: 0; cursor: pointer; font-size: 14px;
@@ -8350,7 +8350,7 @@ main.wrap, .site-foot { position: relative; z-index: 1; }
   /* フィルター：縦積み・各項目を横並びに */
   .filter-side { display: flex; flex-direction: column; gap: 12px; }
   .filter-side .group { margin-bottom: 0; }
-  .filter-side .group h4 { margin-top: 0; font-size: 12px; margin-bottom: 6px; }
+  .filter-side .group .filter-ttl { margin-top: 0; font-size: 12px; margin-bottom: 6px; }
   #cat-list { display: flex; flex-direction: row; flex-wrap: wrap; gap: 4px; }
   .filter-side .opt {
     font-size: 11px; padding: 3px 8px; white-space: nowrap;

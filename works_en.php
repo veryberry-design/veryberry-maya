@@ -19,23 +19,23 @@ include "header_en.php";
     <!-- Left filter -->
     <aside class="filter-side">
       <div class="group">
-        <h4>
+        <h3 class="filter-ttl">
           Category <span class="en">CATEGORY </span>
-        </h4>
+        </h3>
         <div id="cat-list">
         </div>
       </div>
       <div class="group">
-        <h4>
+        <h3 class="filter-ttl">
           Tag <span class="en">TAG </span>
-        </h4>
+        </h3>
         <div id="tag-list" style="display:flex; flex-wrap:wrap; gap:6px;">
         </div>
       </div>
       <div class="group">
-        <h4>
+        <h3 class="filter-ttl">
           Year <span class="en">YEAR </span>
-        </h4>
+        </h3>
         <div id="year-list" style="display:flex; flex-wrap:wrap; gap:6px;">
           <span class="stamp berry" data-y="2026">2026 </span>
           <span class="stamp" data-y="2025">2025 </span>

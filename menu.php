@@ -484,8 +484,8 @@ include "header.php";
         </div>
       </div>
       <span class="type-result-tag" id="type-result-tag">type </span>
-      <h4 class="type-result-ttl" id="type-result-ttl">
-      </h4>
+      <h3 class="type-result-ttl" id="type-result-ttl">
+      </h3>
       <p class="type-result-desc" id="type-result-desc">
       </p>
       <div class="type-result-meta">
