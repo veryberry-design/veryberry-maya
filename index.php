@@ -69,16 +69,6 @@ include "header.php";
         <p class="hero-lede">
           目に留まるだけじゃなく、記憶に残るものを。<br>「本当はこうしたい」を探しながら、<br class="sp-only">いちばん合うかたちをつくります。
         </p>
-        <div class="service-chips">
-          <span class="chip">WEB </span>
-          <span class="chip">BANNER </span>
-          <span class="chip">VIDEOS</span>
-          <span class="chip">FLYER </span>
-          <span class="chip-break" aria-hidden="true"></span>
-          <span class="chip">LOGO </span>
-          <span class="chip">ILLUST </span>
-          <span class="chip">BUSINESS CARD</span>
-        </div>
         <div class="cta-row">
           <a class="btn berry lg" href="/works/">実績を見る → </a>
           <a class="btn lg" href="/about/">プロフィール </a>
@@ -100,7 +90,7 @@ include "header.php";
       <a class="toc-item" href="/works/"><span class="page-num">P.03 </span><span class="page-ttl">制作実績 </span></a>
       <a class="toc-item" href="/menu/"><span class="page-num">P.04 </span><span class="page-ttl">料金・流れ </span></a>
       <a class="toc-item" href="/contact/"><span class="page-num">P.05 </span><span class="page-ttl">お問い合わせ </span></a>
-      <a class="toc-item" href="/faq/"><span class="page-num">P.06 </span><span class="page-ttl">FAQ・お客様の声 </span></a>
+      <a class="toc-item" href="/faq/"><span class="page-num">P.06 </span><span class="page-ttl">FAQ </span></a>
     </nav>
   </section>
   <!-- LETTER BANNER -->
@@ -194,13 +184,13 @@ include "header.php";
           </article>
           <article class="leaf">
             <h3>運用の現場を知っているから</h3>
-            <p>私は普段、中小企業のお客様と直接やり取りをしながら、さまざまなWebサイトの更新・運用に携わっています。</p>
+            <p>私は普段、中小企業のお客様とやり取りをしながら、さまざまなWebサイトの更新・運用に携わっています。</p>
             <p>そこで見てきたのは、完成されたデザインだけではありません。日々の更新で生まれる悩みや、使い続ける中で見えてくる課題。その経験があるからこそ、見た目の美しさだけでなく、<span class="webk-mark m-grape">完成した後のことまで考えたご提案</span>ができると考えています。</p>
           </article>
           <article class="leaf">
             <h3>ゼロから学んだ一人として</h3>
             <p>そして、私自身もゼロからWebを学んできた一人です。<br>だからこそ、専門的な知識を一方的に伝えるのではなく、<span class="webk-mark m-grape">「なぜ、この方法がいいのか」その理由や根本にある考え方まで、わかりやすくお伝えしたい。</span></p>
-            <p>一人で制作しているからこそ、一つひとつのご相談にじっくり向き合い、考える時間も、話し合う時間も大切にできます。</p>
+            <p>一人で制作しているからこそ、ひとつひとつのご相談にじっくり向き合い、考える時間も、話し合う時間も大切にできます。</p>
           </article>
           <article class="leaf">
             <h3>「作ってよかった」と思えるWebサイトを</h3>
@@ -253,8 +243,17 @@ include "header.php";
     </script>
     <!-- PROFILE SNIPPET（小さめポラロイド＋テープ） -->
     <section class="profile-pol">
+      <span class="pol-sparks" aria-hidden="true">
+        <i><svg viewBox="0 0 20 20"><path d="M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5 Z" fill="currentColor"/></svg></i>
+        <i><svg viewBox="0 0 20 20"><path d="M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5 Z" fill="currentColor"/></svg></i>
+        <i><svg viewBox="0 0 20 20"><path d="M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5 Z" fill="currentColor"/></svg></i>
+        <i><svg viewBox="0 0 20 20"><path d="M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5 Z" fill="currentColor"/></svg></i>
+        <i><svg viewBox="0 0 20 20"><path d="M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5 Z" fill="currentColor"/></svg></i>
+        <i><svg viewBox="0 0 20 20"><path d="M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5 Z" fill="currentColor"/></svg></i>
+        <i><svg viewBox="0 0 20 20"><path d="M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5 Z" fill="currentColor"/></svg></i>
+      </span>
       <div class="pol-photo">
-        <div class="pol-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/profile01.JPG');"></div>
+        <div class="pol-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/profile01.JPG?v=20261016');"></div>
         <span class="pol-cap">hello, I'm Maya!</span>
       </div>
       <div class="pol-body">

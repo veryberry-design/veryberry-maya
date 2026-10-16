@@ -69,16 +69,6 @@ include "header_en.php";
         <p class="hero-lede">
           Let's talk about anything
         </p>
-        <div class="service-chips">
-          <span class="chip">WEB </span>
-          <span class="chip">BANNER </span>
-          <span class="chip">VIDEOS</span>
-          <span class="chip">FLYER </span>
-          <span class="chip-break" aria-hidden="true"></span>
-          <span class="chip">LOGO </span>
-          <span class="chip">ILLUST </span>
-          <span class="chip">BUSINESS CARD</span>
-        </div>
         <div class="cta-row">
           <a class="btn berry lg" href="/works-en/">Works &rarr; </a>
           <a class="btn lg" href="/about-en/">Profile </a>
@@ -100,7 +90,7 @@ include "header_en.php";
       <a class="toc-item" href="/works-en/"><span class="page-num">P.03 </span><span class="page-ttl">Works </span></a>
       <a class="toc-item" href="/menu-en/"><span class="page-num">P.04 </span><span class="page-ttl">Pricing </span></a>
       <a class="toc-item" href="/contact-en/"><span class="page-num">P.05 </span><span class="page-ttl">Contact </span></a>
-      <a class="toc-item" href="/faq-en/"><span class="page-num">P.06 </span><span class="page-ttl">FAQ &amp; Reviews </span></a>
+      <a class="toc-item" href="/faq-en/"><span class="page-num">P.06 </span><span class="page-ttl">FAQ </span></a>
     </nav>
   </section>
   <!-- LETTER MODAL -->
@@ -168,7 +158,7 @@ include "header_en.php";
     </script>
     <!-- PROFILE SNIPPET -->
     <section class="profile-snip">
-      <div class="imgph round has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/profile01.JPG');background-size:cover;background-position:center;"></div>
+      <div class="imgph round has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/profile01.JPG?v=20261016');background-size:cover;background-position:center;"></div>
       <div class="profile-snip-body">
         <h3>
           NEWBERRY MAYA KRISTEN <span class="en">/ designer &amp; coder </span>

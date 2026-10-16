@@ -183,9 +183,9 @@
   .wm-step + .wm-step::before { display: none; }
 }
 
-@media (max-width: 880px) { .other-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 880px) { .other-grid { grid-template-columns: repeat(2, 1fr); row-gap: 64px; } }
 
-@media (max-width: 560px) { .other-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .other-grid { grid-template-columns: 1fr; row-gap: 64px; } }
 
 @media (max-width: 880px) {
   .blog-row { grid-template-columns: 1fr; gap: 28px; }

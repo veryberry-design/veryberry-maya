@@ -329,6 +329,8 @@ include "header.php";
     </p>
   </div>
   <section class="other-grid" style="margin-top: 36px;">
+    <div class="other-tagwrap">
+      <span class="other-string" aria-hidden="true"></span>
     <article class="other-card">
       <div class="other-card-h">
         <span class="other-tag">banner </span>
@@ -353,6 +355,9 @@ include "header.php";
       </ul>
       <a class="btn berry" href="/contact/">このメニューで相談 → </a>
     </article>
+    </div>
+    <div class="other-tagwrap">
+      <span class="other-string" aria-hidden="true"></span>
     <article class="other-card">
       <div class="other-card-h">
         <span class="other-tag">business card</span>
@@ -377,6 +382,9 @@ include "header.php";
       </ul>
       <a class="btn berry" href="/contact/">このメニューで相談 → </a>
     </article>
+    </div>
+    <div class="other-tagwrap">
+      <span class="other-string" aria-hidden="true"></span>
     <article class="other-card">
       <div class="other-card-h">
         <span class="other-tag">other </span>
@@ -397,6 +405,7 @@ include "header.php";
       </ul>
       <a class="btn berry" href="/contact/">このメニューで相談 → </a>
     </article>
+    </div>
   </section>
   <!-- Notes（ご利用条件）は非表示中。表示するときはこのコメントを外す
   <div class="sect-title sect-title-centered" style="margin-top: 100px;">
@@ -540,10 +549,17 @@ include "header.php";
       <span class="scrib">制作の流れ </span>
     </h2>
   </div>
-  <div class="flowv-view flowv-ribbon" data-style="ribbon">
+  <div class="flowr">
+    <!-- カードをつなぐ流れる点線の道（PC：横に蛇行／SP：縦に蛇行） -->
+    <svg class="flowr-road" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <path class="flowr-road-pc" d="M16 22 C 30 40, 40 40, 50 26 S 70 10, 84 22 C 100 40, 100 60, 84 74 S 60 90, 50 76 S 25 60, 16 76"/>
+      <path class="flowr-road-sp" d="M30 2 C 95 6, 95 14, 70 18 S 5 26, 30 34 S 95 42, 70 50 S 5 58, 30 66 S 95 74, 70 82 S 5 90, 30 98"/>
+    </svg>
     <div class="flv-step">
+      <span class="flv-plant" aria-hidden="true"><svg viewBox="0 0 90 100"><ellipse cx="45" cy="92" rx="14" ry="5" fill="#c9b18f"/><ellipse cx="45" cy="88" rx="5" ry="3.5" fill="#8a6b45"/></svg></span>
       <div class="flv-l">
         <span class="flv-num">01 </span>
+        <span class="flv-en">contact</span>
       </div>
       <div class="flv-r">
         <div class="flv-name">
@@ -555,8 +571,10 @@ include "header.php";
       </div>
     </div>
     <div class="flv-step">
+      <span class="flv-plant" aria-hidden="true"><svg viewBox="0 0 90 100"><path d="M45 96V74" stroke="#6aa15a" stroke-width="3" stroke-linecap="round"/><path d="M45 78c-8-2-12-8-12-14 8 0 12 6 12 14zM45 78c8-2 12-8 12-14-8 0-12 6-12 14z" fill="#8cc27a"/></svg></span>
       <div class="flv-l">
         <span class="flv-num">02 </span>
+        <span class="flv-en">hearing</span>
       </div>
       <div class="flv-r">
         <div class="flv-name">
@@ -568,8 +586,10 @@ include "header.php";
       </div>
     </div>
     <div class="flv-step">
+      <span class="flv-plant" aria-hidden="true"><svg viewBox="0 0 90 100"><path d="M45 96V58" stroke="#6aa15a" stroke-width="3" stroke-linecap="round"/><path d="M45 80c-14-2-20-12-20-22 14 0 20 10 20 22zM45 70c14-2 20-12 20-22-14 0-20 10-20 22z" fill="#7bb569"/></svg></span>
       <div class="flv-l">
         <span class="flv-num">03 </span>
+        <span class="flv-en">estimate</span>
       </div>
       <div class="flv-r">
         <div class="flv-name">
@@ -581,8 +601,10 @@ include "header.php";
       </div>
     </div>
     <div class="flv-step">
+      <span class="flv-plant" aria-hidden="true"><svg viewBox="0 0 90 100"><path d="M45 96V48" stroke="#6aa15a" stroke-width="3" stroke-linecap="round"/><path d="M45 84c-14-2-20-12-20-22 14 0 20 10 20 22zM45 76c14-2 20-12 20-22-14 0-20 10-20 22z" fill="#7bb569"/><g fill="#fff" stroke="#f6cfda" stroke-width="1.5"><circle cx="45" cy="30" r="7"/><circle cx="56" cy="38" r="7"/><circle cx="52" cy="50" r="7"/><circle cx="38" cy="50" r="7"/><circle cx="34" cy="38" r="7"/></g><circle cx="45" cy="41" r="5" fill="#ffe59a"/></svg></span>
       <div class="flv-l">
         <span class="flv-num">04 </span>
+        <span class="flv-en">design</span>
       </div>
       <div class="flv-r">
         <div class="flv-name">
@@ -594,8 +616,10 @@ include "header.php";
       </div>
     </div>
     <div class="flv-step">
+      <span class="flv-plant" aria-hidden="true"><svg viewBox="0 0 90 100"><path d="M45 96V52" stroke="#6aa15a" stroke-width="3" stroke-linecap="round"/><path d="M45 86c-14-2-20-12-20-22 14 0 20 10 20 22zM45 78c14-2 20-12 20-22-14 0-20 10-20 22z" fill="#7bb569"/><path d="M45 56c-9 0-14-8-14-16 0-6 6-8 14-8s14 2 14 8c0 8-5 16-14 16z" fill="#cfe6b8"/><path d="M45 34l-6-6 6 2 6-2z" fill="#6aa15a"/></svg></span>
       <div class="flv-l">
         <span class="flv-num">05 </span>
+        <span class="flv-en">check</span>
       </div>
       <div class="flv-r">
         <div class="flv-name">
@@ -607,8 +631,10 @@ include "header.php";
       </div>
     </div>
     <div class="flv-step">
+      <span class="flv-plant" aria-hidden="true"><svg viewBox="0 0 90 100"><path d="M45 96V58" stroke="#6aa15a" stroke-width="3" stroke-linecap="round"/><path d="M45 88c-14-2-20-12-20-22 14 0 20 10 20 22zM45 80c14-2 20-12 20-22-14 0-20 10-20 22z" fill="#7bb569"/><path d="M45 62c-12 0-19-11-19-21 0-8 7-11 19-11s19 3 19 11c0 10-7 21-19 21z" fill="#d04a6c"/><g fill="#f6cfda"><circle cx="38" cy="40" r="1.6"/><circle cx="52" cy="40" r="1.6"/><circle cx="45" cy="48" r="1.6"/><circle cx="38" cy="54" r="1.6"/><circle cx="52" cy="54" r="1.6"/></g><path d="M45 32l-8-7 8 3 8-3z" fill="#6aa15a"/><text x="66" y="24" font-family="Caveat, cursive" font-size="16" fill="#e5b94a">★</text></svg></span>
       <div class="flv-l">
         <span class="flv-num">06 </span>
+        <span class="flv-en">delivery</span>
       </div>
       <div class="flv-r">
         <div class="flv-name">
@@ -698,6 +724,7 @@ include "header.php";
   </div>
 </div>
 <a class="coupon-float" id="coupon-float" href="/contact/" hidden>
+  <span class="coupon-float-top">coupon</span>
   <span class="coupon-float-code">ONIGIRI</span>
   <span class="coupon-float-label">クーポン有効中</span>
 </a>

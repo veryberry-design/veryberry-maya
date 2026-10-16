@@ -9,10 +9,10 @@ include "header.php";
 <main class="wrap">
   <div class="sect-title sect-title-centered" style="margin-top: 100px;">
     <div class="en kicker-en">
-      — help & voices —
+      — help —
     </div>
     <h2>
-      <span class="scrib">よくある質問・お客様の声 </span>
+      <span class="scrib">よくある質問 </span>
     </h2>
     <p class="muted sm" style="max-width: 480px; margin: 18px auto 0; line-height: 2;">
       気になること、よく聞かれる質問や、ご依頼前の不安を <br/>
@@ -21,53 +21,63 @@ include "header.php";
   </div>
   <!-- はじめての方へ コルクボード -->
   <section class="first-time-section">
-    <div class="bboard">
-      <div class="bboard-inner">
-        <div class="bboard-header-note">
-          <span class="bboard-pin bboard-pin-rose" aria-hidden="true"></span>
-          <span class="bboard-label-en">— for first-timers — </span>
-          <h3 class="bboard-ttl">
-            はじめての方へ
-          </h3>
-          <p class="bboard-intro">
-            「何から相談したらいいかわからない」<br/>
-            ー それが一番多いご相談です。 <br/>
-            デザインのことがわからなくても大丈夫。<br/>
-            ゆっくり三ステップで進めます。
-          </p>
-        </div>
-        <div class="bboard-notes">
-          <div class="bboard-note bboard-note-a">
-            <span class="bboard-pin bboard-pin-rose" aria-hidden="true"></span>
-            <span class="ft-n">01 </span>
-            <span class="ft-en">say hi </span>
-            <span class="ft-jp">まずはちょっと話す </span>
+    <div class="ftr-head">
+      <span class="ftr-en">— for first-timers — </span>
+      <h3 class="ftr-ttl">
+        はじめての方へ
+      </h3>
+      <p class="ftr-intro">
+        「何から相談したらいいかわからない」<br class="sp-only"/>
+        ー それが一番多いご相談です。 <br/>
+        デザインのことがわからなくても大丈夫。<br class="sp-only"/>
+        ゆっくり三ステップで進めます。
+      </p>
+    </div>
+    <div class="ftr-field">
+      <!-- ゴールに向かって流れる点線の道 -->
+      <svg class="ftr-road" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <path class="ftr-road-pc" d="M16 30 C 30 90, 40 90, 50 60 S 70 10, 84 30"/>
+        <path class="ftr-road-sp" d="M30 4 C 95 14, 95 26, 50 34 S 5 54, 50 66 S 95 86, 72 98"/>
+      </svg>
+      <div class="ftr-steps">
+        <div class="ftr-pol">
+          <!-- 画像を入れるときは style="background-image:url('<?php echo MAYA_URI; ?>/img/xxx.png');" を追加 -->
+          <div class="ftr-photo ftr-photo-1"></div>
+          <div class="ftr-cap">
+            <div class="ftr-row"><span class="ft-n">01 </span><span class="ft-en">say hi </span></div>
+            <h4 class="ft-jp">まずはちょっと話す </h4>
             <p>
               やりたいこと、もやもやしていること、どんなフォームでも。
             </p>
           </div>
-          <div class="bboard-note bboard-note-b">
-            <span class="bboard-pin bboard-pin-lavender" aria-hidden="true"></span>
-            <span class="ft-n">02 </span>
-            <span class="ft-en">talk together </span>
-            <span class="ft-jp">一緒に整理する </span>
+        </div>
+        <div class="ftr-pol">
+          <div class="ftr-photo ftr-photo-2"></div>
+          <div class="ftr-cap">
+            <div class="ftr-row"><span class="ft-n">02 </span><span class="ft-en">talk together </span></div>
+            <h4 class="ft-jp">一緒に整理する </h4>
             <p>
               Zoom30分、もしくはチャットで、<br/>もやもやを形にします。
             </p>
           </div>
-          <div class="bboard-note bboard-note-c">
-            <span class="bboard-pin bboard-pin-grape" aria-hidden="true"></span>
-            <span class="ft-n">03 </span>
-            <span class="ft-en">plan & quote </span>
-            <span class="ft-jp">見積もりを出す </span>
+        </div>
+        <div class="ftr-pol">
+          <div class="ftr-photo ftr-photo-3"></div>
+          <div class="ftr-cap">
+            <div class="ftr-row"><span class="ft-n">03 </span><span class="ft-en">plan &amp; quote </span></div>
+            <h4 class="ft-jp">見積もりを出す </h4>
             <p>
               費用とスケジュールを文面で。<br/>スタートはそれから大丈夫。
             </p>
           </div>
         </div>
       </div>
+      <span class="ftr-flag" aria-hidden="true">
+        <svg viewBox="0 0 28 36"><path d="M4 2v32" stroke="#5a4d6a" stroke-width="2" stroke-linecap="round"/><path d="M5 3h18l-5 6 5 6H5z" fill="#ffe59a"/></svg>goal!
+      </span>
     </div>
   </section>
+
   <!-- FAQ -->
   <section class="faq-section" style="margin-top: 100px;">
     <div class="sect-title sect-title-centered" style="margin-top: 30px;">
@@ -185,29 +195,6 @@ include "header.php";
       </div>
     </div>
   </section>
-  <!-- お客様の声（非表示中）
-  <section class="voices-section" style="margin-top: 80px;">
-    <div class="sect-title sect-title-centered">
-      <div class="en kicker-en">
-        — voices —
-      </div>
-      <h3>
-        <span class="scrib">お客様の声 </span>
-      </h3>
-      <p class="muted sm" style="max-width: 460px; margin: 12px auto 0;">
-        これまでご一緒した方からいただいた感想です
-      </p>
-    </div>
-    <div class="voices-stack">
-      <article class="voice-feature" id="voice-feature">
-      </article>
-      <div class="dots" id="voice-dots">
-      </div>
-      <div class="voice-list" id="voice-list">
-      </div>
-    </div>
-  </section>
-  -->
   <!-- ご相談だけでもOK バナー -->
   <section class="casual-cta-section" style="margin-top: 100px;">
     <div class="casual-cta">
@@ -252,12 +239,6 @@ const FAQ = [
 { cat:'other', q:'海外案件は対応していますか？', a:'要相談ですが、対応実績あります。タイムゾーン調整しましょう。' },
 ];
 
-const VOICES = [
-{ who:'カフェ K様', role:'WEBサイト制作', s:5, q:'こんなにあまずっぱくて、こんなに使いやすい！店の世界観を上手にすくい上げてもらえました。' },
-{ who:'美容室 H様', role:'バナー一式', s:5, q:'毎月のキャンペーンバナーをお願いしています。クリック率が目に見えて上がりました。' },
-{ who:'飲食店 M様', role:'プロモーション動画', s:4, q:'30秒の動画で、お店の雰囲気が伝わるようになりました。何度も提案いただき助かりました。' },
-{ who:'アクセサリ R様', role:'チラシ＋ロゴ', s:5, q:'はじめての店舗オープンに、寄り添って一緒に考えてくれました。お守りみたいな存在です。' },
-];
 
 const list = document.getElementById('faq-list');
 let cat ='all';
@@ -300,73 +281,8 @@ cat = b.dataset.cat;
 renderFAQ();
 });
 
-const vf = document.getElementById('voice-feature');
-const dots = document.getElementById('voice-dots');
-const vlist= document.getElementById('voice-list');
-let vi = 0;
-
-function renderVoiceFeature() {
-if (!vf) return;
-const v = VOICES[vi];
-vf.innerHTML = `
-    <div class="who">
-    <div class="imgph">
-    <span class="lbl">${v.who.slice(0, 2)}</span>
-    </div>
-    <div>
-    <h4>
-    ${v.who}
-    </h4>
-    <div class="role">
-    ／ ${v.role}
-    </div>
-    <div class="stars">
-    ${''.repeat(v.s)}${''.repeat(5 - v.s)}
-    </div>
-    </div>
-    </div>
-    <blockquote>
-    "${v.q}"
-    </blockquote>
-    <span class="corner">${BB.ICONS.berry(90,'var(--grape)')}</span>`;
-dots.innerHTML ='';
-VOICES.forEach((_, i) => {
-const s = document.createElement('span');
-if (i === vi) s.className ='on';
-s.addEventListener('click', () => { vi = i; renderVoiceFeature(); });
-dots.append(s);
-});
-}
-
-function renderVoiceList() {
-if (!vlist) return;
-vlist.innerHTML ='';
-VOICES.forEach((v, i) => {
-if (i === vi) return;
-const row = document.createElement('div');
-row.className ='v';
-row.innerHTML = `
-    <div class="imgph">
-    <span class="lbl"></span>
-    </div>
-    <span class="name">${v.who}</span>
-<span class="role">／ ${v.role}</span>
-<span class="stars">${''.repeat(v.s)}</span>`;
-row.addEventListener('click', () => { vi = i; renderVoiceFeature(); renderVoiceList(); });
-row.style.cursor ='pointer';
-vlist.append(row);
-});
-}
-
-setInterval(() => {
-if (document.hidden) return;
-vi = (vi + 1) % VOICES.length;
-renderVoiceFeature(); renderVoiceList();
-}, 6000);
 
 renderFAQ();
-renderVoiceFeature();
-renderVoiceList();
 
 // ===== ミニヒアリング 進捗バー & contact.php引き継ぎ =====
 (function () {

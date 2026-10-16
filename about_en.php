@@ -131,7 +131,7 @@ include "header_en.php";
         <!-- 01 Nice to meet you -->
         <div class="kami-scene" data-i="1">
           <div class="kami-photo">
-            <div class="imgph has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/profile03.JPG');background-size:cover;background-position:center;"></div>
+            <div class="imgph has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/profile03.JPG?v=20261016');background-size:cover;background-position:center;"></div>
           </div>
           <div class="kami-text">
             <span class="kami-tag">scene 01 / Nice to meet you </span>
@@ -491,13 +491,6 @@ include "header_en.php";
           <div class="apple-player-by">
             curated by VeryBerry
           </div>
-          <div class="apple-player-stats">
-            <span id="pl-count">10 tracks </span>
-            <span>&middot; </span>
-            <span id="pl-duration">42 min </span>
-            <span>&middot; </span>
-            <span id="pl-updated">Updated 2026.05.10 </span>
-          </div>
           <p class="apple-player-sub" id="pl-sub">
             For late-night sessions. Calm piano and ambient sounds at the core.
           </p>
@@ -536,7 +529,7 @@ include "header_en.php";
       <div class="thanks-emoji">
       </div>
       <div class="thanks-en">
-        — thank you for visiting —
+        Thank you!
       </div>
       <h2 class="thanks-ttl">
         Thank you for reading<br>all the way to the end!
@@ -828,19 +821,14 @@ const pl = PLAYLISTS[key];
 document.getElementById('pl-cover').textContent = pl.cover;
 document.getElementById('pl-title').textContent = pl.title;
 document.getElementById('pl-sub').textContent = pl.sub;
-document.getElementById('pl-updated').textContent = pl.updated;
 if (pl.iframe) {
   iframeEl.src = pl.iframe;
   iframeEl.style.display = 'block';
   list.style.display = 'none';
-  document.getElementById('pl-count').textContent = '';
-  document.getElementById('pl-duration').textContent = '';
 } else {
   iframeEl.style.display = 'none';
   iframeEl.src = '';
   list.style.display = '';
-  document.getElementById('pl-count').textContent = `${pl.tracks.length} tracks`;
-  document.getElementById('pl-duration').textContent = '';
   list.innerHTML = pl.tracks.map((t, i) => `
     <li class="apple-track">
     <span class="apple-track-num">${i + 1}</span>

@@ -131,7 +131,7 @@ include "header.php";
         <!-- 01 はじめまして -->
         <div class="kami-scene" data-i="1">
           <div class="kami-photo">
-            <div class="imgph has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/profile03.JPG');background-size:cover;background-position:center;"></div>
+            <div class="imgph has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/profile03.JPG?v=20261016');background-size:cover;background-position:center;"></div>
           </div>
           <div class="kami-text">
             <span class="kami-tag">scene 01 / はじめまして </span>
@@ -173,7 +173,7 @@ include "header.php";
               <li><span class="kami-label">血液型：</span><span class="kami-value">A型</span></li>
               <li><span class="kami-label">性格：</span><span class="kami-value">行動派</span></li>
               <li><span class="kami-label">好きな色：</span><span class="kami-value">紫一択!!!</span></li>
-              <li><span class="kami-label">好きな食べ物：</span><span class="kami-value">基本なんでも!<br/> 最近はシャケにハマりまくってます...</span></li>
+              <li><span class="kami-label">好きな食べ物：</span><span class="kami-value">基本なんでも!</span></li>
               <li><span class="kami-label">趣味：</span><span class="kami-value">料理  / Webデザイン / 食べ物マグネット集め</span></li>
             </ul>
           </div>
@@ -494,13 +494,6 @@ include "header.php";
           <div class="apple-player-by">
             curated by VeryBerry
           </div>
-          <div class="apple-player-stats">
-            <span id="pl-count">10曲 </span>
-            <span>· </span>
-            <span id="pl-duration">42分 </span>
-            <span>· </span>
-            <span id="pl-updated">更新 2026.05.10 </span>
-          </div>
           <p class="apple-player-sub" id="pl-sub">
             夜更かしの作業に。穏やかなピアノとアンビエントを中心に。
           </p>
@@ -555,10 +548,10 @@ include "header.php";
       <div class="thanks-emoji">
       </div>
       <div class="thanks-en">
-        — thank you for visiting —
+        Thank you!
       </div>
       <h2 class="thanks-ttl">
-        最後まで見てくださり、<br>ありがとうございます！
+        最後まで見てくださり、<br class="sp-only">ありがとうございます！
       </h2>
       <p class="thanks-msg">
         ここまで読んでくださって<br class="sp-only">ありがとうございます。 <br/>
@@ -847,19 +840,14 @@ const pl = PLAYLISTS[key];
 document.getElementById('pl-cover').textContent = pl.cover;
 document.getElementById('pl-title').textContent = pl.title;
 document.getElementById('pl-sub').textContent = pl.sub;
-document.getElementById('pl-updated').textContent = pl.updated;
 if (pl.iframe) {
   iframeEl.src = pl.iframe;
   iframeEl.style.display = 'block';
   list.style.display = 'none';
-  document.getElementById('pl-count').textContent = '';
-  document.getElementById('pl-duration').textContent = '';
 } else {
   iframeEl.style.display = 'none';
   iframeEl.src = '';
   list.style.display = '';
-  document.getElementById('pl-count').textContent = `${pl.tracks.length}曲`;
-  document.getElementById('pl-duration').textContent = '';
   list.innerHTML = pl.tracks.map((t, i) => `
     <li class="apple-track">
     <span class="apple-track-num">${i + 1}</span>

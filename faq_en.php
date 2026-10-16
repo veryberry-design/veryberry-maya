@@ -2,17 +2,17 @@
 /*
 Template Name: FAQ (EN)
 */
-$pageTitle = "VeryBerry — FAQ & Reviews";
+$pageTitle = "VeryBerry — FAQ";
 $currentPage = "faq";
 include "header_en.php";
 ?>
 <main class="wrap">
   <div class="sect-title sect-title-centered" style="margin-top: 100px;">
     <div class="en kicker-en">
-      — help &amp; voices —
+      — help —
     </div>
     <h2>
-      <span class="scrib">FAQ &amp; Client Reviews </span>
+      <span class="scrib">FAQ </span>
     </h2>
     <p class="muted sm" style="max-width: 480px; margin: 18px auto 0; line-height: 2;">
       Answers to common questions and concerns before you reach out.
@@ -20,52 +20,61 @@ include "header_en.php";
   </div>
   <!-- For First-Timers cork board -->
   <section class="first-time-section">
-    <div class="bboard">
-      <div class="bboard-inner">
-        <div class="bboard-header-note">
-          <span class="bboard-pin bboard-pin-rose" aria-hidden="true"></span>
-          <span class="bboard-label-en">— for first-timers — </span>
-          <h3 class="bboard-ttl">
-            For First-Timers
-          </h3>
-          <p class="bboard-intro">
-            "I don't know where to start." That's the most common thing we hear.<br/>
-            No design knowledge needed —<br/>
-            we'll go through it together in three easy steps.
-          </p>
-        </div>
-        <div class="bboard-notes">
-          <div class="bboard-note bboard-note-a">
-            <span class="bboard-pin bboard-pin-rose" aria-hidden="true"></span>
-            <span class="ft-n">01 </span>
-            <span class="ft-en">say hi </span>
-            <span class="ft-jp">Say Hi </span>
+    <div class="ftr-head">
+      <span class="ftr-en">— for first-timers — </span>
+      <h3 class="ftr-ttl">
+        For First-Timers
+      </h3>
+      <p class="ftr-intro">
+        "I don't know where to start." That's the most common thing we hear.<br/>
+        No design knowledge needed —<br/>
+        we'll go through it together in three easy steps.
+      </p>
+    </div>
+    <div class="ftr-field">
+      <svg class="ftr-road" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <path class="ftr-road-pc" d="M16 30 C 30 90, 40 90, 50 60 S 70 10, 84 30"/>
+        <path class="ftr-road-sp" d="M30 4 C 95 14, 95 26, 50 34 S 5 54, 50 66 S 95 86, 72 98"/>
+      </svg>
+      <div class="ftr-steps">
+        <div class="ftr-pol">
+          <!-- To add an image: style="background-image:url('<?php echo MAYA_URI; ?>/img/xxx.png');" -->
+          <div class="ftr-photo ftr-photo-1"></div>
+          <div class="ftr-cap">
+            <div class="ftr-row"><span class="ft-n">01 </span><span class="ft-en">say hi </span></div>
+            <h4 class="ft-jp">Say Hi </h4>
             <p>
               Tell us what you want, what's unclear — anything is fine.
             </p>
           </div>
-          <div class="bboard-note bboard-note-b">
-            <span class="bboard-pin bboard-pin-lavender" aria-hidden="true"></span>
-            <span class="ft-n">02 </span>
-            <span class="ft-en">talk together </span>
-            <span class="ft-jp">Talk Together </span>
+        </div>
+        <div class="ftr-pol">
+          <div class="ftr-photo ftr-photo-2"></div>
+          <div class="ftr-cap">
+            <div class="ftr-row"><span class="ft-n">02 </span><span class="ft-en">talk together </span></div>
+            <h4 class="ft-jp">Talk Together </h4>
             <p>
               30 min on Zoom or via chat —<br/>we'll shape your ideas together.
             </p>
           </div>
-          <div class="bboard-note bboard-note-c">
-            <span class="bboard-pin bboard-pin-grape" aria-hidden="true"></span>
-            <span class="ft-n">03 </span>
-            <span class="ft-en">plan &amp; quote </span>
-            <span class="ft-jp">Get a Quote </span>
+        </div>
+        <div class="ftr-pol">
+          <div class="ftr-photo ftr-photo-3"></div>
+          <div class="ftr-cap">
+            <div class="ftr-row"><span class="ft-n">03 </span><span class="ft-en">plan &amp; quote </span></div>
+            <h4 class="ft-jp">Get a Quote </h4>
             <p>
               We'll send costs and schedule in writing.<br/>You can decide from there.
             </p>
           </div>
         </div>
       </div>
+      <span class="ftr-flag" aria-hidden="true">
+        <svg viewBox="0 0 28 36"><path d="M4 2v32" stroke="#5a4d6a" stroke-width="2" stroke-linecap="round"/><path d="M5 3h18l-5 6 5 6H5z" fill="#ffe59a"/></svg>goal!
+      </span>
     </div>
   </section>
+
   <!-- FAQ -->
   <section class="faq-section" style="margin-top: 100px;">
     <div class="sect-title sect-title-centered" style="margin-top: 30px;">
@@ -227,12 +236,6 @@ const FAQ = [
   { cat:'other', q:'Do you handle international projects?', a:"We have overseas project experience. We'll coordinate time zones." },
 ];
 
-const VOICES = [
-  { who:'Cafe K', role:'Website Design', s:5, q:'"The sweetness came through and it was so easy to use! You captured our shop\'s vibe perfectly."' },
-  { who:'Hair Salon H', role:'Banner Set', s:5, q:'"We request monthly campaign banners and our click rate has noticeably improved."' },
-  { who:'Restaurant M', role:'Promo Video', s:4, q:'"A 30-second video that really conveys our atmosphere. Thank you for all the rounds of proposals."' },
-  { who:'Accessories R', role:'Flyer + Logo', s:5, q:'"You were there with me every step of my first store opening. You\'re like a lucky charm."' },
-];
 
 const list = document.getElementById('faq-list');
 let cat ='all';
@@ -275,75 +278,8 @@ cat = b.dataset.cat;
 renderFAQ();
 });
 
-const vf = document.getElementById('voice-feature');
-const dots = document.getElementById('voice-dots');
-const vlist= document.getElementById('voice-list');
-let vi = 0;
-
-function renderVoiceFeature() {
-if (!vf) return;
-const v = VOICES[vi];
-vf.innerHTML = `
-    <div class="who">
-    <div class="imgph">
-    <span class="lbl">${v.who.slice(0, 2)}</span>
-    </div>
-    <div>
-    <h4>
-    ${v.who}
-    </h4>
-    <div class="role">
-    / ${v.role}
-    </div>
-    <div class="stars">
-    ${'★'.repeat(v.s)}${'☆'.repeat(5 - v.s)}
-    </div>
-    </div>
-    </div>
-    <blockquote>
-    ${v.q}
-    </blockquote>
-    <span class="corner">${BB.ICONS.berry(90,'var(--grape)')}</span>`;
-if (dots) {
-dots.innerHTML ='';
-VOICES.forEach((_, i) => {
-const s = document.createElement('span');
-if (i === vi) s.className ='on';
-s.addEventListener('click', () => { vi = i; renderVoiceFeature(); });
-dots.append(s);
-});
-}
-}
-
-function renderVoiceList() {
-if (!vlist) return;
-vlist.innerHTML ='';
-VOICES.forEach((v, i) => {
-if (i === vi) return;
-const row = document.createElement('div');
-row.className ='v';
-row.innerHTML = `
-    <div class="imgph">
-    <span class="lbl"></span>
-    </div>
-    <span class="name">${v.who}</span>
-<span class="role">/ ${v.role}</span>
-<span class="stars">${'★'.repeat(v.s)}</span>`;
-row.addEventListener('click', () => { vi = i; renderVoiceFeature(); renderVoiceList(); });
-row.style.cursor ='pointer';
-vlist.append(row);
-});
-}
-
-setInterval(() => {
-if (document.hidden) return;
-vi = (vi + 1) % VOICES.length;
-renderVoiceFeature(); renderVoiceList();
-}, 6000);
 
 renderFAQ();
-renderVoiceFeature();
-renderVoiceList();
 
 // ===== Quick hearing progress bar & contact.php carry-over =====
 (function () {
