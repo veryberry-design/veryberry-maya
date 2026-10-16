@@ -629,7 +629,7 @@ include "header.php";
     </div>
   </article>
 </div>
-<script src="<?php echo MAYA_URI; ?>/js/app.js?v=2">
+<script src="<?php echo maya_asset( '/js/app.js' ); ?>">
   </script>
   <!-- Drifting bubbles -->
   <script>

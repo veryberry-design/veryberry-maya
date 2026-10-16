@@ -729,9 +729,9 @@ include "header_en.php";
   <span class="coupon-float-label">Coupon Active</span>
 </a>
 </main>
-<script src="<?php echo MAYA_URI; ?>/js/app.js?v=2">
+<script src="<?php echo maya_asset( '/js/app.js' ); ?>">
   </script>
-  <script src="<?php echo MAYA_URI; ?>/js/image-slot.js">
+  <script src="<?php echo maya_asset( '/js/image-slot.js' ); ?>">
     </script>
     <script>
       (function () {

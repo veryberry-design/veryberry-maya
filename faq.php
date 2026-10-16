@@ -223,7 +223,7 @@ include "header.php";
     <a class="btn berry lg" href="/contact/">お問い合わせ → </a>
   </div>
 </main>
-<script src="<?php echo MAYA_URI; ?>/js/app.js?v=2">
+<script src="<?php echo maya_asset( '/js/app.js' ); ?>">
   </script>
   <script>
     (function () {

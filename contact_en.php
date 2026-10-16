@@ -293,7 +293,7 @@ include "header_en.php";
   <p class="mail-status" id="mail-status">Sending your message...</p>
 </div>
 
-<script src="<?php echo MAYA_URI; ?>/js/app.js?v=2"></script>
+<script src="<?php echo maya_asset( '/js/app.js' ); ?>"></script>
 <script>
 (function () {
   const form = document.getElementById('cf');

@@ -174,9 +174,9 @@ include "header_en.php";
     </div>
   </article>
 </div>
-<script src="<?php echo MAYA_URI; ?>/js/app.js?v=2">
+<script src="<?php echo maya_asset( '/js/app.js' ); ?>">
   </script>
-  <script src="<?php echo MAYA_URI; ?>/js/works-data_en.js">
+  <script src="<?php echo maya_asset( '/js/works-data_en.js' ); ?>">
   </script>
   <script>
     (function () {

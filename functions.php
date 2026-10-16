@@ -19,6 +19,19 @@ if ( ! defined( 'MAYA_URI' ) ) {
 	define( 'MAYA_URI', get_template_directory_uri() );
 }
 
+if ( ! function_exists( 'maya_asset' ) ) {
+	/**
+	 * テーマ内ファイルのURLに ?ver=更新日時 を付けて返す。
+	 * ファイルを更新すると URL が変わるので、長期キャッシュでも古いJSが残らない。
+	 * 例: <script src="<?php echo maya_asset( '/js/app.js' ); ?>"></script>
+	 */
+	function maya_asset( $rel ) {
+		$file = get_template_directory() . $rel;
+		$ver  = is_file( $file ) ? filemtime( $file ) : '';
+		return esc_url( MAYA_URI . $rel . ( $ver ? '?ver=' . $ver : '' ) );
+	}
+}
+
 if ( ! function_exists( 'maya_enqueue_assets' ) ) {
 	/**
 	 * テーマのスタイルシートを登録・読み込みする。

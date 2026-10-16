@@ -354,7 +354,7 @@ include "header.php";
     nonce: '<?php echo esc_js( wp_create_nonce( 'maya_contact' ) ); ?>'
   };
 </script>
-<script src="<?php echo MAYA_URI; ?>/js/app.js?v=2"></script>
+<script src="<?php echo maya_asset( '/js/app.js' ); ?>"></script>
 <script>
 (function () {
   const form = document.getElementById('cf');

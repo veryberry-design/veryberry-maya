@@ -323,9 +323,9 @@ include "header.php";
       </div>
     </div>
   </main>
-  <script src="<?php echo MAYA_URI; ?>/js/app.js?v=2">
+  <script src="<?php echo maya_asset( '/js/app.js' ); ?>">
     </script>
-    <script src="<?php echo MAYA_URI; ?>/js/works-data.js">
+    <script src="<?php echo maya_asset( '/js/works-data.js' ); ?>">
     </script>
     <script>
       (function () {
