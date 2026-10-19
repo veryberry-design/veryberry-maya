@@ -4827,8 +4827,10 @@ label .opt {
 .ftr-photo-1 { background-color: #fbe3ea; }
 .ftr-photo-2 { background-color: var(--grape-pale); }
 .ftr-photo-3 { background-color: #e2f1e4; }
-.ftr-cap { padding: 12px 4px 0; }
-.ftr-row { display: flex; align-items: baseline; gap: 10px; }
+/* イラスト（白背景）は台紙の色を重ねず、そのまま見せる */
+.ftr-photo.has-img { background-size: contain; background-origin: content-box; padding: 14px; }
+.ftr-cap { padding: 12px 4px 0; text-align: center; }
+.ftr-row { display: flex; align-items: baseline; justify-content: center; gap: 10px; }
 .ftr-cap .ft-n { font-family: var(--script); font-weight: 700; color: var(--berry); font-size: 30px; line-height: 1; }
 .ftr-cap .ft-en { font-family: var(--script); color: var(--grape); font-size: 17px; letter-spacing: .06em; }
 .ftr-cap .ft-jp { font-size: 19px; margin: 2px 0 0; font-weight: 400; }
@@ -5607,8 +5609,7 @@ label .opt {
   display: flex; align-items: center; gap: 10px; list-style: none;
 }
 .faq-item summary::-webkit-details-marker { display: none; }
-.faq-item summary .b { width: 18px; height: 22px; transition: transform .3s; }
-.faq-item[open] summary .b { transform: rotate(15deg) scale(1.15); }
+.faq-item summary .b { width: 18px; flex-shrink: 0; text-align: center; font-family: var(--script); font-weight: 700; font-size: 22px; line-height: 1; color: var(--berry); }
 .faq-item summary .grow { flex: 1; }
 .faq-item summary .toggle { font-family: var(--script); color: var(--grape); transition: transform .25s; }
 .faq-item[open] summary .toggle { transform: rotate(45deg); }

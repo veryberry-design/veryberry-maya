@@ -39,7 +39,7 @@ include "header_en.php";
       <div class="ftr-steps">
         <div class="ftr-pol">
           <!-- To add an image: style="background-image:url('<?php echo MAYA_URI; ?>/img/xxx.png');" -->
-          <div class="ftr-photo ftr-photo-1"></div>
+          <div class="ftr-photo ftr-photo-1 has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/first01.webp');"></div>
           <div class="ftr-cap">
             <div class="ftr-row"><span class="ft-n">01 </span><span class="ft-en">say hi </span></div>
             <h4 class="ft-jp">Say Hi </h4>
@@ -49,7 +49,7 @@ include "header_en.php";
           </div>
         </div>
         <div class="ftr-pol">
-          <div class="ftr-photo ftr-photo-2"></div>
+          <div class="ftr-photo ftr-photo-2 has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/first02.webp');"></div>
           <div class="ftr-cap">
             <div class="ftr-row"><span class="ft-n">02 </span><span class="ft-en">talk together </span></div>
             <h4 class="ft-jp">Talk Together </h4>
@@ -59,7 +59,7 @@ include "header_en.php";
           </div>
         </div>
         <div class="ftr-pol">
-          <div class="ftr-photo ftr-photo-3"></div>
+          <div class="ftr-photo ftr-photo-3 has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/first03.webp');"></div>
           <div class="ftr-cap">
             <div class="ftr-row"><span class="ft-n">03 </span><span class="ft-en">plan &amp; quote </span></div>
             <h4 class="ft-jp">Get a Quote </h4>
@@ -257,7 +257,7 @@ d.className ='faq-item';
 if (i === 0 && cat !=='all') d.open = true;
 d.innerHTML = `
     <summary>
-    <span class="b">${BB.ICONS.berry(18,'var(--berry)')}</span>
+    <span class="b" aria-hidden="true">Q</span>
 <span class="grow">${f.q}</span>
 <span class="toggle">+</span>
     </summary>

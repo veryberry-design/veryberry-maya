@@ -15,8 +15,8 @@ include "header.php";
       <span class="scrib">よくある質問 </span>
     </h2>
     <p class="muted sm" style="max-width: 480px; margin: 18px auto 0; line-height: 2;">
-      気になること、よく聞かれる質問や、ご依頼前の不安を <br/>
-      やさしくほぐしてみたよ度です
+      ちょっとした疑問や、よくあるご質問、<br/>
+      ご依頼前の不安にお答えしています。
     </p>
   </div>
   <!-- はじめての方へ コルクボード -->
@@ -41,33 +41,32 @@ include "header.php";
       </svg>
       <div class="ftr-steps">
         <div class="ftr-pol">
-          <!-- 画像を入れるときは style="background-image:url('<?php echo MAYA_URI; ?>/img/xxx.png');" を追加 -->
-          <div class="ftr-photo ftr-photo-1"></div>
+          <div class="ftr-photo ftr-photo-1 has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/first01.webp');"></div>
           <div class="ftr-cap">
             <div class="ftr-row"><span class="ft-n">01 </span><span class="ft-en">say hi </span></div>
             <h4 class="ft-jp">まずはちょっと話す </h4>
             <p>
-              やりたいこと、もやもやしていること、どんなフォームでも。
+              お悩みやご希望を、まずは気軽に。<br/>小さなことでも大歓迎です。
             </p>
           </div>
         </div>
         <div class="ftr-pol">
-          <div class="ftr-photo ftr-photo-2"></div>
+          <div class="ftr-photo ftr-photo-2 has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/first02.webp');"></div>
           <div class="ftr-cap">
             <div class="ftr-row"><span class="ft-n">02 </span><span class="ft-en">talk together </span></div>
             <h4 class="ft-jp">一緒に整理する </h4>
             <p>
-              Zoom30分、もしくはチャットで、<br/>もやもやを形にします。
+              お話を聞きながら、想いを整理。<br/>理想のカタチを一緒に考えます。
             </p>
           </div>
         </div>
         <div class="ftr-pol">
-          <div class="ftr-photo ftr-photo-3"></div>
+          <div class="ftr-photo ftr-photo-3 has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/first03.webp');"></div>
           <div class="ftr-cap">
             <div class="ftr-row"><span class="ft-n">03 </span><span class="ft-en">plan &amp; quote </span></div>
             <h4 class="ft-jp">見積もりを出す </h4>
             <p>
-              費用とスケジュールを文面で。<br/>スタートはそれから大丈夫。
+              内容に合わせてお見積もり。<br/>費用やスケジュールをご案内します。
             </p>
           </div>
         </div>
@@ -206,8 +205,8 @@ include "header.php";
           ご相談だけでもOKです
         </h3>
         <p class="casual-cta-msg">
-          「ちゃんと依頼できるかわからない」「まだアイデア段階」そんな状態でもウェルカムです。 <br/>
-          ふんわり話して、一緒に整理しましょう。無理に取り込みたりはしません。
+          「何をお願いすればいいかわからない」「まだアイデア段階」そんな状態でも大歓迎です。<br/>
+          まずは気軽にお話ししながら、一緒に整理していきましょう。無理に契約をおすすめすることはありません。
         </p>
         <div class="casual-cta-btns">
           <a class="btn berry lg" href="/contact/">ふんわり相談してみる → </a>
@@ -216,12 +215,6 @@ include "header.php";
       </div>
     </div>
   </section>
-  <div style="text-align:center; margin-top:50px;">
-    <p class="muted sm">
-      解決しない場合は、お気軽にご相談ください。
-    </p>
-    <a class="btn berry lg" href="/contact/">お問い合わせ → </a>
-  </div>
 </main>
 <script src="<?php echo maya_asset( '/js/app.js' ); ?>">
   </script>
@@ -260,7 +253,7 @@ d.className ='faq-item';
 if (i === 0 && cat !=='all') d.open = true;
 d.innerHTML = `
     <summary>
-    <span class="b">${BB.ICONS.berry(18,'var(--berry)')}</span>
+    <span class="b" aria-hidden="true">Q</span>
 <span class="grow">${f.q}</span>
 <span class="toggle">＋</span>
     </summary>
