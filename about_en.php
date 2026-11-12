@@ -979,6 +979,7 @@ const SCRAPS = [
 
 const grid = document.getElementById('scrap-grid');
 const modal = document.getElementById('scrap-modal');
+if (!grid || !modal) return;
 
 if (grid) {
 grid.innerHTML = SCRAPS.map((s, i) => `

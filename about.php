@@ -998,6 +998,7 @@ const SCRAPS = [
 
 const grid = document.getElementById('scrap-grid');
 const modal = document.getElementById('scrap-modal');
+if (!grid || !modal) return;
 
 grid.innerHTML = SCRAPS.map((s, i) => `
     <div class="scrap-card size-${s.size}" data-i="${i}" style="transform: rotate(${s.rot}deg);">
