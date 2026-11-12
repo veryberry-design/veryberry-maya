@@ -410,49 +410,49 @@ include "header_en.php";
     </div>
     <div class="reg-grid" id="reg-grid">
       <div class="reg-tile big" data-i="0" data-lbl="[ reg 01 ]">
-        <div class="imgph has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/regu/regu02.JPG');background-size:cover;background-position:center;"></div>
+        <div class="imgph has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/regu/regu02.jpg');background-size:cover;background-position:center;"></div>
         <div class="reg-cap">
           Little miss
         </div>
       </div>
       <div class="reg-tile" data-i="1" data-lbl="[ reg 02 ]">
-        <div class="imgph has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/regu/regu08.JPG');background-size:cover;background-position:center;"></div>
+        <div class="imgph has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/regu/regu08.jpg');background-size:cover;background-position:center;"></div>
         <div class="reg-cap">
           Lick lick
         </div>
       </div>
       <div class="reg-tile" data-i="2" data-lbl="[ reg 03 ]">
-        <div class="imgph has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/regu/regu03.JPG');background-size:cover;background-position:center;"></div>
+        <div class="imgph has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/regu/regu03.jpg');background-size:cover;background-position:center;"></div>
         <div class="reg-cap">
           Halloween
         </div>
       </div>
       <div class="reg-tile tall" data-i="3" data-lbl="[ reg 04 ]">
-        <div class="imgph has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/regu/regu05.JPG');background-size:cover;background-position:center;"></div>
+        <div class="imgph has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/regu/regu05.jpg');background-size:cover;background-position:center;"></div>
         <div class="reg-cap">
           Jump!!
         </div>
       </div>
       <div class="reg-tile" data-i="4" data-lbl="[ reg 05 ]">
-        <div class="imgph has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/regu/regu04.JPG');background-size:cover;background-position:center;"></div>
+        <div class="imgph has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/regu/regu04.jpg');background-size:cover;background-position:center;"></div>
         <div class="reg-cap">
           Being held like a good girl
         </div>
       </div>
       <div class="reg-tile" data-i="5" data-lbl="[ reg 06 ]">
-        <div class="imgph has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/regu/regu06.JPG');background-size:cover;background-position:center;"></div>
+        <div class="imgph has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/regu/regu06.jpg');background-size:cover;background-position:center;"></div>
         <div class="reg-cap">
           Peeking from under the bed...
         </div>
       </div>
       <div class="reg-tile" data-i="6" data-lbl="[ reg 07 ]">
-        <div class="imgph has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/regu/regu09.JPG');background-size:cover;background-position:center;"></div>
+        <div class="imgph has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/regu/regu09.jpg');background-size:cover;background-position:center;"></div>
         <div class="reg-cap">
           Reg and the ball
         </div>
       </div>
       <div class="reg-tile" data-i="7" data-lbl="[ reg 08 ]">
-        <div class="imgph has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/regu/regu01.JPG');background-size:cover;background-position:center;"></div>
+        <div class="imgph has-img" style="background-image:url('<?php echo MAYA_URI; ?>/img/regu/regu01.jpg');background-size:cover;background-position:center;"></div>
         <div class="reg-cap">
           Bunny treat time
         </div>
